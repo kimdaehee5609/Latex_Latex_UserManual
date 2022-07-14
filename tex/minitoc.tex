@@ -1,0 +1,262 @@
+
+
+% ========================================== chapter ============
+\newpage
+\chapter{minitoc}
+				
+	% -------------------------------------- page -------------------
+		%			\nomtcrule      		% removes rules = horizontal lines
+		%			\nomtcpagenumbers  	% remove page numbers from minitocs
+		%			\newpage
+					\minitoc				% Creating an actual minitoc
+					\doublespace
+
+	% -------------------------------------------------------------
+	\newpage
+	\section{minitoc 개요}
+	
+	\subsection{문서의 처음에 선언}
+	
+				\begin{table}[h]
+				\caption{minitoc 본문내에서 선언문}
+				\centering 
+				\tabulinesep=0.8ex
+				\begin{tabu} to 0.8\textwidth { X[l, 1.0] X[l, 2] }
+				\tabucline[0.2ex]{-}		
+				\textbackslash doparttoc	&Table of contents for parts	\\
+				\textbackslash dopartlof	&List of figures for parts	\\
+				\textbackslash dopartlot	&List of tables for parts	\\
+				\tabucline[0.1ex]{-}		
+				\textbackslash dominitoc	&Table of contents for chapters	\\
+				\textbackslash dominilof	&List of figures for chapters	\\
+				\textbackslash dominilot	&List of tables for chapters	\\
+				\tabucline[0.1ex]{-}		
+				\textbackslash dosecttoc	&Table of contents for sections	\\
+				\textbackslash dosectlof	&List of figures for sections	\\
+				\textbackslash dosectlot	&List of tables for sections\\
+				\tabucline[0.1ex]{-}		
+				\end{tabu} 
+		%		\label{table}
+				\end{table}
+				
+	\subsection{문서내에서의 사용}
+
+				\begin{table}[h]
+				\caption{minitoc 본문내에서 사용문}
+				\centering 
+				\tabulinesep=0.8ex
+				\begin{tabu} to 0.8\textwidth { X[l, 1.0] X[l, 2] }
+				\tabucline[0.2ex]{-}		
+				\textbackslash parttoc	&Table of contents for parts	\\
+				\textbackslash partlof	&List of figures for parts	\\
+				\textbackslash partlot	&List of tables for parts	\\
+				\tabucline[0.1ex]{-}		
+				\textbackslash minitoc	&Table of contents for chapters	\\
+				\textbackslash minilof	&List of figures for chapters	\\
+				\textbackslash minilot	&List of tables for chapters	\\
+				\tabucline[0.1ex]{-}		
+				\textbackslash secttoc	&Table of contents for sections	\\
+				\textbackslash sectlof	&List of figures for sections	\\
+				\textbackslash sectlot	&List of tables for sections \\
+				\tabucline[0.1ex]{-}		
+				\end{tabu} 
+		%		\label{table}
+				\end{table}
+
+
+
+
+
+				
+		\newpage
+	% -------------------------------------------------------------
+	\section{mini toc}
+	
+		%---------------
+		\singlespace
+		\setlength{\fboxsep}{12pt}
+		\begin{boxedminipage}[c]{1.0\linewidth}
+		\color{blue}
+		%---------------
+		\begin{verbatim}
+			\documentclass[...]{book}
+			\usepackage{minitoc}
+			...
+			\setcounter{minitocdepth}{2} default
+			\setlength{\mtcindent}{24pt} default
+			\renewcommand{\mtcfont}{\small\rm} default
+			\renewcommand{\mtcSfont}{\small\bf} default
+			...
+			\begin{document}
+			...
+			\dominitoc
+			\dominilof
+			\dominilot
+			\tableofcontents or \faketableofcontents
+			\listoffigures or \fakelistoffigures
+			\listoftables or \fakelistoftables
+			...
+			\chapter{...}
+			\minitoc if you want one
+			\minilof if you want one
+			\minilot if you want one
+			...
+		\end{verbatim}
+		%---------------
+		\end{boxedminipage}
+		\color{black}
+		\doublespace
+		%---------------
+
+		
+		\subsection{minitocdepth}
+		
+		
+		\subsection{mtcindent}
+				
+								
+		\subsection{dominitoc}
+
+				
+		\newpage
+	% -------------------------------------------------------------
+	\section{section toc }
+	
+		%---------------
+		\singlespace
+		\setlength{\fboxsep}{12pt}
+		\begin{boxedminipage}[c]{1.0\linewidth}
+		\color{blue}
+		%---------------
+		\begin{verbatim}
+			\documentclass[...]{article}
+			\usepackage{minitoc}
+			...
+			\setcounter{\secttocdepth}{2} default
+			\setlength{\stcindent}{24pt} default
+			\renewcommand{\stcfont}{\small\rm} default
+			\renewcommand{\stcSSfont}{\small\bf} default
+			...
+			\begin{document}
+			...
+			\dosecttoc
+			\dosectlof
+			\dosectlot
+			\tableofcontents or \faketableofcontents
+			\listoffigures or \fakelistoffigures
+			\listoftables or \fakelistoftables
+			...
+			\chapter{...}
+			\secttoc if you want one
+			\sectlof if you want one
+			\sectlot if you want one
+			...
+		\end{verbatim}
+		%---------------
+		\end{boxedminipage}
+		\color{black}
+		\doublespace
+		%---------------
+		
+
+		\subsection{secttocdepth}
+		
+		
+		\subsection{stcindent}
+
+
+		\subsection{dosecttoc}
+
+
+
+		
+		\newpage
+	% -------------------------------------------------------------
+	\section{part  toc }
+
+
+
+		%---------------
+		\singlespace
+		\setlength{\fboxsep}{12pt}
+		\begin{boxedminipage}[c]{1.0\linewidth}
+		\color{blue}
+		%---------------
+		\begin{verbatim}
+			\documentclass[...]{book}
+			\usepackage{minitoc}
+			...
+			\setcounter{parttocdepth}{2} default
+			\setlength{\ptcindent}{0pt} default
+			\renewcommand{\ptcfont}{\normalsize\rm} default
+			\renewcommand{\ptcCfont}{\normalsize\bf} default
+			\renewcommand{\ptcSfont}{\normalsize\rm} default
+			...
+			\begin{document}
+			...
+			\doparttoc
+			\dopartlof
+			\dopartlot
+			\tableofcontents or
+			\faketableofcontents
+			\listoffigures or
+			\fakelistoffigures
+			\listoftables or
+			\fakelistoftables
+			...
+			\part{...}
+			\parttoc if you want one
+			\partlof if you want one
+			\partlot if you want one
+			...
+		\end{verbatim}
+		%---------------
+		\end{boxedminipage}
+		\color{black}
+		\doublespace
+		%---------------
+
+
+
+		\newpage
+	% -------------------------------------- page -------------------
+		\subsection{part toc depth}
+		
+		
+		\subsection{ptc indent}
+
+
+		\subsection{do part toc}
+
+
+		\subsection{part toc}
+		
+
+		\subsection{do part lof}
+
+		\subsection{part lof}
+
+		\subsection{do part lot}
+
+		\subsection{part lot}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,129 @@
+
+\newpage
+\chapter{package}
+ 
+% ------------------------------------------------------------- 패키지 일반
+\newpage
+\section{package 일반}
+
+	MikTeX이나 LexLive의 경우에 자동으로 패키지를 설치하는 기능이 있지만, 텍 배포판 버전이 올라감에 따라 
+	이 기능이 제대로 작동하지 않는 경우가 많다.
+	
+	  그럴 때마다 텍을 다시 설치하는 것은 매우 번거로우며, 때로는 수동 설치가 더 간편한 경우가 있다. 
+	  또 어떤 경우에는 해당 배포판의 패키지 데이터베이스에 내가 원하는 패키지가 없는 경우도 있다. 
+	  이런 경우에는 수동으로 패키지를 설치할 수밖에 없는데, 여기에 패키지 수동 설치 방법을 간단히 기록해 둔다.
+
+	\begin{enumerate}
+	\item 	\verb|CTAN(http://www.tug.org/ctan.html)|에서 해당 패키지를 찾는다.
+	\item  	패키지를 zip 파일로 받아 저장한다.
+	\item  	다운로드한 zip 파일을 임시 폴더에 푼다.
+	\item 	임시 폴더 내에 INSTALL이라는 파일이 있으면 이 파일의 내용대로 설치한다(잘 되지 않으면 아래 5번 수행).
+	\item 	아니면 그 폴더에서 dtx 파일을 찾아서(예: stmaryrd.dtx) 이 파일을 latex으로 처리한다.
+			\verb|> latex stmaryrd.dtx|
+	\item 	이 과정에서 생성된 *.sty와 *.fd 파일을 tex 배포 폴더의 input 폴더에 적절한 폴더(예: stmaryrd)를 만들고 복사한다.\\
+			(예: \verb|...\tex\latex\stmaryrd|)
+	\item 	이미 그 폴더에 있는 *.mf 파일을 tex 배포 폴더의 mf 폴더 적절한 곳에 복사한다. \\
+			(예: ...\verb|\fonts\source\public\latex-fonts|)
+	\item 	파일 데이터베이스를 다시 만든다.
+			(texlive의 경우: texhash.exe / MikTeX의 경우: mktexlsr.exe)
+	\end{enumerate}
+			
+% ------------------------------------------------------------- 패키지 설치
+\newpage
+\section{package 설치}
+
+
+ 	\begin{description}
+	\item[방법 1]
+		현재 작업하고 있는 폴더에 스타일 파일들을 두세요.
+	\item[방법 2]
+		방법 1의 단점은 뻔합니다. 새로운 작업 폴더들을 만들 때마다 그 스타일 파일들을 복사해야죠.
+		나만의 texmf 폴더를 만들 수 있습니다. \\
+		\verb|c:\texlive\2013| 아래에 texmf.cnf가 있습니다. \\
+		그 파일을 열고 아래와 같이 추가하세요. \\
+		TEXMFHOME = D:/home/texmf/  <-- 이 경로를 원하시는 대로 바꾸세요. \\
+		그리고 \verb|D:\home\texmf| 아래에 texmf 트리 구조에 맞게 아래와 같이 폴더들을 구성하세요. \\
+		\verb|D:\home\texmf\tex\latex\my |
+		이 곳에 스타일 파일들을 두세요. 
+ 	\end{description}
+		
+		
+% ------------------------------------------------------------- 패키지 설치
+\newpage
+\section{LaTeX2e에서 새로운 패키지를 설치하기}
+
+	\begin{enumerate}[{(}1{)}]
+	\item 	\textbf{에러 확인} \\
+			\verb|\usepackage{something}| 했을 때 
+			something.sty가 없다는 에러가 나오면 현재 시스템에 관련 패키지가 없는 것입니다. 
+
+	\item  	\textbf{패키지 찾기} \\
+			대부분의 스타일 패키지는 CTAN(Comprehensive TeX Archive Network)에서 구할 수 있습니다. 
+			\\ \\
+			그러나 원하는 패키지가 어느 위치에 있는지 알기 어렵기 때문에 ftp로 접속하는 경우 헤매는 때가 가끔 있습니다.
+			CTAN Search를 이용하시기 바랍니다. 			
+			
+			\textbf{http://www.ctan.org/find.html}
+			
+			여기서 원하는 패키지 이름만
+			\textsuperscript{(예를 들어 something.sty가 필요하다면 something이라고만 씁니다)} 써넣고 검색을 시도합니다. 
+			\\ \\
+			원하는 패키지가 찾아지면 zip이나 tar.gz로 다운받을 수 있습니다. 
+			대부분 폴더 전체를 zip이나 tar.gz로 묶어서 받는 것입니다.
+			그것을 받아서 적당한 곳에 풀어넣습니다. 
+			바로 \textbf{TEXMF 트리}로 옮기지 말고 예를 들면 \verb|c:\inst| 정도에 풀어놓으시기 바랍니다. 
+	\clearpage
+	\item  	\textbf{인스톨} \\
+			CTAN의 LaTeX2e 패키지들은 대개 두 가지 형태로 제공됩니다. \\ \\
+			하나는 something.sty라는 파일이 있는 경우이고,  
+			다른 하나는 something.dtx, something.ins 라는 파일로 제공되는 경우입니다. 
+			\\ \\
+			실제로 LaTeX에서 사용하는 스타일 파일은 *.sty이기 때문에 
+			첫번째 경우에는 그냥 그대로 쓸 수 있습니다만, 두번째 경우는 스타일 파일을 풀어야 합니다.
+			\begin{description}
+			\item 	[something.(dtx,ins)를 푸는 방법] \hfill \\
+					명령행에서 ins 파일에 대하여 latex을 실행합니다. \\
+					(주의: something.ins를 더블클릭하지 마십시오.) \\
+					 \textbf{latex something.ins} \\
+					그러면 아마도 something.sty를 비롯한 몇 개의 파일이 풀려나올 것입니다. 
+					경우에 따라 *.log, *.cfg, *.def, *.drv 등이 함께 풀리는 경우도 있습니다.
+			\item 	[something.ins를 푸는 방법] \hfill \\
+					*.dtx 파일에 대하여 latex을 실행하면 패키지 관련 문서를 얻을 수 있습니다.
+					이것은 사용법 설명을 겸하고 있으므로 꼭 실행해서 읽어보시기 바랍니다.
+	
+					   \textbf{latex something.dtx} \\
+					   \textbf{latex something.dtx} (두 번 실행하는 것이 좋습니다.) \\
+					   이 결과 something.dvi가 얻어집니다.
+			\end{description}
+
+	\clearpage
+	\item  	\textbf{파일의 위치정하기와 복사} \\
+			새로 설치하는 패키지들은 자신에게 적절한 방법으로 일관되게 관리하는 것이 좋습니다. \\
+			예를 들어, LaTeX2e 패키지라면, \verb|$TEXMFLOCAL(=c:\tex\texmf-local)| 트리 아래에 다음 
+			위치로 설정하는 것이 제일 나을 듯하군요.
+			MiKTeX이라면 \verb|\TEXMFLOCAL=c:\localtexmf| 일 수 있을 것입니다. 그 아래의 위치는 동일합니다.
+
+  
+			\verb|$TEXMFLOCAL/tex/latex/contrib/something|
+
+			사실은 \verb|$TEXMF(LOCAL)/tex| 아래라면 어디에
+			설치해도 되도록 texmf.cnf가 만들어져 있을 것입니다. 그러므로, 위의 경우,
+
+			  \verb|c:\tex\texmf-local\tex\latex\contrib\something|
+
+			이 디렉토리를 만들고, 여기에 *.ins를 실행하여 풀려나온 모든 파일 또는 그냥 모든 파일을 복사(이동)합니다.
+			물론 처음부터 *.sty 등만 있었던 경우에는 그대로 복사하면 됩니다.
+	
+	\item  	\textbf{"파일네임 데이터베이스"의 갱신 }\\
+			이 과정이 꼭 처리되어야 합니다. 
+			TeX은 kpathsea라는 도구를 이용해서 필요한 파일이 어디 있는지 발견합니다.
+			kpathsea는 파일이름을 데이터베이스화해 두었다가, 요청이 있으면 그 파일의 위치를 알려줍니다.
+		
+			fpTeX은 mktexlsr이나 texhash를 실행합니다.
+			MiKTeX은 initexmf -u 명령이나 <시작> 버튼을 누르고 <프로그램> 아래의 MiKTeX에서
+			"Refresh Filename Databases"를 실행하면 될 것입니다.
+	\end{enumerate}
+
+	끝입니다.
+		
+		

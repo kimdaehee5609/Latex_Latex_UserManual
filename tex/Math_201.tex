@@ -1,0 +1,322 @@
+		
+% ========================================== chapter ============
+\newpage
+\chapter{수식}
+	
+		% ----------------------- 장 목차 생성 Initialization
+		\minitoc		
+		
+
+
+% -------------------------------------------------------------
+%
+%
+%
+% -------------------------------------------------------------
+\newpage
+\section{수식의 입력 개요}
+
+	LATEX는 수학식 조판을 위한 특별한 모드를 갖고 있다.
+	수학식은 단락 안에서 행중 수식으로 조판될 수도 있고, 별도의 단락으로 조판될 수도 있다.
+
+	\paragraph{행 중 텍스트 방식}
+	단란안에서 행중 수식 텍스트는 \verb|\(|와 \verb|\)|, \verb|$|와 \verb|$|, 또는 
+	\verb|\begin{math}|와 \verb|\end{math}| 사이에 들어간다.
+
+	\begin{itemize}
+	\item 	\verb|\(| 수학식 \verb|\)|
+	\item 	\verb|$| 수학식 \verb|$|
+	\item 	\verb|\begin{math}| 수학식 \verb|\end{math}|
+	\end{itemize}
+
+
+	\paragraph{별도 단락으로 표시}
+	별도 단락으로 큰 수학 기호를 사용하는 방정식이나 공식을 식자하려면
+	실제로 단락을 나누는 것보다는 수식 보여주기 하는 것이 바람직하다.
+	이렇게 하기 위해서는, 이들을 \verb|\[|와 \verb|\]|안에 넣거나, 
+	\verb|\begin{displaymath}|와 \verb|\edn{displaymath}| 사이에 넣는다.
+
+	\begin{itemize}
+	\item 	\verb|\[| 수학식 \verb|\]|
+	\item 	\verb|\begin{displaymath}| 수학식 \verb|\edn{displaymath}|
+	\end{itemize}
+
+
+	\paragraph{별도 단락으로 표시하고 수식 번호를 붇이는 경우}
+	수식 번호를 \LaTeX 가 붙여 주기를 원한다면, equation 환경을 쓸 수 있다. 
+	그러면 수식 번호에 \verb|\label|을 붙이고 \verb|\ref| 또는 
+	amsmath  패키지에 있는 \verb|\eqref| 명령을 써서 본문 안 다른 곳에서 이 레이블을 참조할 수 있다.
+
+	\begin{itemize}
+	\item 	\verb|\begin{equation}| 수학식 \verb|\edn{equation}|
+	\end{itemize}
+
+
+% -------------------------------------------------------------
+%
+%
+%
+% -------------------------------------------------------------
+\clearpage
+\section{그리스 소문자의 입력}
+	\begin{table}[hbp]
+		\caption{그리스 소문자 입력}
+		\centering
+		\begin{tabular}{ l l }
+		\toprule
+		$\alpha$		&\verb|\alpha| \\
+		$\beta$			&\verb|\beta|  \\ 
+		γ 				&\verb|\gamma|  \\
+		δ 				&\verb|\delta|  \\ 
+		$\epsilon$		&\verb|$\epsilon$|  \\
+		ε				&\verb|\varepsilon| \\
+		ζ 				&\verb|\zeta| \\ 
+		η 				&\verb|\eta|  \\
+		θ 				&\verb|\theta| \\
+		$\vartheta$ 	&\verb|\vartheta| \\
+		ι				&\verb| \iota|  \\		 
+		κ 				&\verb|\kappa| \\		
+		λ				&\verb|\lambda| \\		
+		μ				&\verb|\mu|	 \\		
+		ν				&\verb|\nu|	 \\		
+		ξ 				&\verb|\xi| \\			
+		o				&\verb|o| \\		
+		$\pi$			&\verb|\pi| \\		
+		$\varpi$	 	&\verb|\varpi| \\	
+		ρ				&\verb| \rho| \\	
+		$\varrho$		&\verb|\varrho| \\	
+		σ		&\verb|\sigma| \\	
+		$\varsigma$	&\verb|\varsigma| \\
+		τ		&\verb|\tau|  \\
+		υ 	&\verb|\upsilon| \\
+		φ		&\verb|\phi| \\
+		$\varphi$	 	&\verb|\varphi| \\
+		χ		&\verb|\chi| \\
+		ψ		&\verb|\psi| \\
+		ω		&\verb|\omega| \\
+	    \bottomrule
+		\end{tabular}%
+	\end{table}%
+
+
+	
+% -------------------------------------------------------------
+%
+%
+%
+% -------------------------------------------------------------
+\clearpage
+\section{수식의 배치}
+
+
+	\subsection{수식에서 여러줄 배치 및 맞춤}
+		\paragraph{eqnarray 환경}
+		여러 줄에 걸친 식이나 수식군을 위해서는 equation  대신 eqnarray 환경을, equation* 대신 eqnarray*를 쓸 수 있다.
+		
+		\paragraph{수식 번호}
+		eqnarray 안에서 각 줄마다 하나씩 수식번호가 붙는 다. eqnarray*는 번호가 붙지 않는다.
+		
+		\paragraph{자리 맞춤}
+		equnarray와 equnarray* 환경은 \verb|{rcl}| 형식의 세 컬럼 표(tabular)와 같이 동작하며,
+		가운데 칸은 등호, 부등호, 그 밖에 적당한 다른 기호를 두는데 쓴다.
+
+		\paragraph{줄 바꿈}
+		\verb|\\| 명령은 줄 나눔을 표시한다
+
+		\clearpage
+		\paragraph{사용예}
+		\begin{verbatim}
+			\begin{eqnarray}
+			    f(x) & = & \cos x \\
+    			    f`(x) & = & - \sin x \\
+			    \int_{0}^{x} f(x) dy & = & \sin x 
+			\end{eqnarray}
+		\end{verbatim}
+		\paragraph{결과}
+		\begin{eqnarray}
+			f(x) & = & \cos x \\
+			f`(x) & = & - \sin x \\
+			\int_{0}^{x} f(x) dy & = & \sin x 
+		\end{eqnarray}
+		
+		\paragraph{등호 양쪽 간격 조정}
+		등호 양쪽 간격아 좀 넓어 보인다는 것을 알보 두자. 이를 고치려면 \verb| \set length \ array col sep {2pt}|로 설정하면 이를 고칠 수 있다.
+		
+	
+		\paragraph{결과}
+		\setlength\arraycolsep{2pt}
+		\begin{eqnarray}
+			f(x) & = & \cos x \\
+			f`(x) & = & - \sin x \\
+			\int_{0}^{x} f(x) dy & = & \sin x 
+		\end{eqnarray}
+		
+% -------------------------------------------------------------
+%
+%
+%
+% -------------------------------------------------------------
+\clearpage
+\section{긴 수식의 표현}
+
+
+	긴 수식은 자동으로 적절하게 나누어지지 않을 것이다. 
+	저자는 어디서 나눌것인지 들여쓰기를 얼마나 할지 지정해야 한다. 
+	이를 위해서 다음 두 방법이 가장 널리 쓰인다.
+	\\
+		% -----------------------------------------
+		\rule{\linewidth}{1pt}
+		\paragraph{사용예}
+		\begin{verbatim}
+			\setlength\arraycolsep{2pt}ds
+			\begin{eqnarray}
+			    \sin x 	& = & x -\frac{x^{3}}{3!} + \frac{x^{5}}{5!} - {}
+			    \nonumber \\
+					    	& & {}-\frac{x^{7}{7!}+{} \cdots
+			\end{eqnarray}
+		\end{verbatim}
+		% -----------------------------------------
+		\rule{\linewidth}{1pt}
+		\paragraph{결과}
+			\setlength\arraycolsep{2pt}
+			\begin{eqnarray}
+			    \sin x 	& = & x -\frac{x^{3}}{3!} + \frac{x^{5}}{5!} - {}
+			    \nonumber \\
+					 	& & {}-\frac{x^{7}}{7!}+{} \cdots
+			\end{eqnarray}
+		\rule{\linewidth}{1pt}
+	
+	\verb|\nonumber| 명령은 LATEX에게 이 수식에 번호를 붙이지 말라고 알려준다.
+	
+
+
+% -------------------------------------------------------------
+%
+%
+%
+% -------------------------------------------------------------
+\clearpage
+\section{기본 수식의 입력}
+
+	\subsection{윗첨자 아래첨자}
+
+	\subsection{사칙연산}
+
+	\subsection{제곱근}
+	
+	\subsection{기본함수}
+	
+	one \hfill two\\
+	
+	
+		\begin{tabbing}
+		~\hspace{3cm}\= ~\hspace{3cm} \= ~\hspace{3cm} \= ~\hspace{3cm} \= \kill \\
+		\verb|\sin| \> \verb|\cos| \> \verb|\tan| \> \\
+		\verb|\log| \> \verb|\max| \> \verb|\min| \>
+		\end{tabbing}
+	
+	
+
+
+% -------------------------------------------------------------
+%
+%
+%
+% -------------------------------------------------------------
+\clearpage
+\section{Arrow symbols}
+
+			\textbf{Left}\\
+			\begin{tabular}{ p{0.1\textwidth} p{0.3\textwidth} 
+							p{0.1\textwidth} p{0.3\textwidth}  }
+			\toprule
+			$\leftarrow$		&$\backslash$leftarrow &
+			$\longleftarrow$	&$\backslash$longleftarrow \\
+			$\Leftarrow$		&$\backslash$Leftarrow&
+			$\Longleftarrow$	&$\backslash$Longleftarrow \\
+			\bottomrule
+			\end{tabular} \\
+			
+			\textbf{Right}\\
+			\begin{tabular}{ p{0.1\textwidth} p{0.3\textwidth} 
+							p{0.1\textwidth} p{0.3\textwidth}  }
+			\toprule
+			$\rightarrow $		&$\backslash$rightarrow& 
+			$\longrightarrow$	&$\backslash$longrightarrow \\
+			$\Rightarrow$		&$\backslash$Rightarrow&
+			$\Longrightarrow$	&$\backslash$Longrightarrow \\
+			\bottomrule
+			\end{tabular} \\
+		
+			\textbf{Left-Right}\\
+			\begin{tabular}{ p{0.1\textwidth} p{0.3\textwidth} 
+							p{0.1\textwidth} p{0.3\textwidth}  }
+			\toprule
+			$\leftrightarrow $		&$\backslash$leftrightarrow& 
+			$\longleftrightarrow$	&$\backslash$longleftrightarrow \\
+			$\Leftrightarrow$		&$\backslash$Leftrightarrow&
+			$\Longleftrightarrow$	&$\backslash$Longleftrightarrow \\
+			\bottomrule
+			\end{tabular} \\
+
+			\textbf{Up-Down}\\
+			\begin{tabular}{ p{0.1\textwidth} p{0.3\textwidth} 
+							p{0.1\textwidth} p{0.3\textwidth}  }
+			\toprule
+			$\uparrow $			&$\backslash$uparrow& 
+			$\Uparrow$				&$\backslash$Uparrow \\
+			$\downarrow$			&$\backslash$downarrow&
+			$\Downarrow$			&$\backslash$Downarrow\\
+			$\updownarrow$		&$\backslash$updownarrow&
+			$\Updownarrow$		&$\backslash$Updownarrow\\
+			\bottomrule
+			\end{tabular} \\
+
+			\textbf{arrow}\\
+			\begin{tabular}{ p{0.1\textwidth} p{0.3\textwidth} 
+							p{0.1\textwidth} p{0.3\textwidth}  }
+			\toprule
+			$\nearrow $				&$\backslash$nearrow \\
+			$\searrow $				&$\backslash$searrow \\ 
+			$\swarrow $			&$\backslash$swarrow \\ 
+			$\nwarrow $			&$\backslash$nwearrow \\ 
+			\bottomrule
+			\end{tabular} \\
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

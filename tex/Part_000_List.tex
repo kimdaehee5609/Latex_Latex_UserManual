@@ -1,0 +1,908 @@
+% ===========================================================	part		=============
+%		\addtocontents{toc}{\protect\newpage}
+%		\part{List - 개조식 문서 작성}
+%
+%		\parttoc
+%		\partlof
+%		\partlot
+
+% 	================================================= chapter 	====================
+%
+%	-------------------------------------------------------------------------------
+	\chapter{개조식 문서 작성}
+	\minitoc				% Creating an actual minitoc
+
+	\section{개조식 문서 작성}
+
+
+
+	\section{모양 바꾸기}
+
+
+	%	------------------------------------------------ code	
+		\begin{mdframed}[style=code_document, frametitle={code}]
+			\begin{verbatim}
+		%		Vertical spacing
+			\setlist[itemize]{topsep=0.0em}			% 상단의 여유치
+			\setlist[itemize]{partopsep=0.0em}			% 
+			\setlist[itemize]{parsep=0.0em}			% 
+			\setlist[itemize]{itemsep=0.0em}			% 
+			\setlist[itemize]{noitemsep}				% 
+			
+		%		Horizontal spacing
+			\setlist[itemize]{labelwidth=1em}			%  라벨의 표시 폭
+			\setlist[itemize]{leftmargin=8em}			%  본문 까지의 왼쪽 여백  - 4em
+			\setlist[itemize]{labelsep=3em} 			%  본문에서 라벨까지의 거리 -  3em
+			\setlist[itemize]{rightmargin=0em}			% 오른쪽 여백  - 4em
+			\setlist[itemize]{itemindent=0em} 			% 점 내민 거리 label sep 과 같은면 점위치 까지 내민다
+			\setlist[itemize]{listparindent=3em}		% 본문 드려쓰기 간격
+	
+	
+			\setlist[itemize]{ topsep=0.0em, 			%  상단의 여유치
+						partopsep=0.0em, 		%  
+						parsep=0.0em, 
+						itemsep=0.0em, 
+						labelwidth=1em, 
+						leftmargin=2.5em,
+						labelsep=2em,			%  본문에서 라벨 까지의 거리
+						rightmargin=0em,		% 오른쪽 여백  - 4em
+						itemindent=0em, 		% 점 내민 거리 label sep 과 같은면 점위치 까지 내민다
+						listparindent=0em}		% 본문 드려쓰기 간격
+	
+%			\begin{itemize}
+			\end{verbatim}
+		\end{mdframed}
+
+	
+
+	
+
+
+%	-------------------------------------------------------------------------------
+	\chapter{itemize}
+
+	% ==============================================================================	
+	%	itemize
+	% ==============================================================================	
+
+	\section{itemize}
+
+		% ----------------------------- itemize
+			\begin{itemize}	[					%
+						topsep=0.0em 			,%  상단의 여유치
+						partopsep=0.0em 		,%  
+						parsep=0.0em 			, 
+						itemsep=0.0em 			, 
+						leftmargin=5em 		,
+						labelwidth=1em 			, 
+						labelsep=4em 			,%  본문에서 라벨 까지의 거리
+						rightmargin=0em 		,% 오른쪽 여백  - 4em
+						itemindent=0em 			,% 점 내민 거리 label sep 과 같은면 점위치 까지 내민다
+						listparindent=0em 		,% 본문 드려쓰기 간격
+						]
+			\item	1
+			\item	2
+			\item	3
+			\end{itemize}
+
+	%	------------------------------------------------ code	
+		\begin{mdframed}[style=code_document, frametitle={code}]
+			\begin{verbatim}
+			\begin{itemize}	[					%
+						topsep=0.0em 			,%  상단의 여유치
+						partopsep=0.0em 		,%  
+						parsep=0.0em 			, 
+						itemsep=0.0em 			, 
+						leftmargin=5em 		,
+						labelwidth=1em 			, 
+						labelsep=4em 			,%  본문에서 라벨 까지의 거리
+						rightmargin=0em 		,% 오른쪽 여백  - 4em
+						itemindent=0em 			,% 점 내민 거리 label sep 과 같은면 점위치 까지 내민다
+						listparindent=0em 		,% 본문 드려쓰기 간격
+						]
+			\item	1
+			\item	2
+			\item	3
+			\end{itemize}
+			\end{verbatim}
+		\end{mdframed}
+
+
+
+			
+			\begin{itemize}[topsep=0.0em,itemsep=0.0em]
+			\item	
+			\end{itemize}	
+
+
+			[itemsep=-0.5em]
+			[topsep=-1.0em,			]
+
+
+			\begin{itemize}[	topsep=0.0em,itemsep=0.0em,
+							leftmargin=4em, labelsep=3em ]
+			\item	
+			\end{itemize}	
+
+			
+		% ----------------------------- itemize
+		\def\TStart{	\setlength{\fboxsep}{12pt}
+					\begin{boxedminipage}[c]{1.0\linewidth}
+					\begin{itemize}[topsep=0.0em,itemsep=0.0em]
+					}
+		\def\TEnd{	\end{itemize}	
+					\end{boxedminipage}\\
+					}
+		\TStart
+		\item 1 
+		\item 2 
+		\TEnd
+
+		\setlength{\fboxsep}{12pt}
+		\begin{boxedminipage}[c]{1.0\linewidth}
+		\end{boxedminipage}\\
+
+
+
+%	-------------------------------------------------------------------------------
+	\chapter{enumerate}
+
+	% ==============================================================================	
+	%	enumerate
+	% ==============================================================================	
+
+	\section{enumerate}
+
+		% ----------------------------- enumerate
+			\begin{enumerate}
+			\setlength\itemsep{-1.0em}
+			\item	enumerate test 1
+			\item	enumerate test 2
+				\begin{enumerate}
+				\setlength\itemsep{-1.0em}
+				\item	enumerate test 1
+				\item	enumerate test 2
+					\begin{enumerate}
+					\setlength\itemsep{-1.0em}
+					\item	enumerate test 1
+					\item	enumerate test 2
+					\end{enumerate}
+				\item	enumerate test 5
+				\item	enumerate test 6
+				\end{enumerate}
+			\item	enumerate test 5
+			\item	enumerate test 6
+			\end{enumerate}
+		
+
+
+	%	------------------------------------------------ code	
+		\begin{mdframed}[style=code_document, frametitle={code}]
+			\begin{verbatim}
+			\begin{enumerate}
+			\setlength\itemsep{-1.0em}
+			\item	enumerate test 1
+			\item	enumerate test 2
+				\begin{enumerate}
+				\setlength\itemsep{-1.0em}
+				\item	enumerate test 1
+				\item	enumerate test 2
+					\begin{enumerate}
+					\setlength\itemsep{-1.0em}
+					\item	enumerate test 1
+					\item	enumerate test 2
+					\end{enumerate}
+				\item	enumerate test 5
+				\item	enumerate test 6
+				\end{enumerate}
+			\item	enumerate test 5
+			\item	enumerate test 6
+			\end{enumerate}
+			\end{verbatim}
+		\end{mdframed}
+
+
+	\section{enumerate : label}
+		% -------------------------------------
+		% 	arabic*
+		% -------------------------------------
+			\begin{enumerate}[ label=\arabic*)]
+			\setlength\topsep{0.0em}
+			\setlength\itemsep{-1.0em}
+			\item	enumerate test 1
+			\item	enumerate test 2
+			\item	enumerate test 3
+			\end{enumerate}
+
+	%	------------------------------------------------ code	
+		\begin{mdframed}[style=code_document, frametitle={code}]
+			\begin{verbatim}
+			\begin{enumerate}[ label=\arabic*)]
+			\setlength\topsep{0.0em}
+			\setlength\itemsep{-1.0em}
+			\item	enumerate test 1
+			\item	enumerate test 2
+			\item	enumerate test 3
+			\end{enumerate}
+			\end{verbatim}
+		\end{mdframed}
+
+
+	\section{enumerate}
+
+
+		\paragraph{enumerate : defalult}
+	% ----------------------------- enumerate
+			\begin{enumerate}
+			\setlength\topsep{0.0em}
+			\setlength\itemsep{-1.0em}
+			\setlength\labelwidth{0.0cm}
+			\setlength\labelsep{1cm}
+	
+			\item	enumerate test 1
+			\item	enumerate test 2
+			\item	enumerate test 3
+			\item	enumerate test 4
+			\item	enumerate test 5
+			\item	enumerate test 6
+			\end{enumerate}
+
+		\paragraph{enumerate : leftmargin=2cm}
+	% ----------------------------- enumerate
+			\begin{enumerate}[ leftmargin=2cm ]
+			\setlength\topsep{0.0em}
+			\setlength\itemsep{-1.0em}
+			\setlength\labelwidth{0.0cm}
+			\setlength\labelsep{1cm}
+	
+			\item	enumerate test 1
+			\item	enumerate test 2
+			\item	enumerate test 3
+			\item	enumerate test 4
+			\item	enumerate test 5
+			\item	enumerate test 6
+			\end{enumerate}
+
+
+		\paragraph{enumerate : leftmargin=4cm}
+		% ----------------------------- enumerate
+			\begin{enumerate}[leftmargin=4cm]
+			\setlength\topsep{0.0em}
+			\setlength\itemsep{-1.0em}
+			\setlength\leftmargin{0cm}
+			\setlength\rightmargin{6cm}
+	
+			\setlength\labelsep  {1.0cm}
+			\setlength\labelwidth{0.0cm}
+			\setlength\listparindent{0.0em}
+	
+			\item	enumerate test 1
+			\item	enumerate test 2
+			\item	enumerate test 3
+			\item	enumerate test 4
+			\item	enumerate test 5
+			\item	enumerate test 6
+			\end{enumerate}
+
+
+		
+
+	\section{enumerate}
+
+
+		\paragraph{ leftmargin\{8cm\}, rightmargin\{10cm\} } 
+		% ----------------------------- enumerate
+			\begin{enumerate}
+			\setlength\leftmargin{8cm}
+			\setlength\rightmargin{10cm}
+			\item	보강토체를 따른 활동(성토체내의 흙과 흙 사이의 내부마찰각) 
+			\item	기초지반을 따른 활동(성토체흙과 기초지반흙과의 마찰각) 
+			\item	최하단 토목섬유 보강재와 흙 사이의 경계면을 따른 활동 
+			\end{enumerate}
+	
+		\paragraph{ leftmargin\{4cm\}, rightmargin\{4cm\} } 
+		% ----------------------------- enumerate
+			\begin{enumerate}[leftmargin=4cm, rightmargin=4cm]
+			\item	보강토체를 따른 활동(성토체내의 흙과 흙 사이의 내부마찰각) 
+			\item	기초지반을 따른 활동(성토체흙과 기초지반흙과의 마찰각) 
+			\item	최하단 토목섬유 보강재와 흙 사이의 경계면을 따른 활동 
+			\end{enumerate}
+
+
+
+
+	\section{dingautolist}
+
+		% ----------------------------- enumerate
+			\begin{dingautolist}{172}
+			\setlength\itemsep{-1.0em}
+			\setlength\leftmargin{8cm}
+			\setlength\rightmargin{10cm}
+			\item	보강토체를 따른 활동(성토체내의 흙과 흙 사이의 내부마찰각) 
+			\item	보강토체를 따른 활동(성토체내의 흙과 흙 사이의 내부마찰각) 
+			\item	보강토체를 따른 활동(성토체내의 흙과 흙 사이의 내부마찰각) 
+			\item	보강토체를 따른 활동(성토체내의 흙과 흙 사이의 내부마찰각) 
+			\item	보강토체를 따른 활동(성토체내의 흙과 흙 사이의 내부마찰각) 
+			\item	보강토체를 따른 활동(성토체내의 흙과 흙 사이의 내부마찰각) 
+			\item	보강토체를 따른 활동(성토체내의 흙과 흙 사이의 내부마찰각) 
+			\item	보강토체를 따른 활동(성토체내의 흙과 흙 사이의 내부마찰각) 
+			\item	보강토체를 따른 활동(성토체내의 흙과 흙 사이의 내부마찰각) 
+			\item	보강토체를 따른 활동(성토체내의 흙과 흙 사이의 내부마찰각) 
+			\item	보강토체를 따른 활동(성토체내의 흙과 흙 사이의 내부마찰각) 
+			\item	보강토체를 따른 활동(성토체내의 흙과 흙 사이의 내부마찰각) 
+			\item	기초지반을 따른 활동(성토체흙과 기초지반흙과의 마찰각) 
+			\item	최하단 토목섬유 보강재와 흙 사이의 경계면을 따른 활동 
+			\item	기초지반을 따른 활동(성토체흙과 기초지반흙과의 마찰각) 
+			\item	최하단 토목섬유 보강재와 흙 사이의 경계면을 따른 활동 
+			\item	기초지반을 따른 활동(성토체흙과 기초지반흙과의 마찰각) 
+			\item	최하단 토목섬유 보강재와 흙 사이의 경계면을 따른 활동 
+			\item	기초지반을 따른 활동(성토체흙과 기초지반흙과의 마찰각) 
+			\item	최하단 토목섬유 보강재와 흙 사이의 경계면을 따른 활동 
+			\item	기초지반을 따른 활동(성토체흙과 기초지반흙과의 마찰각) 
+			\item	최하단 토목섬유 보강재와 흙 사이의 경계면을 따른 활동 
+			\item	기초지반을 따른 활동(성토체흙과 기초지반흙과의 마찰각) 
+			\item	최하단 토목섬유 보강재와 흙 사이의 경계면을 따른 활동 
+			\item	기초지반을 따른 활동(성토체흙과 기초지반흙과의 마찰각) 
+			\item	최하단 토목섬유 보강재와 흙 사이의 경계면을 따른 활동 
+			\end{dingautolist}
+
+
+	\section{사용자 정의}
+
+		% ----------------------------- 사용자 정의
+			\begin{enumerate}[label=\bfseries Exercise \arabic*:]
+			\setlength\itemsep{1em}
+			 \item 5 + 7 = 12
+			 \item 9 + 1 = 10
+			 \item 2 $\times$ 2 = 4
+			\end{enumerate}
+
+
+	%	------------------------------------------------ code	
+		\begin{mdframed}[style=code_document, frametitle={code}]
+			\begin{verbatim}
+			\begin{enumerate}[label=\bfseries Exercise \arabic*:]
+			\setlength\itemsep{1em}
+			 \item 5 + 7 = 12
+			 \item 9 + 1 = 10
+			 \item 2 $\times$ 2 = 4
+			\end{enumerate}
+			\end{verbatim}
+		\end{mdframed}
+
+
+
+%	-------------------------------------------------------------------------------
+	\chapter{description}
+
+
+%	-----------------------------------------------------------  section  
+	\section{description}
+
+
+			left margin은 style=sameline에서만 적용된다.  \\
+
+			labelindent=0pt: to have a flush left margin
+
+
+
+%	-----------------------------------------------------------  section  
+	\section{description : defalult - align = left}
+			% ----------------------------- description
+			\paragraph{ align = left }
+				\begin{description}[
+						topsep=0.0em 			,%  상단의 여유치
+						partopsep=0.0em 		,%  
+						parsep=0.0em 			, 
+						itemsep=0.0em 			, 
+						leftmargin=10em 		,
+						labelwidth=10em 			, 
+						labelsep=0em 			,%  본문에서 라벨 까지의 거리
+						rightmargin=0em 		,% 오른쪽 여백  - 4em
+						itemindent=0em 			,% 점 내민 거리 label sep 과 같은면 점위치 까지 내민다
+						listparindent=0em 		,% 본문 드려쓰기 간격
+						align=left				,
+						]
+				\item	[description 1]		description test 1description test 1description test 1description test 1description test 1
+				\item	[description]		description test 2
+				\item	[descrip]			description test 3
+				\item	[descrip]			description test 4
+				\item	[desc]			description test 5
+				\item	[d]				description test 6
+				\end{description}
+	
+	%	------------------------------------------------ code	
+		\begin{mdframed}[style=code_document, frametitle={code}]
+			\begin{verbatim}
+				\begin{description}[
+						topsep=0.0em 			,%  상단의 여유치
+						partopsep=0.0em 		,%  
+						parsep=0.0em 			, 
+						itemsep=0.0em 			, 
+						leftmargin=10em 		,
+						labelwidth=10em 			, 
+						labelsep=0em 			,%  본문에서 라벨 까지의 거리
+						rightmargin=0em 		,% 오른쪽 여백  - 4em
+						itemindent=0em 			,% 점 내민 거리 label sep 과 같은면 점위치 까지 내민다
+						listparindent=0em 		,% 본문 드려쓰기 간격
+						align=left				,
+						]
+				\item	[description 1]		description test 1description test 1description test 1description test 1description test 1
+				\item	[description]		description test 2
+				\item	[descrip]			description test 3
+				\item	[descrip]			description test 4
+				\item	[desc]			description test 5
+				\item	[d]				description test 6
+				\end{description}
+			\end{verbatim}
+		\end{mdframed}
+
+
+%	-----------------------------------------------------------  section  
+	\section{description : defalult - align = right}
+			\paragraph{ align = right }
+				\begin{description}[
+						topsep=0.0em 			,%  상단의 여유치
+						partopsep=0.0em 		,%  
+						parsep=0.0em 			, 
+						itemsep=0.0em 			, 
+						leftmargin=8em 		,
+						labelwidth=8em 		, 
+						labelsep=2em 			,%  본문에서 라벨 까지의 거리
+						rightmargin=0em 		,% 오른쪽 여백  - 4em
+						itemindent=0em 			,% 점 내민 거리 label sep 과 같은면 점위치 까지 내민다
+						listparindent=0em 		,% 본문 드려쓰기 간격
+						align=right				,
+						]
+				\item	[description 1]	description test 1
+				\item	[description]		description test 2
+				\item	[descrip]			description test 3
+				\item	[descrip]			description test 4
+				\item	[desc]			description test 5
+				\item	[d]				description test 6
+				\end{description}
+
+	%	------------------------------------------------ code	
+		\begin{mdframed}[style=code_document, frametitle={code}]
+			\begin{verbatim}
+				\begin{description}[
+						topsep=0.0em 			,%  상단의 여유치
+						partopsep=0.0em 		,%  
+						parsep=0.0em 			, 
+						itemsep=0.0em 			, 
+						leftmargin=8em 		,
+						labelwidth=8em 		, 
+						labelsep=2em 			,%  본문에서 라벨 까지의 거리
+						rightmargin=0em 		,% 오른쪽 여백  - 4em
+						itemindent=0em 			,% 점 내민 거리 label sep 과 같은면 점위치 까지 내민다
+						listparindent=0em 		,% 본문 드려쓰기 간격
+						align=right				,
+						]
+				\item	[description 1]	description test 1
+				\item	[description]		description test 2
+				\item	[descrip]			description test 3
+				\item	[descrip]			description test 4
+				\item	[desc]			description test 5
+				\item	[d]				description test 6
+				\end{description}
+			\end{verbatim}
+		\end{mdframed}
+
+
+
+
+
+%	-----------------------------------------------------------  section  
+	\section{description : style=standard : align = left}
+			% ----------------------------- description
+			\paragraph{ align = left }
+			\begin{description}	[
+							style=standard, 
+							align=left,
+							itemsep=0.0em 			,% 
+							labelsep=2em 			,%
+							]
+			\setlength\labelsep{2em}
+			\item	[description 1]	description test 1
+			\item	[description]		description test 2
+			\item	[descrip]			description test 3
+			\item	[descrip]			description test 4
+			\item	[desc]			description test 5
+			\item	[d]				description test 6
+			\end{description}
+
+
+	%	------------------------------------------------ code	
+		\begin{mdframed}[style=code_document, frametitle={code}]
+			\begin{verbatim}
+			\begin{description}	[
+							style=standard, 
+							align=left,
+							itemsep=0.0em 			,% 
+							labelsep=2em 			,%
+							]
+			\setlength\labelsep{2em}
+			\item	[description 1]	description test 1
+			\item	[description]		description test 2
+			\item	[descrip]			description test 3
+			\item	[descrip]			description test 4
+			\item	[desc]			description test 5
+			\item	[d]				description test 6
+			\end{description}
+			\end{verbatim}
+		\end{mdframed}
+
+
+
+%	-----------------------------------------------------------  section  
+	\section{description : style=standard : align = right}
+
+			\paragraph{ align = right }
+			\begin{description}	[
+							style=standard, 
+							align=right,
+							labelsep=2em,
+							leftmargin=8em,
+							]
+			\item	[description 1]	description test 1description test 1description test 1description test 1description test 1description test 1description test 1description test 1
+			\item	[description]		description test 2
+			\item	[descrip]			description test 3
+			\item	[descrip]			description test 4
+			\end{description}
+
+	%	------------------------------------------------ code	
+		\begin{mdframed}[style=code_document, frametitle={code}]
+			\begin{verbatim}
+			\begin{description}	[
+							style=standard, 
+							align=right,
+							labelsep=2em,
+							leftmargin=8em,
+							]
+			\item	[description 1]	description test 1description test 1description test 1description test 1description test 1description test 1description test 1description test 1
+			\item	[description]		description test 2
+			\item	[descrip]			description test 3
+			\item	[descrip]			description test 4
+			\end{description}
+			\end{verbatim}
+		\end{mdframed}
+
+
+%	-----------------------------------------------------------  section  
+	\section{description : style=standard : align = right}
+
+			\paragraph{ align = right }
+			\begin{description}	[
+							style=standard, 
+							align=right,
+							labelwidth=8em,
+							labelsep=2em,
+							leftmargin=10em,
+							]
+			\item	[description 1]	description test 1description test 1description test 1description test 1description test 1description test 1description test 1description test 1
+			\item	[description]		description test 2
+			\item	[descrip]			description test 3
+			\item	[descrip]			description test 4
+			\end{description}
+			
+			labelwidth=8em + labelsep=2em = leftmargin=10em
+
+	%	------------------------------------------------ code	
+		\begin{mdframed}[style=code_document, frametitle={code}]
+			\begin{verbatim}
+			\begin{description}	[
+							style=standard, 
+							align=right,
+							labelwidth=8em,
+							labelsep=2em,
+							leftmargin=10em,
+							]
+			\item	[description 1]	description test 1description test 1description test 1description test 1description test 1description test 1description test 1description test 1
+			\item	[description]		description test 2
+			\item	[descrip]			description test 3
+			\item	[descrip]			description test 4
+			\end{description}
+			\end{verbatim}
+		\end{mdframed}
+
+
+%	-----------------------------------------------------------  section  
+	\section{description : style=standard : align = parleft}
+
+			\paragraph{ align = parleft }
+			\begin{description}	[
+							style=standard, 
+							align=parleft,
+							leftmargin=10em,
+							labelsep=1em
+							]
+			\item	[description1]		description test 1 description test 1 description test 1 description test 1 description test 1 description test 1
+			\item	[description]		description test 2
+			\item	[descrip]			description test 3
+			\end{description}
+
+
+	%	------------------------------------------------ code	
+		\begin{mdframed}[style=code_document, frametitle={code}]
+			\begin{verbatim}
+			\begin{description}	[ style=standard, align=parleft, 
+								leftmargin=10em, labelsep=1em ]
+			\end{description}
+			\end{verbatim}
+		\end{mdframed}
+
+			\paragraph{ align = parleft }
+			\begin{description}	[
+							style=standard, 
+							align=parleft,
+							leftmargin=10em,
+							labelsep=1em,
+							labelwidth=5em
+							]
+			\item	[description1]		description test 1 description test 1 description test 1 description test 1 description test 1 description test 1
+			\item	[description]		description test 2
+			\item	[descrip]			description test 3
+			\end{description}
+
+	%	------------------------------------------------ code	
+		\begin{mdframed}[style=code_document, frametitle={code}]
+			\begin{verbatim}
+			\begin{description}	[style=standard, align=parleft,
+							leftmargin=10em, labelsep=1em, labelwidth=5em ]
+			\end{description}
+			\end{verbatim}
+		\end{mdframed}
+
+
+%	-----------------------------------------------------------  section  
+	\section{description : unboxed}
+			% ----------------------------- description
+			\begin{description}[style=unboxed]
+			\setlength\topsep{0.0em}
+			\setlength\itemsep{-1.0em}
+			\setlength\leftmargin{12cm}
+			\setlength\labelwidth{2cm}
+			\setlength\labelsep{2em}
+
+
+			\item	[description 1]	description test 1
+			\item	[description]		description test 2
+			\item	[descrip]			description test 3
+			\item	[descrip]			description test 4
+			\item	[desc]			description test 5
+			\item	[d]				description test 6
+			\end{description}
+
+
+	\section{description : nextline}
+			% ----------------------------- description
+			\begin{description}[style=nextline, align=left]
+			\setlength\topsep{0.0em}
+			\setlength\itemsep{-1.0em}
+
+			\item	[description 1]	description test 1
+			\item	[description]		description test 2
+			\item	[descrip]			description test 3
+			\item	[descrip]			description test 4
+			\item	[desc]			description test 5
+			\item	[d]				description test 6
+			\end{description}
+
+
+			% ----------------------------- description
+			\begin{description}[style=nextline]
+			\setlength\topsep{0.0em}
+			\setlength\itemsep{-1.0em}
+
+			\item	[description 1]	description test 1
+			\item	[description]		description test 2
+			\item	[descrip]			description test 3
+			\item	[descrip]			description test 4
+			\item	[desc]			description test 5
+			\item	[d]				description test 6
+			\end{description}
+
+
+
+
+			% ----------------------------- description
+			%	sameline
+			% ----------------------------- description
+
+	\section{description : sameline}
+			% ----------------------------- description
+			\begin{description}[style=sameline]
+			\setlength\topsep{0.0em}
+			\setlength\itemsep{-1.0em}
+			\item	[description 1]	description test 1
+			\item	[description]		description test 2
+			\item	[descrip]			description test 3
+			\item	[descrip]			description test 4
+			\item	[desc]			description test 5
+			\item	[d]				description test 6
+			\end{description}
+
+
+			\begin{description}[style=sameline, leftmargin=2cm]
+			\setlength\topsep{0.0em}
+			\setlength\itemsep{-0.5em}
+%\singlespacing
+%\onehalfspacing
+%\doublespacing
+
+			\item	[description 1]	description test 1
+			\item	[description]		description test 2
+			\item	[descrip]			description test 3
+			\item	[descrip]			description test 4
+			\item	[desc]			description test 5
+			\item	[d]				description test 6
+			\item[$b$] Taxa agregada de bits alcançável para o sistema
+			\item[$H(f)$] Espectro do canal
+			\item[$H_k$] Ganho do $k$-ésimo subcanal
+			\item[$P_x$] Potência total de transmissão
+			\item[$s_k$] Densidade espectral de potência do sinal no $k$-ésimo subcanal
+			\item[$Sx(f)$] Densidade espectral de potência do sinal na frequência contínua
+			\item[$Sn(f)$] Densidade espectral de potência do AWGN na frequência contínua
+			\item[1]	보강토체를 따른 활동(성토체내의 흙과 흙 사이의 내부마찰각) 
+					보강토체를 따른 활동(성토체내의 흙과 흙 사이의 내부마찰각) 
+			\item[2]	기초지반을 따른 활동(성토체흙과 기초지반흙과의 마찰각) 
+			\item[3]	최하단 토목섬유 보강재와 흙 사이의 경계면을 따른 활동 
+
+			\end{description}
+
+		
+	\section{description : align=left}
+		% ----------------------------- description
+		\begin{description}[labelsep=3em, align=left]
+		\setlength\topsep{0.0em}
+		\setlength\itemsep{-1.0em}
+
+		\item[$b$] Taxa agregada de bits alcançável para o sistema
+		\item[$H(f)$] Espectro do canal
+		\item[$H_k$] Ganho do $k$-ésimo subcanal
+		\item[$P_x$] Potência total de transmissão
+		\item[$s_k$] Densidade espectral de potência do sinal no $k$-ésimo subcanal
+		\item[$Sx(f)$] Densidade espectral de potência do sinal na frequência contínua
+		\item[$Sn(f)$] Densidade espectral de potência do AWGN na frequência contínua
+		\end{description}
+
+
+
+
+	\section{description : align=right}
+		% ----------------------------- description
+		\begin{description}[labelsep=3em, align=right]
+		\setlength\topsep{0.0em}
+		\setlength\itemsep{-1.0em}
+
+		\item[$b$] Taxa agregada de bits alcançável para o sistema
+		\item[$Sn(f)$] Densidade espectral de potência do AWGN na frequência contínua
+		\item[$\text{SNR}_k$] Razão sinal-ruído no subcanal $k$
+		\item[$\mathbf{X}$] Vetor correspondente ao símbolo DMT
+		\item[$\mathbf{X}_+$] Vetor de subsímbolos dos tons positivos do símbolo DMT.
+		\item[$X_k$] Subsímbolo no $k$-ésimo tom do símbolo DMT
+		\item[$\Gamma$] \textsl[Gap] de SNR a capacidade
+		\item[$\Delta f$] Largura de banda do subcanal (espaçamento tonal).
+		\item[$\sigma_k$] Densidade espectral de potência do AWGN no $k$-ésimo subcanal
+		\end{description}
+
+
+
+
+%	-------------------------------------------------------------------------------
+	\chapter{parlist}
+
+
+	% ==============================================================================	
+	%	paralist
+	% ==============================================================================	
+	%
+
+\section{paralist}
+
+
+
+
+
+%	-------------------------------------------------------------------------------
+	\chapter{tabbing}
+
+
+
+
+	% ==============================================================================	
+	%	TAB
+	% ==============================================================================	
+	%
+
+\section{tabbing}
+
+
+		\begin{boxedminipage}[c,fboxrule=10pt,fboxsep=12pt]{1.0\linewidth}
+		\begin{itemize}
+		\item[]	\textbackslash begin \{tabbing\}
+		\item[]	text \textbackslash = more text \textbackslash = still more text \textbackslash = last text \textbackslash\textbackslash 
+		\item[]	\textbackslash end \{tabbing\}
+		\end{itemize}
+		\end{boxedminipage} \\
+
+
+		\paragraph{set the tab position}
+
+
+		\begin{tabbing}
+		\hspace{2cm}	\= \hspace{2cm}	\= \hspace{2cm}	\\
+		second row 	\> text-- 	\> more \\
+		second row 	\> text-- 	\> more \\
+		\end{tabbing}
+
+		\begin{tabbing}
+		\hspace{2cm}	\=\hspace{2cm}	\=\hspace{2cm}\\
+		second row 	\>  		\> more \\
+		second row 	\>  		\> more \\
+		\end{tabbing}
+
+		\paragraph{Tabbing commands}
+		\begin{description}[itemsep=-0.5em,style=sameline]
+		\item [\textbackslash =] set tab
+		\item [\textbackslash $>$] advance to next tab stop
+		\item [\textbackslash $<$]
+		\item [\textbackslash $+$] indent; move margin right
+		\item [\textbackslash $-$] unindent; move margin left
+		\item [\textbackslash ']
+		\item [\textbackslash `]
+		\item [\textbackslash \textbackslash] end of line; newline
+		\item [\textbackslash kill] ignore preceding text; use only for spacing
+		\end{description}
+
+
+
+
+%	-------------------------------------------------------------------------------
+	\chapter{tab enum}
+
+	% ==============================================================================	
+	%	문제 풀이의 보기 항목
+	%	tablists package
+	% ==============================================================================	
+
+\section{tabenum}
+
+
+
+		\begin{tabenum}[\bfseries1)]%
+		\tabenumitem 		$z=\displaystyle\frac xy$
+		\tabenumitem 		$z=\displaystyle\frac xy$
+		\tabenumitem 		$z=\displaystyle\frac xy$
+		\tabenumitem 		$z=\displaystyle\frac xy$
+		\tabenumitem 		$z=\displaystyle\frac xy$
+		\tabenumitem 		$z=\displaystyle\frac xy$
+		\tabenumitem 		$z=\displaystyle\frac xy$\\
+		\tabenumitem 		$z=\displaystyle\frac xy$ 
+		\skipitem
+		\tabenumitem 		$6 z=\displaystyle\frac xy$\\	
+		\item			$ item  z=\displaystyle\frac xy$
+		\noitem			$ noitem 2^x=9$
+		\item			$2^x=9 noitem$\cr
+		\item			$2^x=9$\cr
+		\item			$2^x=9$\cr
+		\item			$2^x=9$\cr
+		\tabenumitem		$3^{2x+3}=16 $
+		\tabenumitem		$z=2x^2+4y^2$\par
+		\tabenumitem		$u=\sqrt{x^2+y^2+z^2}$
+		\tabenumitem		$v=gt+\displaystyle\frac{g}{4}t$;\\[1ex]
+		\tabenumitem		$v=gt+\frac{g}{4}t$;\\[1ex]
+%		\tabenumitem		$u=2ˆ{5x-3y+z}$;
+%		\tabenumitem		$w=(v+7)ˆ2+(u-3)ˆ2$;
+%		\tabenumitem		$5ˆx=\displaystyle\frac{4}{3} ;$
+%		\tabenumitem		$z=(x+1)ˆ2+yˆ2$;\\*
+%		\tabenumitem		$2+5+8+ \ldots +(3n+2)=155$, $n\in \mathrm{N};$
+%		\tabenumitem		$t=5uˆ2+8vˆ2$;
+		\end{tabenum}
+
+
+
+
+
+
+

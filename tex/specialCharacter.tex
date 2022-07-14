@@ -1,0 +1,170 @@
+
+%
+%		\usepackage{pifont}		% 		
+%		\usepackage{textcomp}		%	 		
+%		\usepackage{gensymb}		% 		
+%		\usepackage{marvosym}		% 		
+
+
+% ========================================== chapter ============
+	\chapter{특수문자}
+
+	% -------------------------------------- page -------------------
+	%	\nomtcrule         		% removes rules = horizontal lines
+	%	\nomtcpagenumbers  % remove page numbers from minitocs
+		\newpage
+		\minitoc				% Creating an actual minitoc
+	%	\doublespace
+
+
+
+% ------------------------------------------ section ------------ 특수문자
+	\section{특수 문자}
+
+		\subsection{따옴표}
+			타지기에서처럼 $''$를 사용해서는 안된다. 
+			
+			출판물에서는 특별한 여는 따옴표와 닫는 따옴표를 사용한다. 
+			\LaTeX에서는 두개의 $'$ (grave accent)와 두개의 $'$(vertical quote)를 
+			각각 여는 따옴표와 닫는 따옴표로 사용한다.
+			작은 따옴표의 경우에는 각각의 기호를 한 번씩만 사용하면 된다.
+		
+			\begin{quote}
+			(ㄱ)왼쪽 따옴표 (ㄱ)오른쪽 따옴표
+			\end{quote}
+		
+			\paragraph{여는 따옴표}
+			여는 따옴표는 표준 자판 제일 윗쪽의 제일 왼쪽 키에 할당되어 있는 문자
+			(back-tick 혹은 grave accent)를 사용한다.
+		
+			\paragraph{닫는 따옴표}
+			닫는 따옴표는 자판 가운데줄 오른쪽 끝에 있는 작은 따옴표 문자(vertical quote)를 사용한다.
+		
+		
+		\subsection{대시와 히이픈}
+				
+						
+		\subsection{틸데(\~{})}
+	
+		\subsection{도 기호($^{\circ}$)}
+	
+			\begin{framed}
+			\verb|$30\,^{\circ} \mathrm{C} $|  	$30\,^{\circ} \mathrm{C} $ \\
+			\verb|$30^{\circ} \mathrm{C} $|  		$30^{\circ} \mathrm{C} $
+			\end{framed}
+	
+		\subsection{유로 통화 기호}
+		
+	
+		\subsection{줄임표}
+
+
+
+
+% ------------------------------------------ section ------------ 
+	\section{특수문자}
+
+
+	% --------------------------------------------------
+	\subsection{ textcircled }
+	\begin{itemize}[itemsep=-0.5em,leftmargin=4em]
+	\item[	\textcircled {\footnotesize A} ] \textbackslash textcircled \{\textbackslash footnotesize A\}
+	\item[	\textcircled {\footnotesize B} ] \textbackslash textcircled \{\textbackslash footnotesize B\}
+	\item[	\textcircled {\footnotesize C} ] \textbackslash textcircled \{\textbackslash footnotesize C\}
+	\item[	\textcircled {\footnotesize D} ] \textbackslash textcircled \{\textbackslash footnotesize D\}
+	\item[	\textcircled {\footnotesize E} ] \textbackslash textcircled \{\textbackslash footnotesize E\}
+	\item[	\textcircled {\footnotesize F} ] \textbackslash textcircled \{\textbackslash footnotesize F\}
+	\item[	\textcircled {\footnotesize G} ] \textbackslash textcircled \{\textbackslash footnotesize G\}
+
+
+	\item[	\textcircled {\footnotesize 1} ] \textbackslash textcircled \{\textbackslash footnotesize 1\}
+	\item[	\textcircled {\footnotesize 2} ] \textbackslash textcircled \{\textbackslash footnotesize 2\}
+	\item[	\textcircled {\footnotesize 3} ] \textbackslash textcircled \{\textbackslash footnotesize 3\}
+
+	\item[	\textcircled {\footnotesize 11}] \textbackslash textcircled \{\textbackslash footnotesize 11\}
+	\item[	\textcircled {\scriptsize   11}] \textbackslash textcircled \{\textbackslash scriptsize   11\}
+	\item[	\textcircled {\tiny         11}] \textbackslash textcircled \{\textbackslash tiny         11\}
+
+
+	\item[	\textcircled {\footnotesize 가}] \textbackslash textcircled \{\textbackslash footnotesize 가\}
+	\item[	\textcircled {\scriptsize   가}] \textbackslash textcircled \{\textbackslash scriptsize   가\}
+	\item[	\textcircled {\tiny         가}] \textbackslash textcircled \{\textbackslash tiny         가\}
+
+	\end{itemize}
+
+	% --------------------------------------------------
+	\subsection{gensymb}
+
+	\celsius \\
+	\perthousand \\
+	\degree	\\
+
+	\textbullet ~ textbullet
+
+	\textzerooldstyle\\
+
+	$\div$\\
+
+	% --------------------------------------------------
+	\subsection{textcomp}
+
+			\verb|\usepackage{textcomp}|
+			
+
+	\begin{itemize}
+		\item	\textcelsius  		\verb|\textcelsius|
+		\item	\textpertenthousand	\verb|\textpertenthousand|
+		\item	\textperthousand		\verb|\textperthousand|
+		\item	\textreferencemark		\verb|\textreferencemark|
+	\end{itemize}
+
+
+
+
+
+	\newpage \null
+	\subsection{Table 211: marvosym Engineering Symbols}
+
+			\verb|\usepackage{marvosym}|
+
+
+	\begin{itemize}
+		\item	\Beam		\verb|	\Beam	|
+		\item	\Force		\verb|	\Force	|
+		\item	\Octosteel		\verb|	\Octosteel	|
+		\item	\RoundedTTsteel		\verb|	\RoundedTTsteel	|
+		\item	\Bearing		\verb|	\Bearing	|
+		\item	\Hexasteel		\verb|	\Hexasteel	|
+		\item	\Rectpipe		\verb|	\Rectpipe	|
+		\item	\Squarepipe		\verb|	\Squarepipe	|
+		\item	\Circpipe		\verb|	\Circpipe	|
+		\item	\Lefttorque		\verb|	\Lefttorque	|
+		\item	\Rectsteel		\verb|	\Rectsteel	|
+		\item	\Squaresteel		\verb|	\Squaresteel	|
+		\item	\Circsteel		\verb|	\Circsteel	|
+		\item	\Lineload		\verb|	\Lineload	|
+		\item	\Righttorque		\verb|	\Righttorque	|
+		\item	\Tsteel		\verb|	\Tsteel	|
+		\item	\Fixedbearing		\verb|	\Fixedbearing	|
+		\item	\Loosebearing		\verb|	\Loosebearing	|
+		\item	\RoundedLsteel		\verb|	\RoundedLsteel	|
+		\item	\TTsteel		\verb|	\TTsteel	|
+		\item	\Flatsteel		\verb|	\Flatsteel	|
+		\item	\Lsteel		\verb|	\Lsteel	|
+		\item	\RoundedTsteel		\verb|	\RoundedTsteel	|
+	\end{itemize}
+
+
+
+
+%	\subsection{\asterisus asterisus}
+
+
+
+
+
+
+
+
+
+

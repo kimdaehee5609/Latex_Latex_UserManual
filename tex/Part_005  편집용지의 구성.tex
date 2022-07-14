@@ -1,0 +1,421 @@
+\documentclass[12pt,a4paper]{book}
+
+% --------------------------------- 페이지 스타일 지정
+	\usepackage{geometry}
+	\geometry{hmargin={1.4in,1.4in}}
+	\setlength{\topmargin}{00pt} 	%
+	\setlength{\headsep}{45pt} 	%
+
+
+		\usepackage{kotex}				% 한글 사용
+		\usepackage[unicode]{hyperref}			% 한굴 하이퍼링크 사용
+		\usepackage{amssymb,amsfonts,amsmath}% 수학 수식 사용
+		
+		\usepackage{enumerate}			%
+		\usepackage{enumitem}			%
+		\usepackage{pifont}				%
+		\usepackage{setspace}			%
+		\usepackage{booktabs}			% table
+		\usepackage{color}				%
+		\usepackage{multirow}			%
+		\usepackage{boxedminipage}		% 미니 페이지
+		\usepackage[pdftex]{graphicx}	% 그림 사용
+		\usepackage[final]{pdfpages}	%pdf 사용
+		\usepackage{framed}			%pdf 사용
+		
+		\usepackage{fix-cm}	
+		\usepackage[english]{babel}
+
+		\usepackage{tikz}%
+		\usetikzlibrary{arrows,positioning,shapes}
+		%\usetikzlibrary{positioning}
+
+
+% ----------------------------- 장의 목차
+\usepackage{minitoc}
+	\setcounter{minitocdepth}{1}    	% Show until subsubsections in minitoc
+	\setlength{\mtcindent}{12pt} 	% default 24pt
+
+% --------------------------------- 페이지 스타일 지정
+
+	\usepackage[Bjornstrup]{fncychap}
+
+	\usepackage{fancyhdr}
+	\pagestyle{fancy}
+	\fancyhead{} % clear all fields
+	\fancyhead[LO]{\small \leftmark}
+	\fancyhead[RE]{\small \leftmark}
+	\fancyfoot{} % clear all fields
+	\fancyfoot[LE,RO]{\large \thepage}
+	%\fancyfoot[CO,CE]{\empty}
+	\renewcommand{\headrulewidth}{0.4pt}
+	\renewcommand{\footrulewidth}{0.4pt}
+
+% --------------------------------- recoment
+
+	\newcommand{\red}{\color{red}}			% 글자 색깔 지정
+	\newcommand{\blue}{\color{blue}}		% 글자 색깔 지정
+	\newcommand{\black}{\color{black}}		% 글자 색깔 지정
+	\newcommand{\superscript}[1]{${}^{#1}$}
+	
+	
+% --------------------------------- 문서 기본 사항 설정
+
+		\setcounter{secnumdepth}{1} % 문단 번호 깊이
+		\setcounter{tocdepth}{1} % 문단 번호 깊이
+		\setlength{\parindent}{0cm} % 문서 들여 쓰기를 하지 않는다.
+		\doublespace
+	
+% --------------------------------- 환경 정의 : 박스 치고 안의 글자 빨간색
+
+			\newenvironment{BoxRedText}
+			{ 	\setlength{\fboxsep}{12pt}
+				\begin{boxedminipage}[c]{1.0\linewidth}
+				\color{red}
+			}
+			{ 	\end{boxedminipage} 
+				\color{black}
+			}
+			
+
+
+% ------------------------------------------------------------------------------
+% Begin document (Content goes below)
+% ------------------------------------------------------------------------------
+
+	\begin{document}
+		\dominitoc
+		
+
+% ------------------------------------------------------------------------------
+% Maketitle
+% ------------------------------------------------------------------------------
+			\begin{titlepage}
+			\thispagestyle{empty}				% Remove page numbering on this page
+			\definecolor{grey}{rgb}{0.9,0.9,0.9} 
+			\colorbox	{grey}
+						{ \parbox[t]{1.0\linewidth}
+						{
+						\vspace*{1.2cm} 
+						\fontsize{20}{20} \rmfamily \hfill \LaTeX 		\\ [0.8cm] \null
+						\fontsize{40}{20} \rmfamily \hfill Page Layout \\ [0.8cm] \null
+						\fontsize{20}{50} \rmfamily \hfill ver101
+						\vspace*{0.8cm} 
+						} }
+			\vfill
+			% Print the author data as defined above
+			\hfill Kim Dae Hee\\ \null
+			\hfill (주)서영엔지니어링\\ \null
+			\hfill 건설관리팀\\ \null
+			\hfill \url{h01038395609@gmail.com} \\ \null
+			\hfill \rule{0.4\linewidth}{1pt}
+			\end{titlepage}
+			\cleardoublepage
+% ------------------------------------------------------------------------------
+% 
+% ------------------------------------------------------------------------------
+
+
+			\newpage
+			\tableofcontents
+			
+			\newpage
+			\listoffigures
+			\listoftables
+			
+
+% \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\  Page layout
+
+	\part{ Page Layout}
+			
+% ========================================== chapter ============================
+\newpage
+\chapter{편집 용지}
+
+	% -------------------------------------- page -------------------
+		\minitoc				% Creating an actual minitoc
+
+
+% ------------------------------------------ section ------------ 
+\newpage
+\section{판형 (페이지)}
+
+	\subsection{용지 크기}
+	
+		\begin{itemize}
+			\item	a4paper, 
+			\item	a5paper, 
+			\item	b5paper, 
+			\item	letterpaper, 
+			\item	legalpaper,
+			\item	executivepaper
+		\end{itemize}
+
+
+% -------------------------------------------------------------
+\newpage
+\section{판면 (편집영역)}
+
+% -------------------------------------------------------------
+\newpage
+\section{면주와 여백문단)}
+
+	
+	
+% ------------------------------------------ section ------------ 
+\newpage  \null
+\section{문서 여백}
+
+	
+		\setlength{\fboxsep}{12pt}
+		\begin{boxedminipage}[c]{1.0\linewidth}
+			\begin{verbatim}
+			\set length { 편집할 여백 } {크기}
+			\set length { \left margin } {2cm}
+			\end{verbatim} 
+		\end{boxedminipage}
+		
+		
+		\textbf{ geo metry package }\\
+		\setlength{\fboxsep}{12pt}
+		\begin{boxedminipage}[c]{1.0\linewidth}
+			\begin{verbatim}
+			\ use package 
+				[left=1.0cm, right=1.0cm, top=1.0cm, bottom=1.0cm] { geo metry }
+			\end{verbatim}
+		\end{boxedminipage}
+
+
+
+	% -------------------------------------- page -------------------
+	\newpage  
+	\subsection*{문서 여백 : set length }
+
+		\singlespacing
+		\setlength{\fboxsep}{12pt}
+		\begin{boxedminipage}[c]{1.0\linewidth}
+			\begin{verbatim}
+			\set length { \편집할 여백 } { 크기 }
+			
+			\set length { \left margin } { 2cm }
+			\set length { \right margin } { 2cm }
+			\set length { \odd side margin } { 2cm }  % 홀수쪽
+			\set length { \even side margin } { 2cm } % 짝수쪽
+			\set length { \top margin } { 2cm }
+			\set length { \text width } { 18cm }
+			\set length { \text height } { 25cm }
+			\end{verbatim} 
+		\end{boxedminipage}
+		\doublespacing
+
+	% -------------------------------------- page -------------------
+	\newpage  
+	\subsection*{문서 여백}
+
+		\singlespacing
+		\setlength{\fboxsep}{12pt}
+		\begin{boxedminipage}[c]{1.0\linewidth}
+			\begin{verbatim}
+				1. one inch + \hoffset
+				2. one inch + \voffset
+				
+				\oddsidemargin = 31pt
+				\topmargin = 20pt
+				\headheight = 12pt   % 머리말 높이
+				\headsep = 25pt       % 머리말과 본문사이 간격
+				
+				\textheight = 592pt  % 본문의 높이
+				\textwidth = 390pt	% 본문의 폭
+				
+				\marginparsep = 10pt
+				\marginparwidth = 35pt
+				
+				\footskip = 30pt  % 본문과 꼬리말 사이 간격
+				
+				\marginparpush = 7pt (not shown)
+				\hoffset = 0pt
+				\voffset = 0pt
+				
+				\paperwidth = 597pt
+				\paperheight = 845pt
+			\end{verbatim} 
+		\end{boxedminipage}
+		\doublespacing
+
+
+	% -------------------------------------- page -------------------
+	\newpage  
+	\subsection*{문서 여백 : geometry }
+
+		\singlespacing
+		\setlength{\fboxsep}{12pt}
+		\begin{boxedminipage}[c]{1.0\linewidth}
+			\begin{verbatim}
+			\use package { geo metry }
+			
+			\geometry { paper size = { 25cm, 35cm }
+			\geometry { total = { 20cm, 30cm }
+			\geometry { body = { 18cm, 25cm }
+			\geometry { hmargin = { 3cm, 2cm }
+			\geometry { vmargin = { 2cm, 3cm }
+			\geometry { margin par width = 2cm }
+			\geometry { head = 1cm }
+			\end{verbatim} 
+		\end{boxedminipage}
+		\doublespacing
+	
+		\singlespacing
+		\setlength{\fboxsep}{12pt}
+		\begin{boxedminipage}[c]{1.0\linewidth}
+			\begin{verbatim}
+			\use package 
+			[ left=1.0in, right=1.0in, top=1.0in, bottom=1.0in ]
+			{ geo metry }
+			\end{verbatim} 
+		\end{boxedminipage}
+		\doublespacing
+
+
+
+
+
+
+
+
+
+
+
+
+% ========================================== chapter ============================
+\newpage
+\chapter{머리말 꼬리말}
+
+
+
+	% -------------------------------------- page -------------------
+	\newpage
+	\section{머리말 꼬리말}
+	
+% ========================================== chapter ============================
+\newpage
+\chapter{쪽 번호}
+	
+	% -------------------------------------- page -------------------
+	\newpage
+	\section{쪽 번호}
+	
+	
+% ========================================== chapter ============================
+\newpage
+\chapter{쪽 나누기}
+	
+	
+	% -------------------------------------- page -------------------
+	\newpage
+	\section{쪽 나누기}
+	
+		\begin{enumerate}[ topsep=0.0em, itemsep=-0.5em ]
+		\item	\verb|\\| \\
+				start a new paragraph.
+		\item	\verb|\\*| \\
+				 start a new line but not a new paragraph.
+		\item	\verb|\- OK| \\
+				to hyphenate a word here.
+		\item	\verb|\cleardoublepage| \\
+				flush all material and start a new page, start new odd numbered page.
+		\item	\verb|\clearpage| plush all material and start a new page.
+		\item	\verb|\hyphenation| enter a sequence pf exceptional hyphenations.
+		\item	\verb|\linebreak| allow to break the line here.
+		\item	\verb|\newline| request a new line.
+		\item	\verb|\newpage| request a new page.
+		\item	\verb|\nolinebreak| no line break should happen here.
+		\item	\verb|\nopagebreak| no page break should happen here.
+		\item	\verb|\pagebreak| encourage page break.
+		\end{enumerate}
+	
+	
+
+
+
+% ========================================== chapter ============================
+\newpage
+\chapter{줄 나누기}
+		
+	% -------------------------------------- page -------------------
+	\newpage
+	\section{줄 나누기}
+	
+
+% ========================================== chapter ============================
+\newpage
+\chapter{난 외주}
+
+	% --------------------------------------- section -------------- 난 외주
+	\newpage
+	\section{난 외주}
+	
+		굉장히 쉽다\\
+		\verb|\marginpar{text}|를 쓴다.\\
+	
+		\marginpar{난 외주 사용예}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}

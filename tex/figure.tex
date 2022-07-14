@@ -1,0 +1,466 @@
+
+\newpage
+\chapter{그림}
+ 
+% ------------------------------------------------------------- 그림 이란
+	\newpage
+	\section{그림이란 ?}
+		그림(figure)이라고 부르는 것은 실제 그림뿐 아니라 텍스트의 일부, 표 등등 figure 환경으로 
+		둘러싸인 것을 모두 가리킨다. 예를 하나 들면 그림 1에 보인 바와 같다.\\
+	
+		\begin{verbatim}
+		\includegraphics[width=0.6\textwidth]{./fig/8.pdf}
+		\end{verbatim}
+		
+		\includegraphics[width=0.6\textwidth]{./fig/8.pdf}
+	
+
+	\clearpage
+% ------------------------------------------------------------- 그림 넣기 개요
+	\section{그림 넣기 개요}
+	
+			그림을 삽입하려면 graphicx 꾸러미를 이용한다. 
+				
+			
+			어떤 종류의 그림을 처리할 수 있는지는 전적으로 DVI(Device Independent) 드라이버에 달려 있다. 
+			따라서 graphicx 꾸러미에 어떤 DVI 드라이버를 사용 하라고 다음과 같이 알려줘야 한다.
+			\verb|\usepackage[dvips]{graphicx}|
+			가장 널리 사용되는 DVI 드라이버는 dvips이다. 
+			LATEX 대신 pdflatex을 쓰겠다면 pdftex이 필요하다.
+			\verb|\usepackage[pdftex]{graphicx}|
+			
+			\paragraph{EPS}
+			dvips는 EPS(Encapsulated PostScript)를 처리한다. 
+			EPS는 점 방식(bitmap)일 수도 있고, 선 방식(vector)일 수도 있고, 그 두 가지가 혼용될 수도 있다. 
+			그런 점에서 EPS는 가장 편리하고 신뢰할 만한 그림 형식이다.
+			
+			\paragraph{yap}
+			yap은 EPS를 보여주거나 인쇄하지 못한다. 
+			yap을 통해 DVI에 삽입된 EPS를 보려면 ghostscript가 필요하다. 
+			
+			고스트스크립트는 http://ftp.ktug.or.kr/mirrors/ghost/AFPL/에서 구할 수 있다.
+			
+			이제 그림을 삽입해보자.
+			
+			\verb|\includegraphcis{그림 파일}|
+			
+	\clearpage
+	\section{includegraphics 명령의 지시어}
+			
+			다음은 \verb|\includegraphics|명령에서 가장 많이 쓰이는 지시자들이다.
+			\begin{description}
+			\item[scale]=숫자 \\
+					그림 크기의 배율을 지시한다.
+			\item[width]=길이 그림의 폭을 지시한다. \\
+					폭만 정하면 높이도 그에 따라 바뀐다.
+			\item[height]=길이 그림의 높이를 지시한다. \\
+					높이만 정하면 폭도 그에 따라 바뀐다.
+			\item[keepaspectratio]=true/false \\
+					width와 height를 모두 지시했을 때, 폭과 높이의 비율이 바뀔 수 있다.
+					이 지시자를 쓰면 지시된 폭과 높이를 넘지 않으면서 원래 비율을 유지시킨다.
+			\item[angle]=숫자 \\
+					시계 반대 방향으로 회전시킨다. angle의 값을 90으로 width 앞에 썼다면 width는
+			height로 바뀐다.
+			\end{description}
+	
+			\begin{description}
+			\item[width=xx] \hfill \\
+			Specify the preferred width of the imported image to xx.	 
+			\item[height=xx] \hfill \\
+			Specify the preferred height of the imported image to xx.
+			\item[keepaspectratio] \hfill \\
+			This can be set to either true or false. When true, 
+			it will scale the image according to both height and width, but will not distort the image, 
+			so that neither width nor height are exceeded.
+			
+			\item[scale=xx] \hfill \\
+			Scales the image by the desired scale factor. e.g, 0.5 to reduce by half, or 2 to double.
+			
+			\item[angle=xx] \hfill \\
+			This option can rotate the image by xx degrees (counter-clockwise)
+			
+			\item[trim=l b r t] \hfill \\
+			This option will crop the imported image by l from the left, 
+			b from the bottom, r from the right, and t from the top. Where l, b, r and t are lengths.
+			
+			\item[clip] \hfill  \\
+			For the trim option to work, you must set clip=true.
+			
+			\item[page=x] \hfill \\
+			If the image file is a pdf file with multiple pages, 
+			this parameter allows you to use a different page than the first.
+			\item[resolution=x]	\hfill  \\
+			Specify image resolution in dpi
+			\end{description}
+	
+	
+
+
+
+
+% ------------------------------------------------------------- 그림의 위치
+\newpage
+\section{그림의 위치}
+
+		그림들은 원고에 \textbf{지정된 정확한 그 위치에 나타난다는 것이 보장되지 않는다}는 사실에 주의하라. 
+		사실 워드 프로세서와의 주요 차이점이 그림이 고정된 위치에 있는 것으로 취급되지 않는다는 점이다. 
+	
+		\paragraph{떠다니는 개체} 
+			LATEX에서 그림은 LATEX 자신이 스스로 결정하는 적절한 위치로 “떠다니게” 되어 있다. 그러므로,
+		본문에서는 “아래 그림”이나 “위의 그림”과 같이 참고하여서는 안되며, “그림 \ref{fig:label}을
+		볼 것” 이런 식으로 써야 한다.
+		이러한 속성 때문에 그림과 표는 떠다니는 개체(floats)라고 불린다. 
+		
+		\paragraph{그림의 위치를 특정하고 싶은 경우} 
+		만약 이런 떠다니는 개체의 위치를 정확하게 특정하고 싶다면 here 패키지를 사용하여 위치 지정 옵션 인자를 H로 설정하면 된다.
+	
+	
+% ------------------------------------------------------------- 그림의 배치
+	\newpage
+	\section{그림의 배치}
+		
+		\clearpage	
+		\subsection{floatflt 꾸러미}
+		
+			\begin{verbatim}
+			\begin{floatingfigure}[위치 지시자]{삽입할 위치의 폭}
+			그림 삽입 명령어
+			\caption{그림 제목}
+			\end{floatingfigure}
+			\end{verbatim}
+		
+			\begin{floatingfigure}[r]{0.33\textwidth}
+			\includegraphics[width=.3\textwidth]{./fig/8.pdf}
+			\caption{floatingfigure로 그림 배치하기}
+			\end{floatingfigure}
+			
+			그림을 왼쪽 또는 오른쪽에 두고 그 옆으로 글이 흐르게 하려면 wrapfig 꾸러미를 이용한다. 
+			위치 지시자에는 왼쪽 배치를 지시하는 $l$과 오른쪽 배치를 지시하는 $r$이 있다.
+			
+			floatflt와 비슷한 기능을 하는 꾸러미로는 wrapfig와 picins가 있다.
+			floatingfigure 환경은 글 옆에 배치된다는 점 이외에 figure 환경과 다르지 않다.
+			
+			\begin{verbatim}
+			\begin{floatingfigure}[r]{.33\textwidth}
+			\includegraphics[width=.3\textwidth]{silver2}
+			\caption{floatingfigure로 그림 배치하기}
+			\end{floatingfigure}
+			\end{verbatim}
+		
+		
+		\clearpage
+		\subsection{subfigure 꾸러미}
+		
+			한꺼번에 여러개의 그림을 넣고 각 그림마다 별도의 제목을 달려면 subfigure 꾸러미를 이용한다.
+				
+			\begin{verbatim}
+			\begin{figure}
+			\subfigure[그림 제목]{그림 삽입 명령어}
+			\subfigure[그림 제목]{그림 삽입 명령어}
+			\caption{그림 제목}
+			\end{figure}
+			\end{verbatim}
+		
+			\begin{figure}
+			\centering
+			\subfigure[8개월 때]{\includegraphics[width=.2\textwidth]{./fig/8.pdf}}\hfill
+			\subfigure[16개월 때]{\includegraphics[width=.2\textwidth]{./fig/8.pdf}}\hfill
+			\subfigure[32개월 때]{\includegraphics[width=.2\textwidth]{./fig/8.pdf}}
+			\caption{subfigure로 그림 배치하기}
+			\end{figure}
+		
+				
+			\begin{verbatim}
+			\begin{figure}
+			\centering
+			\subfigure[8개월 때]{\includegraphics[width=.3\textwidth]{silver}}\hfill
+			\subfigure[16개월 때]{\includegraphics[width=.3\textwidth]{silver2}}\hfill
+			\subfigure[32개월 때]{\includegraphics[width=.3\textwidth]{silver3}}
+			\caption{subfigure로 그림 배치하기}
+			\end{figure}
+			\end{verbatim}
+		
+		
+		
+		\clearpage
+		\subsection{한 페이지에 그림 하나만 중앙에 넣고 싶다}
+		
+			그림 전후에 \verb|\clearpage|를 넣어 주면 문제가 해결된다.
+			\begin{verbatim}
+			\clearpage
+			\begin{figure}
+			\centering
+			\includegraphics{....}
+			\end{figure}
+			\clearpage
+			\end{verbatim}
+		
+		
+			\clearpage
+			\begin{figure}
+			\centering
+			\includegraphics[width=1\textwidth]{./fig/8.pdf}
+			\end{figure}
+			\clearpage
+		
+		
+			\clearpage
+			\begin{figure}
+			\centering
+			\includegraphics[width=1\paperwidth]{./fig/8.pdf}
+			\end{figure}
+			\clearpage
+		
+			\clearpage
+			\begin{figure}
+			\centering
+			\includegraphics[height=1\paperheight]{./fig/8.pdf}
+			\end{figure}
+			\clearpage
+		
+		
+			\clearpage
+			\begin{figure}
+			\centering
+			\includegraphics[page=1,scale=0.5]{./fig/8.pdf}
+			\end{figure}
+			\clearpage
+	
+% ------------------------------------------------------------- pdf page
+\newpage
+\section{Including full PDF pages}
+
+	There is a great package for including full pages of PDF files: pdfpages. \par
+	It is capable of inserting entire pages as is and more pages per one page in any layout (e.g. 2x3).
+
+	\subsection{Package Options:}
+
+	The package has several options:
+
+	\verb|\usepackage[ options ]{pdfpages}|
+
+	\begin{itemize}
+	\item final : Inserts pages. This is the default.
+	\item draf t: Does not insert pages, but prints a box and the filename instead.
+	\item enable-survey : Activates survey functionalities. (Experimental, subject to change.)
+	\end{itemize}
+	
+	The first command is
+
+	\verb|\includepdf[ key=val ]{ filename }|
+	
+	Options for key=val (A comma separated list of options using the key = value syntax)
+	
+	\begin{description}
+	\item[pages] 	Selects pages to insert. \\
+			The argument is a comma separated list, \\
+			containing page numbers (pages={3,5,6,8}), \\
+			 ranges of page numbers (pages={4-9}) or any combination. \\
+			To insert empty pages use {}. For instance pages={3,{},8-11,15} will insert page 3, an empty page, 
+			and pages 8, 9, 10, 11, and 15.
+			Actually not only links but all kinds of PDF annotations will get lost. 
+			Page ranges are specified by the following syntax: m - n. 
+			This selects all pages from m to n. Omitting m defaults to the first page; 
+			omitting n defaults to the last page of the document. 
+			Another way to select the last page of the document, is to use the keyword last. 
+			(This is only permitted in a page range.) 
+			E.g.: pages=- will insert all pages of the document, and pages=last-1 will insert all pages 
+			in reverse order. (Default: pages=1) 
+	\item[angle]	 You can use the angle-option for turning the included page, 
+			for exampe for turning a landscape document when the latex-document is portrait. 
+			Example: angle=90  
+	\item[addtolist]	Adds an entry to the list of figures, 
+			the list of tables, or any other list (e.g. from float.sty). 
+			This option requires four arguments, separated by commas:
+			addtolist={ page number , type , heading , label }
+			\begin{itemize}
+			\item page number : Page number of the inserted page.
+			\item type: Name of a floating environment. (figure, table, etc.)
+			\item heading: Title inserted into LoF, LoT, etc.
+			\item label: Name of the label. This label can be referred to with \verb|\ref| and \verb|\pageref|.
+			\end{itemize}
+			Like addtotoc, addtolist accepts multiple sets of the above mentioned four arguments, all separated by commas. \\
+			The proper recursive definition is: addtolist={ page number , type , heading , label [, lof-list ] }
+	\item[pagecommand]  Declares LaTeX-commands, which are executed on each sheet of paper. 
+			(Default : pagecommand=\verb|{\thispagestyle{empty}}| \\
+			pagecommand=\verb|{\label{fig:mylabel}}|
+	\end{description}
+	
+	You can also inserts pages of several external PDF documents. \par
+	\verb|	\includepdfmerge[ key=val ]{ file-page-list } |
+	Several PDFs can be placed table-like on one page. See more information in its documentation.		
+			
+				
+	\includepdf[page=1]{./fig/8.pdf}
+					
+						
+							
+								
+									
+										
+											
+												
+													
+														
+															
+																
+																	
+																		
+																			
+																				
+																					
+																						
+																							
+																								
+																									
+																										
+																											
+																												
+																													
+																														
+																															
+																																
+																																	
+																																		
+																																				
+
+% ------------------------------------------------------------- 그림 넣기
+\newpage
+\section{그림의 넣기}
+
+\subsection{latex로 처리}
+
+	
+	문서를 latex과 dvips로 처리하려 하는 경우, 그림은 EPS 파일만을 포함할 수 있다. 
+
+\subsection{pdflatex로 처리}
+
+
+		pdflatex은 PDF 포맷의 그림파일은 물론이고 JPG, PNG 그림도 처리한다. \\ \\
+		만약 PDFLATEX을 사용한다면 .eps 그림을 반드시 .pdf로 바꾸고 원본에서도 .pdf 그림을 
+		부르도록 수정해주어야 한다. EPS를 .pdf로 변환하는 데는 epstopdf를 이용한다.
+		
+
+		
+						
+		
+
+% -------------------------------------------------------------
+\newpage
+\section{latex로 그림 넣기}
+
+\rule{\linewidth}{1.2pt}
+\begin{verbatim}
+    \usepackage[dvips]{graphicx}
+   
+    \includegraphics[width=0.5\textwidth]{./fig/8}
+\end{verbatim}
+\rule{\linewidth}{1.2pt}
+
+
+% -------------------------------------------------------------
+\newpage
+\section{pdf latex로 그림 넣기}
+
+\rule{\linewidth}{1.2pt}
+\begin{verbatim}
+    \usepackage[pdftex]{graphicx}
+    
+    \begin{fingure}[htbp]
+      \centring
+      \includegraphics[angle=0,width=0.5\textwidth]{./fig/8.pdf}
+      \caption{그림 설명문}
+    	\end{fingure}
+\end{verbatim}
+\rule{\linewidth}{1.2pt}
+
+
+\begin{table}[ht]
+	\caption{graphicx 패키지의 key 명령}
+	\centering
+    \begin{tabular}{l l}
+    \toprule
+    width   & 그림의 폭을 지정   \\
+    height  & 그림의 높이를 지정   \\
+    angle   & 그림을 반시계 방향으로 회전   \\
+    scale   & 그림의 배율을 지정  \\
+    \bottomrule
+    \end{tabular}%
+  \label{table:keyname}%
+\end{table}%
+
+
+
+
+% -------------------------------------------------------------
+	\newpage
+	\section{컴파일에 따른 그림 파일의 선택적 사용}
+
+		.pdf와 .ps를 같은 원본 파일에서 컴파일러에 따라 선택적으로 사용하도록 하려면 다음과 같이 하
+		라.
+		
+		\rule{\linewidth}{1.2pt}
+		\begin{verbatim}
+			% define the variable \ifpdf
+			\newif\ifpdf
+			\ifx\pdfoutput\undefined
+			\pdffalse
+			\else
+			\pdfoutput=1
+			\pdftrue
+			\fi
+			...
+			% include the right options
+			\ifpdf
+			\usepackage[pdftex]{graphicx}
+			\pdfcompresslevel=9
+			\else
+			\usepackage{graphicx}
+			\fi
+			...
+			% include the right graphic file
+			\ifpdf
+			\includegraphics{file.pdf}
+			\else
+			\includegraphics{file.eps}
+			\fi
+		\end{verbatim}
+		\rule{\linewidth}{1.2pt}
+
+% -------------------------------------------------------------
+%
+%	에러 시 대처
+%
+% -------------------------------------------------------------
+	\newpage
+	\section{에러시 대처}
+
+		18개 이상의 figure(떠다니는 개체)들이 대기열에 들어가서 처리되지 않고 있으면 ‘Too many
+		unprocessed floats’라는 LATEX 에러를 만나게 된다. 이럴 경우 가장 간단한 방법은 nclearpage
+		명령을 세 개 또는 네 개의 그림 뒤에 붙여서 floats들을 처리하고 페이지를 나누게 하는 것이다.
+		참고로 more°oats 패키지를 쓰면 대기열에 저장할 수 있는 floats의 개수가 36개로 늘어난다.
+
+% -------------------------------------------------------------
+%
+%	그림의 형식
+%
+% -------------------------------------------------------------
+\newpage
+\section{그림의 형식}
+
+		\subsection{그림의 형식}
+			
+				그림이 Encapsulated POSTSCRIPT (.eps) 포맷이라면, graphicx 패키지를 써서 LATEX 원본 파일에
+				삽입할 수 있다. 그림 2에 보인 것과 같은 명령을 사용할 수 있다.
+		
+		
+		\subsection{그림의 형식 변환}
+		
+				.jpg, .gif, .png와 같은 일반적인 그래픽 포맷을 .eps로 변환시켜주는 프로그램이 많다. 그 중에
+				예를 들면 ImageMagick (http://www.imagemagick.org)과 GIMP (http://www.gimp.org)를 들 수
+				있다. 다만, 이 프로그램들이 만들어내는 POSTSCRIPT 파일은 크기가 엄청나다.
+				
+				비트맵 그림을 작은 크기의 POSTSCRIPT 파일로 변환해주는 방법으로는 jpeg2ps (http://www.
+				pdflib.com/jpeg2ps/index.html)나 bmeps (CTAN://support/bmeps)가 좋다. 
+				앞의 것은 .jpg 파일을 변환할 때는 가장 좋은 방법이고, 나중의 것은 더 많은 포맷의 그림파일을 다룰 수 있다.
+		

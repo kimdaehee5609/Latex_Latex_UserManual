@@ -1,0 +1,196 @@
+\documentclass[12pt,a4paper]{report}
+\usepackage[hangul]{kotex}				% 한글 사용
+\usepackage[unicode]{hyperref}			% 한굴 하이퍼링크 사용
+\usepackage{amssymb,amsfonts,amsmath}% 수학 수식 사용
+
+\usepackage{enumerate}			%
+\usepackage{enumitem}			%
+\usepackage{pifont}				%
+\usepackage{setspace}			%
+\usepackage{booktabs}			% table
+\usepackage{color}				%
+\usepackage{multirow}			%
+\usepackage{boxedminipage}		% 미니 페이지
+\usepackage[pdftex]{graphicx}	% 그림 사용
+\usepackage[final]{pdfpages}	%pdf 사용
+\usepackage{framed}	%pdf 사용
+
+% ----------------------------- 장의 목차
+\usepackage{minitoc}
+	\setcounter{minitocdepth}{1}    	% Show until subsubsections in minitoc
+	\setlength{\mtcindent}{12pt} 	% default 24pt
+	
+% --------------------------------- 페이지 스타일 지정
+	\setlength{\topmargin}{00pt} 	%
+	\setlength{\headsep}{45pt} 	%
+
+	\usepackage{fancyhdr}
+	\pagestyle{fancy}
+	\fancyhead{} % clear all fields
+	\fancyhead[LO]{\small \leftmark}
+	\fancyhead[RE]{\small \leftmark}
+	\fancyfoot{} % clear all fields
+	\fancyfoot[LE,RO]{\large \thepage}
+	%\fancyfoot[CO,CE]{\empty}
+	\renewcommand{\headrulewidth}{0.4pt}
+	\renewcommand{\footrulewidth}{0.4pt}
+
+% --------------------------------- recoment
+
+	\newcommand{\red}{\color{red}}			% 글자 색깔 지정
+	\newcommand{\black}{\color{black}}		% 글자 색깔 지정
+	
+	
+% --------------------------------- 문서 기본 사항 설정
+
+		\setcounter{secnumdepth}{1} % 문단 번호 깊이
+		\setcounter{tocdepth}{1} % 문단 번호 깊이
+		\setlength{\parindent}{0cm} % 문서 들여 쓰기를 하지 않는다.
+		\doublespace
+
+
+\begin{document}
+
+
+		% --------------------------------- 타이틀 페이지
+		\begin{titlepage}
+		\singlespace
+		\pagestyle{empty}
+		\newcommand{\HRule}{\rule{\textwidth}{0.5mm}}
+		\begin{center}
+		\null
+		\vspace{2cm}
+		\textsc{\LARGE \LaTeX }\\[1.0cm]
+		\HRule\\[-0.4cm]
+		\HRule \\[0.4cm]
+			{ \huge \bfseries 수식 심복 \\[0.4cm] }
+		\HRule\\[-0.4cm]
+		\HRule \\[1.5cm]
+		
+		% Author and supervisor
+		\noindent
+		\begin{minipage}{1\textwidth}
+			\begin{flushright} \large \today	\end{flushright}
+			\begin{flushright} \large \emph{Author:}  김대희	\end{flushright}
+
+		\end{minipage}%
+		\vfill
+		% Bottom of the page
+		
+		\end{center}
+		\cleardoublepage
+		\end{titlepage}																						
+		% --------------------------------- 타이틀 페이지
+
+		\listoffigures
+		\listoftables
+		
+		
+		
+% ========================================== chapter ============
+\newpage
+\chapter{수식 심볼}
+		
+
+% -------------------------------------------------------------
+%
+%
+%
+% -------------------------------------------------------------
+\clearpage
+\section{Arrow symbols}
+
+			\textbf{Left}\\
+			\begin{tabular}{ p{0.1\textwidth} p{0.3\textwidth} 
+							p{0.1\textwidth} p{0.3\textwidth}  }
+			\toprule
+			$\leftarrow$		&$\backslash$leftarrow &
+			$\longleftarrow$	&$\backslash$longleftarrow \\
+			$\Leftarrow$		&$\backslash$Leftarrow&
+			$\Longleftarrow$	&$\backslash$Longleftarrow \\
+			\bottomrule
+			\end{tabular} \\
+			
+			\textbf{Right}\\
+			\begin{tabular}{ p{0.1\textwidth} p{0.3\textwidth} 
+							p{0.1\textwidth} p{0.3\textwidth}  }
+			\toprule
+			$\rightarrow $		&$\backslash$rightarrow& 
+			$\longrightarrow$	&$\backslash$longrightarrow \\
+			$\Rightarrow$		&$\backslash$Rightarrow&
+			$\Longrightarrow$	&$\backslash$Longrightarrow \\
+			\bottomrule
+			\end{tabular} \\
+		
+			\textbf{Left-Right}\\
+			\begin{tabular}{ p{0.1\textwidth} p{0.3\textwidth} 
+							p{0.1\textwidth} p{0.3\textwidth}  }
+			\toprule
+			$\leftrightarrow $		&$\backslash$leftrightarrow& 
+			$\longleftrightarrow$	&$\backslash$longleftrightarrow \\
+			$\Leftrightarrow$		&$\backslash$Leftrightarrow&
+			$\Longleftrightarrow$	&$\backslash$Longleftrightarrow \\
+			\bottomrule
+			\end{tabular} \\
+
+			\textbf{Up-Down}\\
+			\begin{tabular}{ p{0.1\textwidth} p{0.3\textwidth} 
+							p{0.1\textwidth} p{0.3\textwidth}  }
+			\toprule
+			$\uparrow $			&$\backslash$uparrow& 
+			$\Uparrow$				&$\backslash$Uparrow \\
+			$\downarrow$			&$\backslash$downarrow&
+			$\Downarrow$			&$\backslash$Downarrow\\
+			$\updownarrow$		&$\backslash$updownarrow&
+			$\Updownarrow$		&$\backslash$Updownarrow\\
+			\bottomrule
+			\end{tabular} \\
+
+			\textbf{arrow}\\
+			\begin{tabular}{ p{0.1\textwidth} p{0.3\textwidth} 
+							p{0.1\textwidth} p{0.3\textwidth}  }
+			\toprule
+			$\nearrow $				&$\backslash$nearrow \\
+			$\searrow $				&$\backslash$searrow \\ 
+			$\swarrow $			&$\backslash$swarrow \\ 
+			$\nwarrow $			&$\backslash$nwearrow \\ 
+			\bottomrule
+			\end{tabular} \\
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}

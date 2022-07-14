@@ -1,0 +1,326 @@
+
+			
+
+
+	
+			
+% ========================================== chapter ============================
+\newpage
+\chapter{편집 용지}
+
+	% -------------------------------------- page -------------------
+		\minitoc				% Creating an actual minitoc
+
+
+% ------------------------------------------ section ------------ 
+\newpage
+\section{판형 (페이지)}
+
+	\subsection{용지 크기}
+	
+		\begin{itemize}
+			\item	a4paper, 
+			\item	a5paper, 
+			\item	b5paper, 
+			\item	letterpaper, 
+			\item	legalpaper,
+			\item	executivepaper
+		\end{itemize}
+
+
+% -------------------------------------------------------------
+\newpage
+\section{판면 (편집영역)}
+
+% -------------------------------------------------------------
+\newpage
+\section{면주와 여백문단)}
+
+	
+	
+% ------------------------------------------ section ------------ 
+\section{문서 여백}
+
+	
+		\setlength{\fboxsep}{12pt}
+		\begin{boxedminipage}[c]{1.0\linewidth}
+			\begin{verbatim}
+			\set length { 편집할 여백 } {크기}
+			\set length { \left margin } {2cm}
+			\end{verbatim} 
+		\end{boxedminipage}
+		
+
+
+	\paragraph{ geometry package} \hfill
+
+%		\setlength{\fboxsep}{12pt}
+		\begin{boxedminipage}[c]{1.0\linewidth}
+			\begin{verbatim}
+			\ use package 
+				[left=1.0cm, right=1.0cm, top=1.0cm, bottom=1.0cm] { geo metry }
+			\end{verbatim}
+		\end{boxedminipage}
+
+	%	------------------------------------------------ code	
+		\begin{mdframed}[style=code_document, frametitle={code}]
+			\begin{verbatim}
+			\usepackage{geometry}
+			\geometry{landscape=true	}
+			\geometry{top 		=10em}
+			\geometry{bottom		=10em}
+			\geometry{left		=8em}
+			\geometry{right		=8em}
+			\geometry{headheight	=4em} % 머리말 설치 높이
+			\geometry{headsep		=2em} % 머리말의 본문과의 띠우기 크기
+			\geometry{footskip		=4em} % 꼬리말의 본문과의 띠우기 크기
+	 		\geometry{showframe}
+		
+	%		paperwidth 	= left + width + right (1)
+	%		paperheight 	= top + height + bottom (2)
+	%		width 		= textwidth (+ marginparsep + marginparwidth) (3)
+	%		height 		= textheight (+ headheight + headsep + footskip) (4)
+			\end{verbatim}
+		\end{mdframed}
+
+
+
+
+
+	% -------------------------------------- page -------------------
+	\newpage  
+	\subsection*{문서 여백 : set length }
+
+		\singlespacing
+		\setlength{\fboxsep}{12pt}
+		\begin{boxedminipage}[c]{1.0\linewidth}
+			\begin{verbatim}
+			\set length { \편집할 여백 } { 크기 }
+			
+			\set length { \left margin } { 2cm }
+			\set length { \right margin } { 2cm }
+			\set length { \odd side margin } { 2cm }  % 홀수쪽
+			\set length { \even side margin } { 2cm } % 짝수쪽
+			\set length { \top margin } { 2cm }
+			\set length { \text width } { 18cm }
+			\set length { \text height } { 25cm }
+			\end{verbatim} 
+		\end{boxedminipage}
+		\doublespacing
+
+	% -------------------------------------- page -------------------
+	\newpage  
+	\subsection*{문서 여백}
+
+		\singlespacing
+		\setlength{\fboxsep}{12pt}
+		\begin{boxedminipage}[c]{1.0\linewidth}
+			\begin{verbatim}
+				1. one inch + \hoffset
+				2. one inch + \voffset
+				
+				\oddsidemargin = 31pt
+				\topmargin = 20pt
+				\headheight = 12pt   % 머리말 높이
+				\headsep = 25pt       % 머리말과 본문사이 간격
+				
+				\textheight = 592pt  % 본문의 높이
+				\textwidth = 390pt	% 본문의 폭
+				
+				\marginparsep = 10pt
+				\marginparwidth = 35pt
+				
+				\footskip = 30pt  % 본문과 꼬리말 사이 간격
+				
+				\marginparpush = 7pt (not shown)
+				\hoffset = 0pt
+				\voffset = 0pt
+				
+				\paperwidth = 597pt
+				\paperheight = 845pt
+			\end{verbatim} 
+		\end{boxedminipage}
+		\doublespacing
+
+
+	% -------------------------------------- page -------------------
+	\newpage  
+	\subsection*{문서 여백 : geometry }
+
+		\singlespacing
+		\setlength{\fboxsep}{12pt}
+		\begin{boxedminipage}[c]{1.0\linewidth}
+			\begin{verbatim}
+			\use package { geo metry }
+			
+			\geometry { paper size = { 25cm, 35cm }
+			\geometry { total = { 20cm, 30cm }
+			\geometry { body = { 18cm, 25cm }
+			\geometry { hmargin = { 3cm, 2cm }
+			\geometry { vmargin = { 2cm, 3cm }
+			\geometry { margin par width = 2cm }
+			\geometry { head = 1cm }
+			\end{verbatim} 
+		\end{boxedminipage}
+		\doublespacing
+	
+		\singlespacing
+		\setlength{\fboxsep}{12pt}
+		\begin{boxedminipage}[c]{1.0\linewidth}
+			\begin{verbatim}
+			\use package 
+			[ left=1.0in, right=1.0in, top=1.0in, bottom=1.0in ]
+			{ geo metry }
+			\end{verbatim} 
+		\end{boxedminipage}
+		\doublespacing
+
+
+
+
+
+
+
+
+
+
+
+
+% ========================================== chapter ============================
+\chapter{머리말 꼬리말}
+
+
+
+% -------------------------------------- page -------------------
+\section{머리말}
+
+
+% -------------------------------------- page -------------------
+\section{꼬리말}
+
+	
+
+
+
+
+% ========================================== chapter ============================
+\chapter{쪽 번호}
+	
+	% -------------------------------------- page -------------------
+	\newpage
+	\section{쪽 번호}
+	
+	
+% ========================================== chapter ============================
+\chapter{쪽 나누기}
+	
+
+	
+	% -------------------------------------- page -------------------
+	\section{쪽 나누기}
+	
+		\begin{enumerate}[ topsep=0.0em, itemsep=-0.5em ]
+		\item	\verb|\\| \\
+				start a new paragraph.
+		\item	\verb|\\*| \\
+				 start a new line but not a new paragraph.
+		\item	\verb|\- OK| \\
+				to hyphenate a word here.
+		\item	\verb|\cleardoublepage| \\
+				flush all material and start a new page, start new odd numbered page.
+		\item	\verb|\clearpage| plush all material and start a new page.
+		\item	\verb|\hyphenation| enter a sequence pf exceptional hyphenations.
+		\item	\verb|\linebreak| allow to break the line here.
+		\item	\verb|\newline| request a new line.
+		\item	\verb|\newpage| request a new page.
+		\item	\verb|\nolinebreak| no line break should happen here.
+		\item	\verb|\nopagebreak| no page break should happen here.
+		\item	\verb|\pagebreak| encourage page break.
+		\end{enumerate}
+	
+	
+
+
+
+% ========================================== chapter ============================
+\newpage
+\chapter{줄 나누기}
+		
+	% -------------------------------------- page -------------------
+	\newpage
+	\section{줄 나누기}
+	
+
+% ========================================== chapter ============================
+\newpage
+\chapter{난 외주}
+
+	% --------------------------------------- section -------------- 난 외주
+	\newpage
+	\section{난 외주}
+	
+		굉장히 쉽다\\
+		\verb|\marginpar{text}|를 쓴다.\\
+	
+		\marginpar{난 외주 사용예}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

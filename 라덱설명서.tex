@@ -1,0 +1,3236 @@
+%	-------------------------------------------------------------------------------
+% 
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%	-------------------------------------------------------------------------------
+%	\documentclass[12pt, a4paper, twoside]{book}
+%	\documentclass[12pt, a4paper, twoside, openright]{book}
+	\documentclass[12pt, a4paper, oneside]{book}
+%	\documentclass[12pt, a4paper, landscape, oneside]{book}
+
+		% --------------------------------- 페이지 스타일 지정
+		\usepackage{geometry}
+%		\geometry{landscape=true	}
+		\geometry{top 		=10em}
+		\geometry{bottom		=10em}
+		\geometry{left		=8em}
+		\geometry{right		=8em}
+		\geometry{headheight	=4em} % 머리말 설치 높이
+		\geometry{headsep		=2em} % 머리말의 본문과의 띠우기 크기
+		\geometry{footskip		=4em} % 꼬리말의 본문과의 띠우기 크기
+% 		\geometry{showframe}
+	
+%		paperwidth 	= left + width + right (1)
+%		paperheight 	= top + height + bottom (2)
+%		width 		= textwidth (+ marginparsep + marginparwidth) (3)
+%		height 		= textheight (+ headheight + headsep + footskip) (4)
+
+
+
+		%	===================================================================
+		%	package
+		%	===================================================================
+%			\usepackage[hangul]{kotex}				% 한글 사용
+			\usepackage{kotex}						% 한글 사용
+			\usepackage[unicode]{hyperref}			% 한글 하이퍼링크 사용
+			\usepackage{amssymb,amsfonts,amsmath}	% 수학 수식 사용
+
+			\usepackage{scrextend}					% 
+		
+		% ------------------------------ 개조식 문서 작성
+			\usepackage{enumerate}			%
+			\usepackage{enumitem}			%
+			\usepackage{tabto}				%     tabto package
+			\usepackage{tablists}			%	수학문제의 보기 등을 표현하는데 사용
+										%	tabenum
+
+
+
+
+		% ------------------------------ box & minipage
+			\usepackage{setspace}			%
+			\usepackage{booktabs}			% table
+			\usepackage{color}				%
+			\usepackage{boxedminipage}		% 미니 페이지
+			\usepackage[pdftex]{graphicx}	% 그림 사용
+			\usepackage[final]{pdfpages}	% pdf 사용
+			\usepackage{framed}			% pdf 사용
+			
+			\usepackage{fix-cm}	
+			\usepackage[english]{babel}
+	
+			\usepackage{tikz}%
+			\usetikzlibrary{arrows,positioning,shapes}
+			%\usetikzlibrary{positioning}
+
+		% ------------------------------ 그림
+			\usepackage[pdftex]{graphicx} 	% 그림
+			\usepackage{floatflt} 			% 그림
+			\usepackage{subfigure} 		% 그림
+			\usepackage{pdfpages} 			% 그림
+			
+
+
+		%	=======================================================================================
+		% 	tikz package
+		% 	
+		% 	--------------------------------- 	
+			\usepackage{tikz}%
+			\usetikzlibrary{arrows,positioning,shapes}
+			\usetikzlibrary{mindmap,trees}			
+		%	=======================================================================================
+		% 	mdframed package
+		% 	
+		% 	--------------------------------- 	
+			\usepackage[framemethod=TikZ]{mdframed}				% md framed package
+			\usepackage{smartdiagram}							% smart diagram package
+
+
+		% ------------------------------ table 
+			\usepackage{longtable}			%
+%			\usepackage[table]{xcolor}		 xcolor 이 충돌을 자꾸 일으킴
+			\usepackage{rotating}
+			\usepackage{array}
+			\usepackage{tabularx}
+			\usepackage{tabulary}
+			\usepackage{multirow}
+
+			\usepackage{tabu}				%
+			\usepackage{tabto}				%  tabto package  
+%			\usepackage{subcaption}		%  sub caption package  : 다중 캡션  subfigure와 충돌됨
+
+
+		% --------------------------------- 	page
+			\usepackage{afterpage}			% 다음페이지가 나온면 어떻게 하라는 명령 정의 패키지
+%			\usepackage{fullpage}			% 잘못 사용하면 다 흐트러짐 주의해서 사용
+%			\usepackage{pdflscape}			% 
+			\usepackage{lscape}			%	 
+
+
+			\usepackage{blindtext}
+			\usepackage{lipsum}
+	
+		% --------------------------------- 특수문자 font 사용
+			\usepackage{pifont}			%
+			\usepackage{textcomp}
+			\usepackage{gensymb}
+			\usepackage{marvosym}
+
+
+
+			\usepackage[cc]{titlepic}  		% 표지에 그림 넣기 위한 패키지
+			\usepackage{listings}			%
+			
+
+
+
+
+
+		% --------------------------------- 페이지 스타일 지정
+
+		\usepackage[Sonny]		{fncychap}
+
+			\makeatletter
+			\ChNameVar	{\Large\bf}
+			\ChNumVar	{\Huge\bf}
+			\ChTitleVar	{\Large\bf}
+			\ChRuleWidth	{0.5pt}
+			\makeatother
+
+%		\usepackage[Lenny]		{fncychap}
+%		\usepackage[Glenn]		{fncychap}
+%		\usepackage[Conny]		{fncychap}
+%		\usepackage[Rejne]		{fncychap}
+%		\usepackage[Bjarne]	{fncychap}
+%		\usepackage[Bjornstrup]{fncychap}
+
+		\usepackage{fancyhdr}
+		\pagestyle{fancy}
+		\fancyhead{} % clear all fields
+		\fancyhead[LO]{\footnotesize \leftmark}
+		\fancyhead[RE]{\footnotesize \leftmark}
+		\fancyfoot{} % clear all fields
+		\fancyfoot[LE,RO]{\large \thepage}
+		%\fancyfoot[CO,CE]{\empty}
+		\renewcommand{\headrulewidth}{1.0pt}
+		\renewcommand{\footrulewidth}{0.4pt}
+	
+
+		%	--------------------------------------------------------------------------------------- 
+		% 	tritlesec package
+		% 	
+		% 	
+		% 	------------------------------------------------------------------ section 스타일 지정
+			\usepackage{titlesec}
+		
+		% 	----------------------------------------------------------------- section 글자 모양 설정
+			\titleformat*{\section}					{\large\bfseries}
+			\titleformat*{\subsection}				{\normalsize\bfseries}
+			\titleformat*{\subsubsection}			{\normalsize\bfseries}
+			\titleformat*{\paragraph}				{\normalsize\bfseries}
+			\titleformat*{\subparagraph}			{\normalsize\bfseries}
+	
+		% 	----------------------------------------------------------------- section 번호 설정
+			\renewcommand{\thepart}				{\arabic{part}.}
+			\renewcommand{\thesection}				{\arabic{section}.}
+			\renewcommand{\thesubsection}			{\thesection\arabic{subsection}.}
+			\renewcommand{\thesubsubsection}		{\thesubsection\arabic{subsubsection}}
+			\renewcommand{\theparagraph} 			{$\blacksquare$ \hspace{3pt}}
+
+		% 	----------------------------------------------------------------- section 페이지 나누기 설정
+			\let\stdsection\section
+			\renewcommand\section{\newpage\stdsection}
+
+		% --------------------------------- 	장, 절 등의 번호와 장, 절 등과의 간격 조정
+		
+			\titlespacing*{\section} 				{0pt}{1.0em}{1.0em}
+			\titlespacing*{\subsection}	  		{0ex}{1.0em}{1.0em}
+			\titlespacing*{\subsubsection}			{0ex}{1.0em}{1.0em}
+			\titlespacing*{\paragraph}			{0ex}{1.0em}{1.0em}
+			\titlespacing*{\subparagraph}			{0ex}{1.0em}{1.0em}
+
+		% --------------------------------- recommend		섹션별 페이지 상단 여백
+			\newcommand{\SectionMargin}			{\newpage  \null \vskip 2cm}
+			\newcommand{\SubSectionMargin}		{\newpage  \null \vskip 2cm}
+			\newcommand{\SubSubSectionMargin}		{\newpage  \null \vskip 2cm}
+
+
+
+	
+		% --------------------------------- mini toc 설정
+			\usepackage{minitoc}
+
+
+%		\renewcommand*{\partheadstartvskip}{\null\vskip20pt}
+%		\renewcommand*{\partheadendvskip}{\vskip2pt}
+%		\renewcommand\beforeparttoc{}		
+		
+		
+		% --------------------------------- 절의 목차
+		\setcounter{parttocdepth}{1}
+		\setlength{\ptcindent}{0pt}
+		\renewcommand{\ptcfont}{\normalsize\rm}
+		\renewcommand{\ptcCfont}{\normalsize\bf}
+		\renewcommand{\ptcSfont}{\normalsize\rm}
+		
+		% --------------------------------- 장의 목차
+		\setcounter{minitocdepth}{1}    	% Show until subsubsections in minitoc
+		\setlength{\mtcindent}{12pt} 		% default 24pt
+
+	
+	
+		% --------------------------------- 	문서 기본 사항 설정
+		\setcounter{secnumdepth}{4} 		% 문단 번호 깊이
+		\setcounter{tocdepth}{3} 			% 문단 번호 깊이
+		\setlength{\parindent}{0cm} 		% 문서 들여 쓰기를 하지 않는다.
+		
+
+		% --------------------------------- 	찾아보기
+		\usepackage{makeidx}
+		\makeindex
+
+		% --------------------------------- 	줄간격 설정
+		\doublespace
+%		\onehalfspace
+%		\singlespace
+		
+		
+% 	============================================================================== List global setting
+%		\setlist{itemsep=1.0em}
+	
+% 	============================================================================== enumi setting
+
+%		\renewcommand{\labelenumi}{\arabic{enumi}.} 
+%		\renewcommand{\labelenumii}{\arabic{enumi}.\arabic{enumii}}
+%		\renewcommand{\labelenumii}{(\arabic{enumii})}
+%		\renewcommand{\labelenumiii}{\arabic{enumiii})}
+
+
+	%	-------------------------------------------------------------------------------
+	%		Vertical and Horizontal spacing
+	%	-------------------------------------------------------------------------------
+		\setlist[enumerate,1]	{ leftmargin=8.0em, rightmargin=0.0em, labelwidth=0.0em, labelsep=0.0em }
+		\setlist[enumerate,2]	{ leftmargin=8.0em, rightmargin=0.0em, labelwidth=0.0em, labelsep=0.0em }
+		\setlist[enumerate,3]	{ leftmargin=8.0em, rightmargin=0.0em, labelwidth=0.0em, labelsep=0.0em }
+		\setlist[enumerate]	{ 	itemsep=0.0em, 
+								leftmargin=6.0ex, 
+								rightmargin=0.0em, 
+								labelwidth=0.0em, 
+								labelsep=4.0ex 
+							}
+
+
+	%	-------------------------------------------------------------------------------
+	%		Label
+	%	-------------------------------------------------------------------------------
+%		\setlist[enumerate,1]{ label=\arabic*., ref=\arabic* }
+%		\setlist[enumerate,1]{ label=\emph{\arabic*.}, ref=\emph{\arabic*} }
+%		\setlist[enumerate,1]{ label=\textbf{\arabic*.}, ref=\textbf{\arabic*} }   	% 1.
+%		\setlist[enumerate,1]{ label=\textbf{\arabic*)}, ref=\textbf{\arabic*)} }		% 1)
+		\setlist[enumerate,1]{ label=\textbf{(\arabic*)}, ref=\textbf{(\arabic*)} }	% (1)
+		\setlist[enumerate,2]{ label=\textbf{\arabic*)}, ref=\textbf{\arabic*)} }		% 1)
+		\setlist[enumerate,3]{ label=\textbf{\arabic*.}, ref=\textbf{\arabic*.} }		% 1.
+
+%		\setlist[enumerate,2]{ label=\emph{\alph*}),ref=\theenumi.\emph{\alph*} }
+%		\setlist[enumerate,3]{ label=\roman*), ref=\theenumii.\roman* }
+
+
+	% 	============================================================================== itemi Global setting
+
+	
+		%	-------------------------------------------------------------------------------
+		%		Vertical spacing
+		%	-------------------------------------------------------------------------------
+			\setlist[itemize]{topsep=0.0em}			% 상단의 여유치
+			\setlist[itemize]{partopsep=0.0em}			% 
+			\setlist[itemize]{parsep=0.0em}			% 
+%			\setlist[itemize]{itemsep=0.0em}			% 
+			\setlist[itemize]{noitemsep}				% 
+			
+		%	-------------------------------------------------------------------------------
+		%		Horizontal spacing
+		%	-------------------------------------------------------------------------------
+			\setlist[itemize]{labelwidth=1em}			%  라벨의 표시 폭
+			\setlist[itemize]{leftmargin=8em}			%  본문 까지의 왼쪽 여백  - 4em
+			\setlist[itemize]{labelsep=3em} 			%  본문에서 라벨까지의 거리 -  3em
+			\setlist[itemize]{rightmargin=0em}			% 오른쪽 여백  - 4em
+			\setlist[itemize]{itemindent=0em} 			% 점 내민 거리 label sep 과 같은면 점위치 까지 내민다
+			\setlist[itemize]{listparindent=3em}		% 본문 드려쓰기 간격
+	
+	
+			\setlist[itemize]	{ 
+						topsep=0.0em, 			%  상단의 여유치
+						partopsep=0.0em, 		%  
+						parsep=0.0em, 
+						itemsep=0.0em, 
+						labelwidth=1em, 
+						leftmargin=2.5em,
+						labelsep=2em,			%  본문에서 라벨 까지의 거리
+						rightmargin=0em,		% 오른쪽 여백  - 4em
+						itemindent=0em, 		% 점 내민 거리 label sep 과 같은면 점위치 까지 내민다
+						listparindent=0em,		% 본문 드려쓰기 간격
+						}
+
+			\setlist[description]	{ 
+							topsep=0.0em, 			%  상단의 여유치
+							partopsep=0.0em, 		%  
+							parsep=0.0em, 
+							itemsep=0.0em, 
+							labelwidth=1em, 
+							leftmargin=2em,
+							labelsep=1em,			%  본문에서 라벨 까지의 거리
+							rightmargin=0em,		% 오른쪽 여백  - 4em
+							itemindent=0em, 		% 점 내민 거리 label sep 과 같은면 점위치 까지 내민다
+							listparindent=0em,		% 본문 드려쓰기 간격
+							}
+
+	%	-------------------------------------------------------------------------------
+	%		Label
+	%	-------------------------------------------------------------------------------
+		\renewcommand{\labelitemi}{$\bullet$}
+		\renewcommand{\labelitemii}{$\cdot$}
+		\renewcommand{\labelitemiii}{$\diamond$}
+		\renewcommand{\labelitemiv}{$\ast$}		
+
+
+
+
+		% --------------------------------- recommend  글자 색깔지정 명령
+		\newcommand{\red}		{\color{red}}			% 글자 색깔 지정
+		\newcommand{\blue}		{\color{blue}}		% 글자 색깔 지정
+		\newcommand{\black}	{\color{black}}		% 글자 색깔 지정
+		\newcommand{\superscript}[1]{${}^{#1}$}
+
+	
+	
+		% --------------------------------- 환경 정의 : 박스 치고 안의 글자 빨간색
+
+			\newenvironment{BoxRedText}
+			{ 	\setlength{\fboxsep}{12pt}
+				\begin{boxedminipage}[c]{1.0\linewidth}
+				\color{red}
+			}
+			{ 	\end{boxedminipage} 
+				\color{black}
+			}
+			
+			
+			
+		% --------------------------------- 예제를 위한 정의 
+
+
+			\newenvironment{ex-001}{\textbf{연습문제}\begin{itshape}} {\end{itshape}}
+
+			\newenvironment{env_ex-002}
+			{ 	\setlength{\fboxsep}{12pt}
+				\begin{boxedminipage}[c]{1.0\linewidth}
+				\color{red}
+			}
+			{ 	\end{boxedminipage} 
+				\color{black}
+			}
+
+			
+
+% ------------------------------------------------------------------------------
+% Begin document (Content goes below)
+% ------------------------------------------------------------------------------
+	\begin{document}
+	
+		% ----------------------- 장 목차 생성 Initialization
+			\noptcrule 	% part toc에서 줄이 침범하는 에러가 나서 줄긋기를 중지 시킴			
+			\dominitoc 		
+			\doparttoc
+			\dopartlof
+			\dopartlot
+			
+			
+
+	% 	--------------------------------------------------------- Title Page  Begin [ 약표제지 ]
+		\begin{titlepage}
+			\centering
+			\null
+			\vspace{2cm}
+			{사용설명서 \huge\bfseries \LaTeX 김대희} \par
+			\titlepic{\includegraphics[width=4cm]{./fig/pic_symark.pdf}} 
+			
+		\end{titlepage}
+		\newpage
+		\thispagestyle{empty}
+	
+	
+	% 	--------------------------------------------------------- Title Page [ 표제지 ]
+		\clearpage
+		\begin{titlepage}
+			\centering
+			\null
+			\vspace{2cm}
+			{사용설명서 \huge\bfseries \LaTeX 김대희} \par
+			\vspace{2cm}
+			{\Large 김대희\par}
+			\vfill
+			% Bottom of the page
+			{\large 2016.8.15 \par}
+			\vspace{2cm}
+		\end{titlepage}
+		\newpage
+		\thispagestyle{empty}
+
+
+
+		\title{\LaTeX 김대희}
+		\author{김대희}
+		\date{\today}
+		\titlepic{\includegraphics[width=4cm]{./fig/pic_symark.pdf}} 
+		\maketitle
+
+
+		\newpage
+		\singlespace
+		\tableofcontents
+		\doublespace
+		
+		\newpage
+		\listoffigures
+		
+		\newpage
+		\listoftables
+
+
+			
+
+
+
+% 	==============================================================================  style
+
+
+		\mdfdefinestyle	{code_document} {
+						outerlinewidth		=1pt			,%
+						innerlinewidth		=2pt			,%
+						outerlinecolor		=blue!70!black	,%
+						innerlinecolor		=white 			,%
+						roundcorner			=4pt			,%
+						skipabove			=1.0em 			,%
+						skipbelow			=1.0em 			,%
+						leftmargin			=0em			,%
+						rightmargin			=0em			,%
+						innertopmargin		=1em 			,%
+						innerbottommargin 	=1em 			,%
+						innerleftmargin		=1em 			,%
+						innerrightmargin	=1em 			,%
+						backgroundcolor		=gray!4			,%
+						frametitlerule		=true 			,%
+						frametitlerulecolor	=white			,%
+						frametitlebackgroundcolor=gray		,%
+						frametitleaboveskip=0.4em 			,%
+						frametitlebelowskip=0.4em 			,%
+						frametitlefontcolor=white 			,%
+						}
+
+
+
+
+%	=========================================================================================================================================== part 사용하기전 기본 사항
+	\addtocontents{toc} {\protect\newpage}
+	\part{사용하기전 기본 사항}
+
+			\parttoc
+	%		\partlof
+	%		\partlot
+				
+	
+
+
+
+
+% 	====================================================================================================================== chapter
+	\chapter{사용하기 전 }
+	\minitoc				% Creating an actual minitoc
+
+
+	\clearpage
+% 	---------------------------------------------------------------------------------------------------------------------- section
+	\section{한글 사용}
+
+	
+	LaTaX은 서유럽 언어를 중심으로 만들어졌기 때문에 한글을 구현하기 위해서는 파일과 명령어를 추가해야 한다.
+
+	ko.Tex는 Unicode/UTF-8인코딩과 EUC-KR을 모두 지원하나 
+	원칙적으로 향후 발전 방향은 Unicode로 합의 되었으므로 Unicode/UTF-8 인코딜만을 다룬다.
+	
+	
+	
+	
+	
+% --------------------------------------- section --------------
+\newpage
+\section{pdf 북마크 기능 사용}
+\null
+
+		
+	\paragraph{pdf에서 북마크 기능을 사용하려면}
+	pdf에서 북마크 기능을 사용하려면 다음의 명령어를 프리앰블에 추가해야 한다.\\
+	\verb|\usepackage{kotex}| \\
+	\verb|\usepackage[unicode]{hyperref}| 
+
+% --------------------------------------- section --------------
+\newpage
+\section{치수 단위}
+\null
+
+		\begin{table}[hbp]
+		\caption{치수}
+		\centering
+		\begin{tabular}{l  l  l }
+		\toprule
+		명령어 & 결과 \\
+		\toprule
+		pt		& \tiny결과 &\normalsize{결과}\\
+		pc		& \scriptsize{결과} \\
+		in  		& \footnotesize{결과} \\
+		bp 		& \small{결과} \\
+		cm  	& \normalsize{결과} \\
+		mm  	& \large{결과} \\
+		dd 		& \Large{결과} \\
+		cc 		& \LARGE{결과} \\
+		sp 		& \huge{결과} \\
+		\bottomrule
+		\end{tabular}%
+		\end{table}%
+
+
+
+		\begin{table}[h!]
+		\begin{tabularx}{1.0\textwidth}{ r X }
+		\toprule
+		Abbreviation				&Definition \\
+		\midrule
+		pt						&A point, is the default length unit. About 0.3515mm \\
+		mm						&a millimetre \\
+		cm 						&a centimetre \\
+		in						&an inch \\
+		ex						&the height of an x in the current font \\
+		em						&the width of an m in the current font \\
+		\textbackslash columnsep	&distance between columns \\
+		\textbackslash columnwidth	&width of the column \\
+		\textbackslash linewidth	&width of the line in the current environment \\
+		\textbackslash paperwidth	&width of the page \\
+		\textbackslash paperheight	&height of the page \\
+		\textbackslash textwidth	&width of the text \\
+		\textbackslash textheight	&height of the text \\
+		\textbackslash unitleght	&units of length in the picture environment. \\
+		\bottomrule
+		\end{tabularx}
+		\end{table}
+
+
+
+
+
+
+
+% --------------------------------------- section --------------
+\newpage
+\section{문서의 종류}
+\null
+
+	\begin{itemize}
+		\item 	article
+		\item 	report
+		\item 	book
+		\item 	letter
+		\item 	beamer
+		\item 	amsart : 간단한 수학문서
+		\item 	amsbook : 수학책
+		\item 	minimal
+		\item 	slides
+		\item 	standalone
+	\end{itemize}
+
+
+
+% 	======================================================================================================================  문서의 장절구분
+	\chapter{문서의 장절 구분}
+
+
+
+	% --------------------------------------- section --------------
+	\newpage
+	\section{장과 절에 번호 붙이기}
+	\null
+
+
+	\begin{itemize}
+	\item	번호를 사용하는 방법
+			\begin{framed}
+			\verb|\setcounter{secnumdepth}{2}|
+			\end{framed}
+
+	\item	이름을 사용하는 방법
+			\begin{framed}
+			\verb|\setcounter{secnumdepth}{subsection}|
+			\end{framed}
+	\end{itemize}
+
+
+
+
+		% -------------------------------------- page -------------------
+			\subsection{문서의 장절 구분 레벨}
+	
+			\begin{table}[hbp]
+			\centering 
+			\begin{tabular}{ p{0.4\textwidth} p{0.2\textwidth} p{0.3\textwidth} }
+			\toprule
+			Command				&Level	&Comment\\
+			\midrule
+			\verb|\part|				&-1	&not in letters\\
+			\verb|\chapter|			&0		&only books and reports\\
+			\verb|\section|			&1		&not in letters\\
+			\verb|\subsection|		&2		&not in letters\\
+			\verb|\subsubsection|	&3		&not in letters\\
+			\verb|\paragraph|		&4		&not in letters\\
+			\verb|\subparagraph|		&5		&not in letters\\
+			\bottomrule
+			\end{tabular} 
+			\end{table}
+	
+	
+			\subsection{sec num depth}
+	
+	
+	
+			\subsection{toc depth}
+	
+	
+	
+	
+		\newpage  \null
+		% -------------------------------------- page -------------------
+			\subsection{Section number Style}
+			
+			각 카운터는 기본 형식이 있습니다. 이러한 형식은 내부 LaTeX의 명령을 사용하여 지정됩니다.
+			
+			\begin{table}[hbp]
+			\centering 
+			\begin{tabular}{ p{0.4\textwidth} p{0.5\textwidth} }
+			\toprule
+			command	&Example\\
+			\midrule
+			\verb|\arabic|	&1, 2, 3 ...\\
+			\verb|\alph|	 	&a, b, c ...\\
+			\verb|\Alph|		&A, B, C ...\\
+			\verb|\roman|	&i, ii, iii ...\\
+			\verb|\Roman|	&I, II, III ...\\
+			\verb|\fnsymbol|	&Aimed at footnotes; prints a sequence of symbols.\\
+			\bottomrule
+			\end{tabular} 
+			\end{table}
+
+
+
+
+
+
+			
+			\newpage  \null
+		% -------------------------------------- page -------------------
+			\subsection{5. Hyperlinks to content}
+	
+	
+
+
+
+% 	======================================================================================================================  문서의 구성
+	\newpage
+	\chapter{\TeX 문서 구성}
+
+
+	% -------------------------------------- page -------------------
+		\minitoc				% Creating an actual minitoc
+		\doublespace
+
+
+
+
+
+	% --------------------------------------- section --------------
+	\newpage 
+	\section{\TeX 문서의 구성}
+	\null
+	
+			\TeX의 문서 구성은 
+			\begin{itemize}
+			\item 프리 앰블
+			\item document
+			\end{itemize}
+			 로 구성된다.
+	
+	% --------------------------------------- section --------------
+	\newpage
+	\section{프리 앰블}
+	\null
+	
+			프리앰블은 본문의 시작을 지시하는 \verb|\begin{document}|이전까지 
+			문서 전체의 형식을 지정하는 부분이다.
+		
+	% --------------------------------------- section --------------
+	\newpage
+	\section{document}
+	\null
+	
+	
+	
+	% --------------------------------------- section --------------
+	\newpage
+	\section{package}
+	\null
+	
+			기본적인 패키지는 이미 설치되었을 것이지만, 직접 설치해야 하는 패키지가 있다. 
+		
+			가장 간단한 방법은 패키지를 사용하는 문서가 있는 폴더에 패키지 파일를 같이 두는 것이다.
+		
+			\paragraph{모든문서에서 사용하려면}
+			모든문서에서 사용하려면 
+			원하는 패키지를 다운받아 내장된 패키지 관리 유틸리티인 tlmgr을 사용하면된다.
+		
+			\paragraph{직접 설치하려면}
+			직접 설치하고 싶다면 
+			\verb|C:\user\texlive\2011\texmf-dist\tex\latex| 폴더 아래에하위 폴더를 만들면 된다.
+
+
+
+
+%	=========================================================================================================================================== part 표지  목차 초록 찾아보기
+	\addtocontents{toc} {\protect\newpage}
+	\part{표지 목차 초록 찾아보기 }
+	
+			\parttoc
+	%		\partlof
+	%		\partlot
+
+
+
+
+% 	====================================================================================================================== chapter  표지 제목 작성
+	\chapter{표지 제목 작성}
+
+	% -------------------------------------- page -------------------
+		\minitoc				% Creating an actual minitoc
+		\doublespace
+
+
+
+	% --------------------------------------- section -------------- 
+	\newpage  \null
+	\section{제목, 저자, 작성일 작성}
+		
+		\begin{framed}
+		\verb|\title{문서제목}| \\
+		\verb|\author{저자}| \\
+		\verb|\date{작성일, 별도 지정하지 않을 경우 컴파일한 날짜가 자동 생성됨}| \\
+		\verb|\maketlitle|
+		\end{framed}
+	
+	
+	
+	
+	
+	% --------------------------------------- section -------------- 
+	\newpage  \null
+	\section{표지에 그림 삽입 (titlepic)}
+	
+		\paragraph{패키지의 설치}
+			표지에 그림을 삽입하려면 아래 두개의 패키지를 먼저 설치해야 한다.
+			\begin{framed}
+			\verb|\usepackage[cc]{titlepic}| \\
+			\verb|\usepackage{graphicx}}|
+			\end{framed}
+	
+		\paragraph{그림 삽입}
+			본문에 titlepic명령 삽입
+			\begin{leftbar}
+			\verb|\title{문서제목}| \\
+			\verb|\author{저자}| \\
+			\verb|\date{작성일}| \\
+			\verb|\titlepic{\includegraphics[width=2cm]{0000.png}}| \\
+			\null \\
+			\verb|\maketlitle|
+			\end{leftbar}
+
+
+
+% 	====================================================================================================================== chapter  초록
+	\chapter{초록}
+
+	% -------------------------------------- page -------------------
+		\minitoc				% Creating an actual minitoc
+		\doublespace
+	
+		
+	% --------------------------------------- section -------------- 
+	\newpage  \null
+	\section{초록 작성}
+	
+	
+	
+	
+	
+	
+% 	====================================================================================================================== chapter  목차
+	\chapter{목차}
+
+	% -------------------------------------- page -------------------
+		\minitoc				% Creating an actual minitoc
+		\doublespace
+
+
+	
+	
+	% --------------------------------------- section -------------- 
+	\newpage  \null
+	\section{목차 작성}
+
+			\begin{itemize}[topsep=0.0em, parsep=0.0em, itemsep=0em, leftmargin=6.0em, labelwidth=3em, labelsep=3em] 
+			\item 	LaTeX에서는 아주 쉽게 목차를 만들 수 있다.
+			\item 	다음의 영령어는 각각 본문 목차, 그림목차, 표목차를 생성하는 명령어이다. \\
+					\textbf{본문} 목차 : \textbackslash tableofcontents \\
+					\textbf{그림} 목차 : \textbackslash listoffigures \\
+					\textbf{표} 목차 	: \textbackslash listoftables 
+			\item 	\textbackslash maketitle 명령어 다음에 위의 명령어를 입력하고 두번 컴파일링 하면 된다.
+			
+			
+			\end{itemize}
+	
+	
+		\paragraph{□  목차의 작성} \tab
+			\begin{framed}
+			toc : \verb|\table of contents| \\
+			lof : \verb|\list of figures| \\
+			lot : \verb|\list of tables|
+			\end{framed} 
+
+
+
+	% --------------------------------------- section -------------- 
+	\newpage  \null
+	\section{본문 목차 \textbackslash table of contents}
+
+
+	
+	% --------------------------------------- section -------------- 
+	\newpage  \null
+	\section{그림 목차 \textbackslash list of figures}
+
+
+	% --------------------------------------- section -------------- 
+	\newpage  \null
+	\section{표 목차 \textbackslash list of tables}
+
+
+
+	% --------------------------------------- section -------------- 
+	\newpage  \null
+	\section{목차 작성의 범위 설정 \textbackslash setcounter }
+	
+		\subsection{□  목차 작성의 범위 설정}
+			\begin{framed}
+			\verb|\set counter { toc depth } { level } | 
+			\end{framed}
+			
+			\vskip 4em
+	
+		\subsection{□  목차에서 목차 번호 설정 깊이 level }
+			\begin{framed}
+			\verb|\set counter { sec num depth } { n }| 
+			\end{framed}
+
+		%		\tabulinesep=0.6ex
+				\begin{tabu} to 1.0\textwidth { X[r, 1.0] X[r, 1.0] X[c, 1.0]}
+				\tabucline[0.2ex]{-}		
+				부 		&part 			&-1 \\
+				장 		&chapter 			&0 \\
+				절 		&section 			&1 \\
+				소절 	&subsection 		&2 \\
+				소소절 	&subsubsection	&3 \\
+				문단 	&paragraph 		&4 \\
+				소문단 	&subparagraph 	&5 \\
+				\tabucline[0.1ex]{-}		
+				\end{tabu} 
+
+
+	% --------------------------------------- section -------------- 
+	\newpage  \null
+	\section{목차에서 페이지 나누기  \textbackslash addtocontents }
+
+
+		split the table of contents in two pages \\
+		목차가 긴 경우 페이지를 나누어 줄려고 하는 경우
+	
+		\paragraph{□  목차에서 페이지 나누기} \tab
+			\begin{framed}
+			\verb|\add to contents { toc } { \protect \newpage }| 
+			\end{framed}
+
+
+
+
+	
+		\newpage  \null
+	% -------------------------------------- page -------------------
+		
+			\include{./tex/minitoc}
+	
+			\cleardoublepage
+			\includepdf[pages=-, fitpaper=true]{./doc/minitoc.pdf}	
+
+
+
+% 	====================================================================================================================== chapter  찾아보기
+	\chapter{찾아보기}
+
+	% -------------------------------------- page -------------------
+		\minitoc				% Creating an actual minitoc
+		\doublespace
+	
+
+
+	% --------------------------------------- section -------------- 
+	\newpage  \null
+	\section{찾아보기 작성}
+	
+		
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+
+
+
+
+
+
+%	=========================================================================================================================================== part 편집용지의 구성
+	\addtocontents{toc} {\protect\newpage}
+	\part{ Page Layout}
+	
+			\parttoc
+	%		\partlof
+	%		\partlot
+	
+	\include{./tex/part_005}
+	
+	
+	
+
+
+% 	====================================================================================================================== chapter  면주
+	\chapter{면주}
+
+
+	% --------------------------------------- section --------------
+	\newpage
+	\section{상단면주와 하단면주}
+	
+	
+	
+	
+	% --------------------------------------- section --------------
+	\newpage
+	\section{면주까지의 거리}
+	
+	
+	
+	% --------------------------------------- section --------------
+	\newpage
+	\section{면주의 범위와 괘선}
+	
+	
+	% --------------------------------------- section --------------
+	\newpage
+	\section{면주의 내용}
+			
+			면주에 페이지번호 즉 변번호는 반드시 들어가야 한다.
+	
+			그리고 면번호이외에 면색인이 포함되는 경우가 많다.
+	
+			면주 표제에 무슨 내용을 넣어야 할 것인가?
+	
+			\begin{enumerate}
+			\item 	책 이름이나 문서 전체의 제목은 넣지 않는 것이 좋다. \\
+					왜냐하면 면주가 ‘색인’의 기능을 하고 있다 할 때 처음부터 끝까지 
+					동일한 내용이 적혀 있다면 이것은 색인으로서의 기능이 없는 것이나 다름없기 때문이다.
+			\item 	왼쪽면의 좀더 고정적인 것 \\
+					왼쪽면에는 조금 더 고정적인 요소를 
+					오른쪽면에는 조금 더 세분된 요소를 표시하는 것이 일반적이다. 
+					즉 편-장 체제라면 왼쪽면에는 편표제 오른쪽면에 장표제를 싣고 
+					장-절 체제라면 왼쪽면에 장표제 오른쪽면에 절표제를 싣는다.
+			\item 	면번호를 판면의 바깥쪽에 찍는다. \\
+					그렇게 하는 이유는 색인으로서의 면번호가 페이지를 완전히 펴지 않은 상태에서도 
+					찾아볼 수 있게 하기 위함이다. \\
+					안쪽에 페이지 번호를 두는 것은 좋지 않다.
+			\item 	면번호와 면색인은 서로 독립적으로 취급하여도 좋다. \\
+					우리나라 출판물에서 많이 취하고 있는 방법은 왼쪽면에는 왼쪽끝에 면번호를 두고 
+					약간의 간격과 면색인을 적은 다음 왼쪽면의 오른쪽끝은 비우는 것이고 
+					오른쪽면은 왼쪽끝을 비우고 오른쪽 끝에 면 색인과 면번호를 차례로 두는 방법이다. \\
+					필요하다면 면색인을 가운데 두어도 좋겠지만 
+					이것은 좌우 페이지 구분이 불필요할 때 사용할 수 있다.
+			\item 	면색인의 길이는 행장의 반을 넘지 않는 것이 좋다. \\
+					만약 표제행이 길다면 적당한 위치에서 줄인다.
+			\end{enumerate}
+	
+					위의 4번은 영문 책의 경우와 관행에 차이가 있다. \\
+					예컨대 라텍 표준 book 클래스의 기본값인 headings 페이지 스타일은 
+					면번호를 바깥쪽에 두는 것은 동일하지만 면색인은 그 페이지의 면번호 반대편에 둔다.
+	
+	% --------------------------------------- section --------------
+	\newpage  \null
+	\section{면주의 서체와 크기}
+	
+	
+	% --------------------------------------- section --------------
+	\newpage  \null
+	\section{면주와 면번호 붙이기}
+
+
+% --------------------------------------- section -------------- 주석문
+\newpage \null
+\section{주석문}
+
+
+
+	% -------------------------------------- page -------------------
+	\newpage  \null
+	\section{페이지 구성 예}
+	
+		\singlespacing
+		\setlength{\fboxsep}{12pt}
+		\begin{boxedminipage}[c]{1.0\linewidth}
+			\begin{verbatim}
+				% --------------------------------- 페이지 스타일 지정
+				\usepackage{fancyhdr}
+				\pagestyle{fancy}
+				
+				\fancyhead{} % clear all fields
+				\fancyhead[LO]{\small \leftmark}
+				\fancyhead[RE]{\small \leftmark}
+				
+				\fancyfoot{} % clear all fields
+				\fancyfoot[LE,RO]{\large \thepage}
+				%\fancyfoot[CO,CE]{\empty}
+				
+				\renewcommand{\headrulewidth}{0.4pt}
+				\renewcommand{\footrulewidth}{0.4pt}
+			\end{verbatim} 
+		\end{boxedminipage}
+		\doublespacing
+	
+	
+
+
+
+
+		
+% 	====================================================================================================================== chapter  페이지 형식
+	\chapter{페이지 형식}
+
+	% -------------------------------------- page -------------------
+		\minitoc				% Creating an actual minitoc
+
+	% --------------------------------------- section --------------
+	\newpage  \null
+	\section{다단 편집}
+	\null
+	
+			\begin{itemize}
+			\item one column
+			\item two column
+			\end{itemize}
+	
+	% --------------------------------------- section --------------
+	\newpage  \null
+	\section{양면 인쇄}
+	\null
+	
+			\begin{itemize}
+			\item one side
+			\item two side
+			\end{itemize}
+
+	% --------------------------------------- section --------------
+	\newpage  \null
+	\section{첫페이지 위치}
+	\null
+	
+			\begin{itemize}
+			\item open any
+			\item open right
+			\end{itemize}
+	
+	% --------------------------------------- section --------------
+	\newpage  \null
+	\section{표지 인쇄}
+	\null
+	
+			\begin{itemize}
+			\item no title page
+			\item title page
+			\end{itemize}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			
+			
+% 	====================================================================================================================== chapter  본문 작성
+	\chapter{본문 작성}
+					
+	% -------------------------------------- page -------------------
+		\minitoc				% Creating an actual minitoc
+		\doublespace
+
+
+
+
+					
+	% --------------------------------------- section -------------- 
+	\newpage
+	\section{장, 절의 설정}
+					
+
+		장, 절을 작성하기 위한 명령어는 다음과 같다.\\
+		단 \verb|\chapter|명령어는 ariticle 클래스에서 사용할 수 없다.\\
+		일반적으로 논문에서는 소소절(\verb|\subsubsection|)까지 쓴다.\\
+
+		\verb|\part [목차에 나타날 부 제목] {부 제목 }|\\
+		\verb|\chapter [목차에 나타날 부 제목] {부 제목 }|\\
+		\verb|\section [목차에 나타날 부 제목] {부 제목 }|\\
+		\verb|\subsection [목차에 나타날 부 제목] {부 제목 }|\\
+		\verb|\subsubsection [목차에 나타날 부 제목] {부 제목 }|\\
+		\verb|\paragraph [목차에 나타날 부 제목] {부 제목 }|\\
+		\verb|\subparagraph [목차에 나타날 부 제목] {부 제목 }|\\
+
+
+	% --------------------------------------- section -------------- 
+	\newpage
+	\section{목차에서의 장, 절의 표시}
+
+
+		\subsection{목차에서의 장, 절의 표시}
+
+			\verb|\setcounter{tocdepth}{3}|\\
+
+
+
+		\subsection{본문에서의 장, 절의 표시}
+
+			\verb|\setcounter{secnumdepth}{3}|\\
+	
+	
+			\begin{table}[hbp]
+			\caption{장, 절 수준 및 번호}
+			\centering 
+
+%			\begin{tabular}{ p{0.2\textwidth} p{0.2\textwidth} p{0.2\textwidth} }
+%			\toprule
+%			부 		&(part)			& -1\\
+%			장 		&(chapter)		& 0\\
+%			절 		&(section)		& 0\\
+%			소절 	&(subsection)	& 0\\
+%			소소절 	&subsubsection)	& 0\\
+%			문단 	&(paragraph)	& 0\\
+%			소문단 	&(subpargraph)	& 0\\
+%			\bottomrule
+%			\end{tabular} 
+
+			\end{table}
+
+		\newpage  \null
+		\subsection{장, 절  번호의  표시 제어}
+	
+			또 숫자를 붙이고 싶지 않지만, 장이나 절 처럼 사용하고 싶다면 *를 붙이면 된다.\\
+
+			\verb|\chapter*{ 장 제목}|\\
+
+			이 명령어는 다른 경우, 예를 들어 수식에도 똑같이 작용될수 있다.\\
+
+			\verb|\section*{}}| 을 이용하면 section number가 사라진다.		
+			하지만 subsection과 이후 section에 까지 numbering 에 영향을 미치므로, 
+			그냥 section number를 숨기고 싶은 의도라면 \verb|\addtocounter{section}{1}| 를 
+			한줄 추가해주면 된다.
+
+			결론 :\\
+			\verb|\section*{Problem 1}|\\
+			\verb|{\addtocounter{section}{1}|
+
+
+	% --------------------------------------- section -------------- 
+	\newpage
+	\section{chapter and section}
+
+
+
+	% --------------------------------------- section -------------- 
+	\newpage 
+	\section{Customize chapters and sections}
+
+
+		당신은 titlesec package를 사용하여 
+		쉽게 장, 절 및 하위 섹션 스타일의 사용자 정의를 할 수 있다.\\
+		
+		\setlength{\fboxsep}{12pt}
+		\begin{boxedminipage}[c]{1.0\linewidth}
+		\small  \singlespace
+		\begin{verbatim}
+\documentclass[a4paper,12pt]{book}
+\usepackage{titlesec}
+ 
+\titleformat  {\chapter} % command
+              [display]    % shape
+              {\bfseries\Large\itshape} % format
+              {Story No. \ \thechapter} % label
+              {0.5ex} % sep
+              {   \rule{\textwidth}{1pt}
+                   \vspace{1ex}
+                   \centering
+              } % before-code
+              [  \vspace{-0.5ex}%
+                  \rule{\textwidth}{0.3pt}
+              ] % after-code
+ 
+\titleformat  {\section}[wrap]
+              {\normalfont\bfseries}
+              {\thesection.}{0.5em}{}
+ 
+\titlespacing{\section}{12pc}{1.5ex plus .1ex minus .2ex}{1pc}
+
+\begin{document}
+  \chapter{Let's begin}
+     \section{First Attempt}
+                  Lorem ipsum dolor sit amet, 
+    \section{Second attempt}
+                  Lorem ipsum dolor sit amet, 
+ \end{document}
+		\end{verbatim}
+		\end{boxedminipage}
+		\doublespace \normalsize
+
+
+		\newpage   \null
+	% -------------------------------------- page -------------------
+		\subsection{title format }
+
+		\setlength{\fboxsep}{12pt}
+		\begin{boxedminipage}[c]{1.0\linewidth}
+		\small  \singlespace
+		\begin{verbatim}
+\titleformat{<command>}
+            [<shape>]
+           {<format>}
+           {<label>}
+           {<sep>}
+           {<before-code>}
+           [<after-code>]
+		\end{verbatim}
+		\end{boxedminipage}
+		\doublespace \normalsize
+
+		\begin{itemize}[itemsep=0.0em]
+		\item	$<$command$>$는 명령을 재정의 하는것이다.\\
+				\verb|\part, \chapter, \section, \subsection, \subsubsection,|
+				\verb|\paragraph| or \verb|\subparagraph.|
+		\item	$<$shape$>$는 단락 모양을 정의 한다.\\
+				possible values are: hang, block, display, runin, leftmargin, rightmargin, drop, wrap, frame.
+		\item	$<$forma$>$
+				$<$forma$>$은 형식을 적용한다.\\
+				for example \verb|\normalfont\Large\bfseries|\\
+				font : rm sf tt md bf up it sl sc\\
+				size : big medium small tiny\\
+				align : raggedleft center raggedright
+		\item	$<$label$>$ specify sectioning label.
+		\item	$<$sep$>$\\
+				$<$sep$>$ is the horizontal separation between label and title body \\
+				and it must be a length and not be empty.
+		\item	$<$before-code$>$is code preceding the title body.
+		\item	$<$after-code$>$ is code following the title body.
+		\end{itemize}
+
+
+		\newpage   \null
+	% -------------------------------------- page -------------------
+		\subsection{title format - shape}
+
+
+			\begin{itemize}[itemsep=0.0em]
+			\item	hang\\
+					hang is the default value, with a hanging label. (Like the standard \verb|\section|.)
+			\item	block\\
+					블록은 추가 서식없이 블록(단락)의 전체 제목을 식자. 
+					중심 타이틀과 특별한 ormatting에 유용한
+					(사진, pspicture 등과 같은 그래픽 도구를 포함)
+			\item	display\\
+					display는 별도의 단락에 라벨을 넣습니다\\
+					 (Like the standard \verb|\chapter|.)
+			\item	runin\\
+					runin은 삽입된 타이틀이다 \\
+					(Like the standard \verb|\paragraph|.)
+			\item	leftmargin\\
+					leftmargin는 왼쪽 여백에서 제목을 넣습니다.
+					페이지의 맨 마지막에 있는 제목은 다음 단계로 이동합니다.
+					큰 제목 underfull 페이지로 이어질 수 있음을 의미 아래쪽 여백에 돌출되지 않습니다.\\
+					이 경우에는 사용자가 페이지 요소의 신축성을 증가시킬 수있다,.
+					\verb|\raggedbottom|를 사용하거나 후술하는 패키지 nobottomtitles 옵션을 사용한다.\\
+					사용 된기구는 마진 동위와는 독립적이기 때문에, 그들은 겹칠 수있다. 
+					사용되지 않는 동의어는 여백입니다.
+			\item	rightmargin\\
+					rightmargin is like leftmargin but at the right margin.
+			\item	drop\\
+					drop wraps the text around the title, provided the first paragraph is longer than the title (if not, they overlap). 
+					The comments in leftmargin also apply here.
+			\item	wrap\\
+					wrap is quite similar to drop. 
+					The only difference is while the space reserved in drop for the title is fixed, in wrap is automatically readjusted to the longest line. The limitations explained below related to calcwidth also apply here.
+			\item	frame\\
+					frame Similar to display, but the title will be framed
+			\end{itemize}
+
+
+
+		\newpage   \null
+	% -------------------------------------- page -------------------
+		\subsection{title spacing }
+
+		\setlength{\fboxsep}{12pt}
+		\begin{boxedminipage}[c]{1.0\linewidth}
+		\small  \singlespace
+		\begin{verbatim}
+ \titlespacing{<command>}
+          {<left>}
+          {<before-sep>}
+          {<after-sep>}
+		\end{verbatim}
+		\end{boxedminipage}
+		\doublespace \normalsize\\
+
+
+		\begin{itemize}[itemsep=0.0em]
+		\item	$<$left$>$ increases the left margin.
+		\item	$<$before-sep$>$ is the vertical space before the title.
+		\item	$<$after-sep$>$ is the separation between title and non-sectioning text.
+		\end{itemize}
+
+
+	% --------------------------------------- section -------------- 
+	\newpage 
+	\section{chapters and sections 번호 }
+
+		\setlength{\fboxsep}{12pt}
+		\begin{boxedminipage}[c]{1.0\linewidth}
+		\small  \singlespace
+		\begin{verbatim}
+\documentclass{article}
+\usepackage{titlesec}
+\setcounter{secnumdepth}{4}
+
+\titleformat{\paragraph}  # 명령
+           {\normalfont\normalsize\bfseries}  % 형태
+           {\theparagraph}{1em}{}                 % 라벨
+
+\titlespacing*{\paragraph}
+           {0pt}
+           {3.25ex plus 1ex minus .2ex}
+           {1.5ex plus .2ex}
+
+\begin{document}
+
+\section{Test Section} test
+\subsection{Test Subsection} test
+\subsubsection{Test Subsubsection} test
+\paragraph{Test Modified Paragraph} test
+
+\end{document}
+		\end{verbatim}
+		\end{boxedminipage}
+		\doublespace \normalsize\\
+
+
+	% --------------------------------------- section -------------- 
+	\newpage  \null
+	\section{본문}
+
+
+
+	% --------------------------------------- section -------------- 
+	\newpage  \null
+	\section{각주}
+
+
+		\setlength{\fboxsep}{12pt}
+		\begin{boxedminipage}[c]{1.0\linewidth}
+			\verb|\footnote {각주 내용 }|
+		\end{boxedminipage}
+
+
+
+
+	% --------------------------------------- section -------------- 
+	\newpage  \null
+	\section{난외주}
+
+		\setlength{\fboxsep}{12pt}
+		\begin{boxedminipage}[c]{1.0\linewidth}
+			\verb|\marginpar {난외주 내용}|
+		\end{boxedminipage}
+
+
+
+
+	% --------------------------------------- section -------------- 
+	\newpage  \null
+	\section{인용}
+
+		\setlength{\fboxsep}{12pt}
+		\begin{boxedminipage}[c]{1.0\linewidth}
+			\verb|\begin { quote }|\\
+			( 인용문 내용 )\\
+			\verb|\end { quote }|
+		\end{boxedminipage}
+
+
+
+	% --------------------------------------- section -------------- 
+	\newpage  \null
+	\section{참고문헌, 표, 그림 넣기}
+
+
+	% --------------------------------------- section -------------- 
+	\newpage  \null
+	\section{상호 참조}
+
+
+	% --------------------------------------- section -------------- 
+	\newpage  \null
+	\section{프로그램 코드를 그대로 입력하기}
+
+		\setlength{\fboxsep}{12pt}
+		\begin{boxedminipage}[c]{1.0\linewidth}
+			\verb|\begin { verbatim }|\\
+			( 인용문 내용 )\\
+			\verb|\end { verbatim }|
+		\end{boxedminipage}
+
+
+	% --------------------------------------- section -------------- 
+	\newpage  \null
+	\section{각 장을 파일로 나누기}
+
+
+
+
+					
+
+					
+
+% ===========================================================	part		=============
+		\addtocontents{toc}{\protect\newpage}
+		\part{List - 개조식 문서 작성}
+
+		\parttoc
+	%	\partlof
+	%	\partlot
+
+
+		\include{./tex/Part_000_list}
+
+
+
+
+%	================================================================================================================================= part 글자모양
+	\addtocontents{toc} {\protect\newpage}
+	
+			\part{글자 모양}
+			
+			\parttoc
+	%		\partlof
+	%		\partlot
+
+
+
+		\include{./tex/part_002}
+
+
+
+
+% 	====================================================================================================================== chapter  특수문자
+	\newpage
+	\chapter{특수문자}
+	
+	% -------------------------------------- page -------------------
+		\minitoc				% Creating an actual minitoc
+	
+
+		\include{./tex/specialCharacter}
+					
+
+
+
+%	=========================================================================================================================================== part 문서 편집
+	\addtocontents{toc} {\protect\newpage}
+	
+			\part{문서 편집}
+			\parttoc
+	%		\partlof
+	%		\partlot
+	
+
+
+% 	====================================================================================================================== chapter  입력
+	\newpage
+	\chapter{입력}
+
+	% -------------------------------------- page -------------------
+		\minitoc				% Creating an actual minitoc
+
+
+
+
+% 	====================================================================================================================== chapter  문단 모양
+	\chapter{문단모양}
+	\newpage
+
+
+		% -------------------------------------- page -------------------
+		\minitoc				% Creating an actual minitoc
+		\doublespace
+
+
+		% --------------------------------------- section --------------
+		\newpage
+		\section{문단모양}
+		
+		
+		% --------------------------------------- section --------------
+		\newpage
+		\section{문단 가로 정렬}
+			
+		
+		
+		% --------------------------------------- section --------------
+		\newpage  
+		\section{문단 간격 벌림}
+		
+				consider
+				\begin{itemize}[topsep=-1.0em, itemsep=-0.5em]
+				\item	\textbf{1) small skip}\\
+				\item	\textbf{2) med skip}\\
+				\item	\textbf{3) big skip}\\
+				\item	\textbf{4) v skip}\\
+				\item	\textbf{5) v fill}\\
+						이후에 정의 되는 문단을 페이지의 바닥까지 내린다.
+				\item	\textbf{6) 문서 전체의 문단 간격}\\
+						문서 전체의 문단 사이 간격은 \verb|\parskip|명령을 사용한다.
+				\end{itemize}
+		
+		
+		
+		% --------------------------------------- section --------------
+		\newpage
+		\section{문단 좌우 여백}
+		
+				일반적으로 문단 여백은 전체 문서에 대해서 설정된다.\\
+				본문의 일부에 대해서 여백을 바꾸거나 재설정해도 효과가 발생하지 않을 것이다.\\
+				만약 어떤 문단에 여백을 새로 조절하려면 다음과 같이 새로운 환경을 정의해서 써야 한다.
+		
+		
+		
+		
+		% --------------------------------------- section --------------
+		\newpage
+		\section{문단 들여쓰기}
+		
+		% --------------------------------------- section --------------
+		\newpage
+		\section{문단 테두리와 음영}
+		
+		
+		
+		
+		% --------------------------------------- section --------------
+		\newpage
+		\section{tabbing}
+		
+		
+				%-----------------------------------------------------	
+				\begin{tabbing}
+					\hspace{1cm}	\= AbiWord		\= A word processor\\[5pt]  	% 탭 정의 및 서술
+									\> Emacs		\> A text editor\\[5pt]
+									\> \TeX 			\> A typesetting program
+				\end{tabbing}
+				%-----------------------------------------------------	
+				\begin{tabbing}
+					\hspace{1cm}	\= AbiWord		\= A word processor\\
+									\> Emacs		\> A text editor\\
+									\> \TeX 			\> A typesetting program
+				\end{tabbing}
+				%-----------------------------------------------------	
+
+
+%	=========================================================================================================================================== part 문서 입력
+	\addtocontents{toc} {\protect\newpage}
+
+			\part{문서 입력}
+			
+			\parttoc
+	%		\partlof
+	%		\partlot
+
+
+
+% 	====================================================================================================================== chapter  문단 모양
+	\chapter{인용문}
+%	\newpage	
+	\minitoc
+	
+	
+	
+	
+	% --------------------------------------- section -------------- 
+		\newpage  \null
+		\section{인용문}
+	
+	
+		%		\tabulinesep=0.6ex
+				\begin{tabu} to 1.0\textwidth { X[c, 1.0] X[c, 1.0] }
+				\tabucline[0.2ex]{-}		
+				quote			&quotation		\\
+				첫줄 들여쓰시 안함	&첫줄 둘여쓰기 함	\\
+				\tabucline[0.1ex]{-}		
+				\end{tabu} 
+	
+	
+		
+		
+		
+	% --------------------------------------- section -------------- 
+		\clearpage  \null
+		\section{인용문 : Latex 에서 quotation 와 quote 의 차이. }
+
+				쓰다보면, 이 둘의 차이를 명확하게 알기 쉽지 않습니다. 
+				그래서 그냥 혼합해서 사용했었습니다. 
+				그런데 이 둘 사이에 들여쓰기와 줄간격이 조금 다르게 쓰이는 것을 보고 조금 찾아 봤더니역시 있더군요. 내용을 대충 번역해봤습니다. 참고하세요.
+
+					\begin{itemize}[topsep=0.0em, parsep=0.0em, itemsep=0em, leftmargin=12.0em, labelwidth=3em, labelsep=3em] 
+					\item quote : 	짧은 인용문이나 작은 인용의 나열 모임 등을 위하여 사용한다. 
+									빈 줄로 분리한다  \\
+									(for a short quotation, or a series of small quotes, separated by blank lines.),
+					\item quotation: 	긴 인용문에 사용하는데, 특히 1단락 이상의 에서 사용한다. 
+									왜냐하면 이것은 그 각각의 단락의 앞부분을 들여쓰기 하기 때문이다  \\
+									(for use with longer quotations, of more than one paragraph, because it indents the first line of each paragraph).
+					\end{itemize}
+				출처: http://tex.stackexchange.com/questions/33219/whats-the-difference-between-the-environments-quote-and-quotation
+
+
+
+
+
+
+
+	% --------------------------------------- section -------------- 
+		\clearpage  \null
+		\section{quote}
+
+
+			\subsection{	quote에서 들여쓰기 제어}
+	
+				\textbackslash noindent
+
+	% --------------------------------------- section -------------- 
+		\clearpage  \null
+		\section{quotation}
+
+
+	% --------------------------------------- section -------------- 
+		\clearpage  \null
+		\section{verse}
+
+
+
+	% --------------------------------------- section -------------- 
+		\clearpage  \null
+		\section{quoting package}
+		
+		
+			\cleardoublepage
+			\includepdf[pages=-, fitpaper=true]{./doc/quoting.pdf}	
+		
+
+
+
+
+
+
+% 	====================================================================================================================== chapter  문단 모양
+	\chapter{프로그램 코드 입력}
+%	\newpage	
+	\minitoc
+		
+	% --------------------------------------- section -------------- 
+		\newpage  \null
+		\section{프로그램 코드를 그대로 입력하기}
+		
+				본문이나 부록에 자신이 작성한 프로그램 코드를 입력하고자 하는 경우가 있다.
+				이때는 verbatim 명령어를 사용한다.
+		
+				\subsection*{Syntax}
+				
+				\begin{lstlisting}
+				\begin{verbatim} ...\end{verbatim}
+				\begin{verbatim*} ... \end{verbatim*}
+				\end{lstlisting}
+				
+				
+				\begin{verbatim}
+					\ begin{verbatim}
+					{ 프로그림 코드 }
+					\ end{verbatim}
+				\end{verbatim}
+		
+			     	
+			     	Type: It is not hard to type \verb+\%+ \\
+				Get: It is not hard to type \% \\
+		
+				
+				\newpage
+				\textbf{vertim과 vertim*의 차이점}\\[-1.0em]
+				\begin{table}[h]
+					\begin{tabular}{ p{0.1\textwidth} p{0.7\textwidth}}
+					\toprule
+					verbatim&
+					\begin{verbatim}
+					Text enclosed inside \texttt{verbatim} environment 
+					is printed directly 
+					and all \LaTeX{} commands are ignored.
+					\end{verbatim}\\
+					vartim*&
+					\begin{verbatim*}
+					Text enclosed inside \texttt{verbatim} environment 
+					is printed directly 
+					and all \LaTeX{} commands are ignored.
+					\end{verbatim*}\\
+					\bottomrule
+					\end{tabular} 
+				\end{table}
+				
+				\newpage
+				
+				\textbf{verb 사용예}
+				\begin{table}[h]
+					\begin{tabular}{ p{0.1\textwidth} p{0.9\textwidth}}
+					\toprule
+					입력&
+					\begin{verbatim}
+						In the directory \verb|C:\Windows\system32| 
+						you can find a lot of Windows system applications. 
+					\end{verbatim}\\
+					출력&
+						In the directory \verb|C:\Windows\system32| 
+						you can find a lot of Windows system applications. \\
+					\bottomrule
+					\end{tabular} 
+				\end{table}
+				
+				\textbf{verb 사용예}
+				\begin{table}[h]
+					\begin{tabular}{ p{0.1\textwidth} p{0.9\textwidth}}
+					\toprule
+					입력&
+					\begin{verbatim}
+						The \verb+\ldots+ command produces \ldots
+					\end{verbatim}\\
+					\midrule
+					출력&
+					The \verb+\ldots+ command produces \ldots\\
+					\bottomrule
+					\end{tabular} 
+				\end{table}
+				
+
+
+
+
+% 	====================================================================================================================== chapter  하이퍼링크 삽입
+		\chapter{하이퍼 링크 삽입}
+				
+		 
+		
+%	=========================================================================================================================================== part  표
+	\addtocontents{toc} {\protect\newpage}
+	
+			\part{표}
+			
+			\parttoc
+	%		\partlof
+	%		\partlot
+	
+
+
+
+	% ----------------------------- include tex
+		
+		% chapter  :  표 일반
+		\include{./tex/Table_101}
+
+
+
+
+
+
+
+
+%	=========================================================================================================================================== part  그림
+	\addtocontents{toc} {\protect\newpage}
+	\part{그림}
+
+
+% 	====================================================================================================================== chapter  그림 입력
+
+		\chapter{그림 입력}
+ 
+ 
+ 
+% 	====================================================================================================================== chapter  선그리기
+		\chapter{선 그리기}
+		\verb|\rule|명령은 길이와 두께를 지정하여 선을 그릴 수 있다.
+	
+	
+	
+% 	====================================================================================================================== chapter  그림 넣기
+
+		\include{./tex/figure}
+
+
+% 	====================================================================================================================== chapter  다이아그램
+
+		\include{./tex/Diagram_101}
+
+
+% 	====================================================================================================================== chapter  Tex Project
+
+		\include{./tex/TexProjet}
+
+
+%	=========================================================================================================================================== part  수식
+	\addtocontents{toc} {\protect\newpage}
+	
+			\part{수식}
+			
+			\parttoc
+	%		\partlof
+	%		\partlot
+
+
+	% ----------------------------- include tex
+		
+		% chapter  :  수식 일반
+		\include{./tex/Math_201}
+
+	% ----------------------------- include tex
+		
+		% chapter  :  수식 심볼
+		\include{./tex/Math_202}
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+%	=========================================================================================================================================== part  박스와 미니페이지
+	\addtocontents{toc} {\protect\newpage}
+	
+			\part{box and minipage}
+			
+			\parttoc
+	%		\partlof
+	%		\partlot
+
+
+
+
+
+% 	====================================================================================================================== chapter  framed package
+	\chapter{framed package}
+%	\newpage	
+	\minitoc
+	
+	
+
+% 	--------------------------------------- section -------------- 글상자
+	\clearpage
+	\section{framed}
+	
+	
+		\subsection{□ 구문}
+			\begin{framed}
+				\verb|\usepackage{framed}|\\
+				\verb|\begin{framed}|\\
+				\verb|( 내   용 )|\\
+				\verb|\end{framed}|
+			\end{framed}
+		
+		
+
+		\clearpage
+		
+			\textbf{□ code}
+			\begin{verbatim}
+			\usepackage{framed}
+			\% ...
+			\begin{framed}
+			      This is an easy way to box text within a document!
+			\end{framed}
+			\end{verbatim}
+
+			\textbf{□ 결과}
+			\begin{framed}
+			This is an easy way to box text within a document!
+			\end{framed}
+
+			11 \begin{framed}
+			This is an easy way to box text within a document!
+			\end{framed}  22
+
+			\begin{framed}
+			This is an easy way to box text within a document!
+			This is an easy way to box text within a document!
+			This is an easy way to box text within a document!
+			This is an easy way to box text within a document!
+			This is an easy way to box text within a document!
+			\end{framed}
+		
+		
+	\clearpage
+		
+		
+			\setlength{\fboxsep}{4pt}
+			\setlength{\fboxrule}{5pt}
+			\begin{framed}
+			\textbf{건설공사 품질관리업무지침 \\ 제8조(품질시험기준) } \\ [-2em]
+			\begin{itemize}[topsep=0.0em, parsep=0.0em, itemsep=0.0em, leftmargin=3em, labelwidth=4em, labelsep=2em]
+			\item	[①] 건설공사의 종류별, 공종별 시험종목·방법 및 빈도 등 건설공사 품질시험기준은 별표 2와 같다.
+			\item	[②] 별표 2의 건설공사 품질시험기준에 명시되지 아니한 공종이나 자재에 대해서는 시방서 등 설계도서에 제시된 시험종목·방법 및 빈도에 따른다.
+			\end{itemize}
+			\end{framed}
+
+		
+
+			\begin{leftbar}	\begin{verbatim}	
+			\setlength{\fboxsep}{4pt}
+			\setlength{\fboxrule}{5pt}
+			\begin{framed}
+			\textbf{건설공사 품질관리업무지침 \\ 제8조(품질시험기준) } \\ [-3em]
+			\begin{itemize}[	topsep=0.0em, parsep=0.0em, itemsep=0.0em, 
+							leftmargin=6em, labelwidth=4em, labelsep=2em]
+			\item	[①] 건설공사의 종류별, 공종별 시험종목·방법 및 빈도 등 건설공사 품질시험기준은 별표 2와 같다.
+			\item	[②] 별표 2의 건설공사 품질시험기준에 명시되지 아니한 공종이나 자재에 대해서는 시방서 등 설계도서에 제시된 시험종목·방법 및 빈도에 따른다.
+			\end{itemize}
+			\end{framed}
+			\end{verbatim}	\end{leftbar} 
+		
+		
+		
+		
+	\clearpage
+% 	---------------------------------------------------------------------------------------------------------------------- section
+	\section{oframed}
+
+		\begin{oframed}
+			\verb|\usepackage{framed}|\\
+			\verb|\begin{oframed}|\\
+			\verb|( 내   용 )|\\
+			\verb|\end{oframed}|
+		\end{oframed}
+
+
+			\begin{oframed}
+			1234567890 1234567890 1234567890 1234567890 1234567890 1234567890 1234567890 
+			1234567890 1234567890 1234567890 1234567890 1234567890 1234567890 1234567890 
+			1134234324234535345345345345345343453453453453453453454534543534534
+			\end{oframed}
+
+
+
+	\clearpage
+% 	---------------------------------------------------------------------------------------------------------------------- section
+	\section{shaded}
+
+		\begin{oframed}
+			\verb|\usepackage{framed}|\\
+			\verb|\definecolor{shadecolor}{gray}{0.9}|\\
+			\verb|\begin{shaded}|\\
+			\verb|( 내   용 )|\\
+			\verb|\end{shaded}|
+		\end{oframed}
+
+
+	\clearpage
+			\definecolor{shadecolor}{gray}{0.9}
+			\begin{shaded}
+			1234567890 1234567890 1234567890 1234567890 1234567890 1234567890 1234567890 
+			1234567890 1234567890 1234567890 1234567890 1234567890 1234567890 1234567890 
+			1134234324234535345345345345345343453453453453453453454534543534534
+			\end{shaded}
+
+			\definecolor{shadecolor}{gray}{0.9}
+			\begin{shaded}
+			\begin{oframed}
+			1234567890 1234567890 1234567890 1234567890 1234567890 1234567890 1234567890 
+			1234567890 1234567890 1234567890 1234567890 1234567890 1234567890 1234567890 
+			1134234324234535345345345345345343453453453453453453454534543534534
+			\end{oframed}
+			\end{shaded}
+
+			\definecolor{shadecolor}{gray}{0.9}
+			\begin{oframed}
+			\begin{shaded}
+			1234567890 1234567890 1234567890 1234567890 1234567890 1234567890 1234567890 
+			1234567890 1234567890 1234567890 1234567890 1234567890 1234567890 1234567890 
+			1134234324234535345345345345345343453453453453453453454534543534534
+			\end{shaded}
+			\end{oframed}
+
+
+
+
+	\clearpage
+% 	---------------------------------------------------------------------------------------------------------------------- section
+	\section{shaded*}
+
+
+
+		\begin{shaded*}
+			\verb|\usepackage{framed}|\\
+			\verb|\definecolor{shadecolor}{gray}{0.9}|\\
+			\verb|\begin{shaded*}|\\
+			\verb|( 내   용 )|\\
+			\verb|\end{shaded*}|
+		\end{shaded*}
+
+
+
+
+	\clearpage
+			\definecolor{shadecolor}{gray}{0.9}
+			\begin{shaded*}
+			1234567890 1234567890 1234567890 1234567890 1234567890 1234567890 1234567890 
+			1234567890 1234567890 1234567890 1234567890 1234567890 1234567890 1234567890 
+			1134234324234535345345345345345343453453453453453453454534543534534
+			\end{shaded*}
+
+			\definecolor{shadecolor}{gray}{0.9}
+			\begin{shaded*}
+			\begin{oframed}
+			1234567890 1234567890 1234567890 1234567890 1234567890 1234567890 1234567890 
+			1234567890 1234567890 1234567890 1234567890 1234567890 1234567890 1234567890 
+			1134234324234535345345345345345343453453453453453453454534543534534
+			\end{oframed}
+			\end{shaded*}
+
+			\definecolor{shadecolor}{gray}{0.9}
+			\begin{oframed}
+			\begin{shaded*}
+			1234567890 1234567890 1234567890 1234567890 1234567890 1234567890 1234567890 
+			1234567890 1234567890 1234567890 1234567890 1234567890 1234567890 1234567890 
+			1134234324234535345345345345345343453453453453453453454534543534534
+			\end{shaded*}
+			\end{oframed}
+
+
+
+
+
+	\clearpage
+% 	---------------------------------------------------------------------------------------------------------------------- section
+	\section{snugshade}
+
+		\begin{snugshade}
+			\verb|\usepackage{framed}|\\
+			\verb|\definecolor{shadecolor}{gray}{0.9}|\\
+			\verb|\begin{snugshade}|\\
+			\verb|( 내   용 )|\\
+			\verb|\end{snugshade}|
+		\end{snugshade}
+
+
+	\clearpage
+	
+			\definecolor{shadecolor}{gray}{0.9}
+			\begin{snugshade}
+			1234567890 1234567890 1234567890 1234567890 1234567890 1234567890 1234567890 
+			1234567890 1234567890 1234567890 1234567890 1234567890 1234567890 1234567890 
+			1134234324234535345345345345345343453453453453453453454534543534534
+			\end{snugshade}
+
+			\definecolor{shadecolor}{gray}{0.9}
+			\begin{snugshade}
+			\begin{oframed}
+			1234567890 1234567890 1234567890 1234567890 1234567890 1234567890 1234567890 
+			1234567890 1234567890 1234567890 1234567890 1234567890 1234567890 1234567890 
+			1134234324234535345345345345345343453453453453453453454534543534534
+			\end{oframed}
+			\end{snugshade}
+
+			\definecolor{shadecolor}{gray}{0.9}
+			\begin{oframed}
+			\begin{snugshade}
+			1234567890 1234567890 1234567890 1234567890 1234567890 1234567890 1234567890 
+			1234567890 1234567890 1234567890 1234567890 1234567890 1234567890 1234567890 
+			1134234324234535345345345345345343453453453453453453454534543534534
+			\end{snugshade}
+			\end{oframed}
+
+
+
+	\clearpage
+% 	---------------------------------------------------------------------------------------------------------------------- section
+	\section{snugshade*}
+
+
+	\clearpage
+
+
+	\clearpage
+% 	---------------------------------------------------------------------------------------------------------------------- section
+	\section{leftbar}
+
+		\begin{leftbar}
+			\verb|\usepackage{framed}|\\
+			\verb|\begin{leftbar}|\\
+			\verb|( 내   용 )|\\
+			\verb|\end{leftbar}|
+		\end{leftbar}
+		
+	\clearpage
+	
+			\begin{leftbar}
+			1234567890 1234567890 1234567890 1234567890 1234567890 1234567890 1234567890 
+			1234567890 1234567890 1234567890 1234567890 1234567890 1234567890 1234567890 
+			1134234324234535345345345345345343453453453453453453454534543534534
+			\end{leftbar}
+
+
+			\begin{leftbar}
+			\paragraph{필수 재료}
+			\begin{itemize}[topsep=0.0em, parsep=0.0em, itemsep=0em, leftmargin=12.0em, labelwidth=3em, labelsep=3em] 
+			\item [밥] 		1 공기
+			\item [참치]		통조림 참치 1/2 캔
+			\item [쌈채소]		3장
+			\end{itemize}
+			\end{leftbar}
+			
+			\begin{leftbar}
+			\begin{itemize}[topsep=0.0em, parsep=0.0em, itemsep=0em, leftmargin=12.0em, labelwidth=3em, labelsep=3em] 
+			\item [밥] 		1 공기
+			\item [참치]		통조림 참치 1/2 캔
+			\item [쌈채소]		3장
+			\end{itemize}
+			\end{leftbar}
+			
+			
+			\begin{leftbar}
+			1234567890 1234567890 1234567890 1234567890
+					\begin{leftbar}
+					1234567890 1234567890 1234567890 1234567890
+					1234567890 1234567890 1234567890 1234567890
+					\end{leftbar}
+					\begin{leftbar}
+					1234567890 1234567890 1234567890 1234567890
+					1234567890 1234567890 1234567890 1234567890
+					\end{leftbar}
+					1234567890 1234567890 1234567890 1234567890
+			1134234324234535345345345345345343453453453453453453454534543534534
+			\end{leftbar}
+
+		
+		
+	\clearpage
+% 	---------------------------------------------------------------------------------------------------------------------- section
+	\section{titled-frame}
+
+			\colorlet{TFFrameColor}{red}
+			\colorlet{TFTitleColor}{red}
+			\begin{titled-frame}{ title farme}
+			1234567890 1234567890 1234567890 1234567890 1234567890 1234567890 1234567890 
+			1234567890 1234567890 1234567890 1234567890 1234567890 1234567890 1234567890 
+			1134234324234535345345345345345343453453453453453453454534543534534
+			\end{titled-frame}
+
+
+			\definecolor{TFFrameColor}{rgb}{0.5,0.5,0.75}
+			\definecolor{TFTitleColor}{rgb}{0,0,0}
+			\begin{titled-frame}{A Titled Frame}
+			This is a titled frame.
+			\end{titled-frame}
+
+			\definecolor{TFFrameColor}{rgb}{0.5,0.5,0.75}
+			\definecolor{TFTitleColor}{rgb}{0.5,0.5,0.5}
+			\begin{titled-frame}{A Titled Frame}
+			This is a titled frame.
+			\end{titled-frame}
+
+
+			\definecolor{TFFrameColor}{rgb}{0.5,0.5,0.75}
+			\definecolor{TFTitleColor}{rgb}{1,0,0}
+			\begin{titled-frame}{A Titled Frame}
+			This is a titled frame.
+			\end{titled-frame}
+
+			\definecolor{TFFrameColor}{rgb}{0.5,0.5,0.75}
+			\definecolor{TFTitleColor}{rgb}{0,1,0}
+			\begin{titled-frame}{A Titled Frame}
+			This is a titled frame.
+			\end{titled-frame}
+
+			\definecolor{TFFrameColor}{rgb}{0.5,0.5,0.75}
+			\definecolor{TFTitleColor}{rgb}{0,0,1}
+			\begin{titled-frame}{A Titled Frame}
+			This is a titled frame.
+			\end{titled-frame}
+
+
+			\definecolor{TFFrameColor}{rgb}{0.5,0.5,0.75}
+			\definecolor{TFTitleColor}{rgb}{1,1,1}
+			\begin{titled-frame}{A Titled Frame}
+			This is a titled frame.
+			\end{titled-frame}
+
+
+
+
+
+
+
+
+			\cleardoublepage
+			\includepdf[pages=-, fitpaper=true]{./doc/framed.pdf}	
+%			\includepdf[page=1-, pagecommand={}]{./doc/pdfpages.pdf}
+%			\includepdf[page=1-, fitpaper=true]{./doc/pdfpages.pdf}
+
+
+
+
+
+
+% 	====================================================================================================================== chapter  box
+	\chapter{box}
+	\newpage	
+	\minitoc
+
+
+	\clearpage
+% 	---------------------------------------------------------------------------------------------------------------------- section
+	\section{par box}
+
+
+		\begin{framed}
+		\begin{verbatim}
+			\parbox
+			    [pos] (c)enter (t)op (b)ottom
+			    [height]
+			    [contentpos] (c)enter (t)op (b)ottom
+			    [width]
+			    [text]
+		\end{verbatim}
+		\end{framed}
+
+
+	\clearpage
+
+		\begin{framed}
+		\begin{verbatim}
+		\parbox[b]{1.5cm}{ hello \\ World}
+		\end{verbatim}
+		\end{framed}
+
+		\parbox[b]{1.5cm}{ hello \\ World}
+		
+
+	
+
+
+	\clearpage
+% 	---------------------------------------------------------------------------------------------------------------------- section
+	\section{\textbackslash mbox}
+
+		\mbox{ mbox를 만들다 }
+		
+
+
+		\textbf{□ code} \\
+		\begin{verb}
+		\mbox{c e n t r a l} 
+		\end{verb}
+
+		\textbf{□ 결과} \\
+		\mbox{c e n t r a l} 
+		
+		
+	\clearpage
+% 	---------------------------------------------------------------------------------------------------------------------- section
+	\section{\textbackslash makebox}
+
+
+		\textbf{□ code} \\
+		\begin{verb}
+		\makebox[\textwidth]{c e n t r a l} 
+		\end{verb}
+
+		\textbf{□ 결과} \\
+		\makebox[\textwidth]{c e n t r a l} 
+			
+
+		\textbf{□ code} \\
+		\begin{verb}
+		\makebox[\textwidth][s]{s p r e a d} 
+		\end{verb}
+		
+		\textbf{□ 결과} \\
+		\makebox[\textwidth][s]{s p r e a d} \par
+		
+		
+		
+		
+
+
+	\clearpage
+% 	---------------------------------------------------------------------------------------------------------------------- section
+	\section{\textbackslash fbox}
+
+
+
+			\begin{itemize}[topsep=0.0em, parsep=0.0em, itemsep=0em, leftmargin=4.0em, labelwidth=3em, labelsep=3em] 
+			
+			\item 	\verb|\fboxsep| : the distance between the frame and the content.
+			\item 	\verb|\fboxrule| : the thickness of the rule.
+
+			\end{itemize}
+			\vskip 2em
+
+
+			\textbf{□ code}
+			\begin{verbatim}
+			\setlength{\fboxsep}{10pt}
+			\setlength{\fboxrule}{5pt}
+			\fbox{A frame.}
+			\end{verbatim}
+
+			
+			\textbf{□ 결과} \\
+			\setlength{\fboxsep}{10pt}
+			\setlength{\fboxrule}{5pt}
+			\fbox{A frame.}
+			\vskip 2em
+			
+
+			\textbf{□ code}
+			\begin{verbatim}
+			\setlength{\fboxsep}{0pt}
+			\fbox{A}
+			\end{verbatim}
+			
+			\textbf{□ 결과} \\
+			\setlength{\fboxsep}{0pt}
+			\fbox{A}
+	
+	
+
+	\clearpage			
+
+		\subsection{□ fbox sep }
+
+		\subsection{□ fbox rule }
+	
+		\begin{framed}
+		\begin{verbatim}
+			\setlength{\fboxsep}{10pt}
+			\setlength{\fboxrule}{5pt}
+			\fbox{A frame.}
+		\end{verbatim}
+		\end{framed}
+		
+		\setlength{\fboxsep}{10pt}
+		\setlength{\fboxrule}{5pt}
+		\fbox{A frame.}
+		
+		\begin{framed}
+		\begin{verbatim}
+			\setlength{\fboxsep}{1em}
+			\setlength{\fboxrule}{0.1pt}
+			\fbox{A frame.}
+		\end{verbatim}
+		\end{framed}
+		
+		\setlength{\fboxsep}{1em}
+		\setlength{\fboxrule}{0.1pt}
+		\fbox{A frame.}
+
+			
+			
+	\clearpage			
+	
+		\setlength{\fboxrule}{1pt}
+		\setlength{\fboxsep}{4pt}
+	
+		\textbf{□ code} \\
+		\begin{verb}
+		\fbox{fbox를 만들다}
+		\end{verb}
+		
+		\textbf{□ 결과} \\
+		\fbox{fbox를 만들다 }
+		\vskip 2em
+		
+		
+		
+		
+		\textbf{□ code} \\
+		\begin{verb}
+		\fbox{text}
+		\end{verb}
+		
+		\textbf{□ 결과} \\
+		\fbox{text}
+		\vskip 2em
+
+
+
+	\clearpage			
+
+		
+		\textbf{□ 문단내에서의 fbox 적용} \\
+		1234567890 		\fbox{1234567890} 1234567890 1234567890 1234567890 1234567890 1234567890 \\
+		
+		\textbf{□ 문단내에서의 framebox 적용} \\
+		1234567890 		\framebox{1234567890} 1234567890 1234567890 1234567890 1234567890 1234567890 \\
+		framebox 적용시 박스의 크기를 지정하지 않으면 된다.
+		
+		
+		
+		\fbox{ 	1. fbox를 만들다 
+				2. fbox를 만들다 }
+		
+		\fbox{ 	1. fbox를 만들다 \\
+				2. fbox를 만들다 }
+		
+		\fbox{ 	1. fbox를 만들다 \newline
+				2. fbox를 만들다 }
+		
+		
+		
+		
+		
+		
+	\clearpage
+% 	---------------------------------------------------------------------------------------------------------------------- section
+	\section{\textbackslash framebox}
+
+		\begin{framed}
+		\begin{verbatim}
+			\framebox
+			    [width]
+			    [pos]
+			    {text}
+		\end{verbatim}
+		\end{framed}
+
+
+
+
+
+
+	\clearpage
+	
+		\textbf{□ code} \\
+		\begin{verb}
+		\framebox[1.1\width]{Guess I’m framed now!} \par
+		\end{verb}
+		
+		\textbf{□ 결과} \\
+		\framebox[1.1\width]{Guess I’m framed now!} \par 
+		\vskip 2em
+		
+		\textbf{□ code} \\
+		\begin{verb}
+		\framebox[0.8\width][r]{Bummer, I am too wide} \par
+		\end{verb}
+		
+		\textbf{□ 결과} \\
+		\framebox[0.8\width][r]{Bummer, I am too wide} \par
+		\vskip 2em
+		
+		\textbf{□ code} \\
+		\begin{verb}
+		\framebox[1cm][l]{never mind, so am I}
+		\end{verb}
+		
+		\textbf{□ 결과} \\
+		\framebox[1cm][l]{never mind, so am I}
+		\vskip 2em
+
+
+
+		\framebox[10cm]{ 	1 framebox를 만들다 \\
+						2 framebox를 만들다 }
+		
+		\framebox[14cm]{ 	1 framebox를 만들다 \newline
+						2 framebox를 만들다 }
+		
+
+
+
+		
+		
+	\clearpage
+% 	---------------------------------------------------------------------------------------------------------------------- section
+	\section{lrbox}
+
+
+	\clearpage
+% 	---------------------------------------------------------------------------------------------------------------------- section
+	\section{\textbackslash makebox}
+
+	\clearpage
+% 	---------------------------------------------------------------------------------------------------------------------- section
+	\section{\textbackslash parbox}
+
+
+	\clearpage
+% 	---------------------------------------------------------------------------------------------------------------------- section
+	\section{\textbackslash raisebox}
+
+	\clearpage
+% 	---------------------------------------------------------------------------------------------------------------------- section
+	\section{\textbackslash savebox}
+
+	\clearpage
+% 	---------------------------------------------------------------------------------------------------------------------- section
+	\section{\textbackslash sbox}
+
+	\clearpage
+% 	---------------------------------------------------------------------------------------------------------------------- section
+	\section{\textbackslash usebox}
+
+
+	\subsection*{minipage}
+	
+		\begin{itemize}
+		\item	입력
+				\begin{verbatim}
+				\begin{minipage}{3cm} blah\end{minipage}
+				\end{verbatim}
+		\item	결과\\
+				\begin{minipage}{3cm} blah\end{minipage}
+		\end{itemize}
+
+	\subsection*{fbox + mini page}
+	
+		\begin{itemize}
+		\item	입력
+				\begin{verbatim}
+				\fbox{ \begin{minipage}{3cm} blah\end{minipage} }
+			\end{verbatim}
+		\item	결과\\
+				\fbox{ \begin{minipage}{3cm} blah\end{minipage} }
+		\end{itemize}
+	
+
+
+
+
+
+	\clearpage
+% 	---------------------------------------------------------------------------------------------------------------------- section
+	\section{resize box}
+
+
+
+
+
+		\setlength{\fboxsep}{4pt}
+		\setlength{\fboxrule}{1pt}
+		\begin{framed}
+		\begin{verbatim}
+			\ resizebox{8cm}{!} {
+			     \begin{tabular}
+			     \end{tabular}     
+			}
+		\end{verbatim}
+		\end{framed}
+
+
+	\clearpage
+% 	---------------------------------------------------------------------------------------------------------------------- section
+	\section{\textbackslash raise box}
+
+
+		\begin{framed}
+		\begin{verbatim}
+		\raisebox{lift}
+		      [height]
+		      [depth]
+		      {text}
+		\end{verbatim}
+		\end{framed}
+
+
+
+
+
+		\raisebox{0pt}[0pt][0pt]
+			{\Large
+				\textbf{Aaaa\raisebox{-0.3ex}{a}%
+			    \raisebox{-0.7ex}{aa}%
+			    \raisebox{-1.2ex}{r}%
+			    \raisebox{-2.2ex}{g}%
+			    \raisebox{-4.5ex}{h}
+				}
+			}
+		he shouted but not even the next one in line noticed that something terrible had happened to him.
+
+
+
+
+	\clearpage
+% 	---------------------------------------------------------------------------------------------------------------------- section
+	\section{\textbackslash scale box}
+	
+	
+		\begin{framed}
+		\begin{verbatim}
+			\scalebox{0.7} {
+			     \begin{tabular}
+			     \end{tabular}     
+			}
+		\end{verbatim}
+		\end{framed}
+	
+
+		\begin{verbatim}
+		\scalebox{h-scale}{v-scale}{argument}
+		\end{verbatim}
+
+
+		\begin{framed}
+		\scalebox{1.0}{
+		1234567890 1234567890 1234567890 1234567890 1234567890 1234567890 1234567890 
+		1234567890 1234567890 1234567890 1234567890 1234567890 1234567890 1234567890 
+		1234567890 1234567890 1234567890 1234567890 1234567890 1234567890 1234567890 
+		1134234324234535345345345345345343453453453453453453454534543534534 
+		}
+		\end{framed}
+	
+		\begin{framed}
+		\scalebox{0.7}{
+		1234567890 1234567890 1234567890 1234567890 1234567890 1234567890 1234567890 
+		1234567890 1234567890 1234567890 1234567890 1234567890 1234567890 1234567890 
+		1234567890 1234567890 1234567890 1234567890 1234567890 1234567890 1234567890 
+		1134234324234535345345345345345343453453453453453453454534543534534
+		}		
+		\end{framed}
+
+		\begin{minipage}{\linewidth}
+		1234567890 1234567890 1234567890 1234567890 1234567890 1234567890 1234567890 
+		1234567890 1234567890 1234567890 1234567890 1234567890 1234567890 1234567890 
+		1234567890 1234567890 1234567890 1234567890 1234567890 1234567890 1234567890 
+		1134234324234535345345345345345343453453453453453453454534543534534
+		\end{minipage}
+
+	
+		\begin{framed}
+		\scalebox{0.7}{
+		\begin{minipage}{\linewidth}
+		1234567890 1234567890 1234567890 1234567890 1234567890 1234567890 1234567890 
+		1234567890 1234567890 1234567890 1234567890 1234567890 1234567890 1234567890 
+		1234567890 1234567890 1234567890 1234567890 1234567890 1234567890 1234567890 
+		1134234324234535345345345345345343453453453453453453454534543534534
+		\end{minipage}
+		}		
+		\end{framed}
+	
+	
+	\clearpage  \null  	
+	
+	
+		\scalebox{0.7}{
+		\begin{boxedminipage}{1.2\linewidth}
+		1234567890 1234567890 1234567890 1234567890 1234567890 1234567890 1234567890 
+		1234567890 1234567890 1234567890 1234567890 1234567890 1234567890 1234567890 
+		1234567890 1234567890 1234567890 1234567890 1234567890 1234567890 1234567890 
+		1134234324234535345345345345345343453453453453453453454534543534534
+		\end{boxedminipage}
+		}		
+	
+	
+	
+	
+		\begin{framed}
+		\begin{verbatim}
+		\scalebox{0.7}{
+		\begin{boxedminipage}{1.2\linewidth}
+		1234567890 1234567890 1234567890 1234567890 1234567890 1234567890 1234567890 
+		1234567890 1234567890 1234567890 1234567890 1234567890 1234567890 1234567890 
+		1234567890 1234567890 1234567890 1234567890 1234567890 1234567890 1234567890 
+		1134234324234535345345345345345343453453453453453453454534543534534
+		\end{boxedminipage}
+		}		
+		\end{verbatim}
+		\end{framed}
+	
+	
+	
+	
+	
+	
+	
+	
+
+	\clearpage
+% 	---------------------------------------------------------------------------------------------------------------------- section
+	\section{\textbackslash save box}
+
+
+	\clearpage
+% 	---------------------------------------------------------------------------------------------------------------------- section
+	\section{\textbackslash rotate box}
+	
+
+	
+	\clearpage
+% 	---------------------------------------------------------------------------------------------------------------------- section
+	\section{\textbackslash color box and fcolor box} 
+	
+
+
+	\clearpage
+% 	---------------------------------------------------------------------------------------------------------------------- section
+	\section{\textbackslash fancy box}
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+% 	====================================================================================================================== chapter  minipage
+	\cleardoublepage
+	\chapter{minipage}
+%	\newpage	
+	\minitoc
+	
+
+
+	\clearpage
+% 	---------------------------------------------------------------------------------------------------------------------- section
+	\section{mini page}
+
+		\begin{framed}
+		\begin{verbatim}
+			\begin{minipage}[c]{1.0\linewidth}
+			\end{minipage}
+		\end{verbatim} 		
+		\end{framed}
+						
+		\begin{minipage}[c]{1.0\linewidth}
+		1234567890 1234567890 1234567890 1234567890 1234567890 1234567890 1234567890 
+		1234567890 1234567890 1234567890 1234567890 1234567890 1234567890 1234567890 
+		1234567890 1234567890 1234567890 1234567890 1234567890 1234567890 1234567890 
+		1134234324234535345345345345345343453453453453453453454534543534534
+		\end{minipage}
+
+			
+	\clearpage
+% 	---------------------------------------------------------------------------------------------------------------------- section
+	\section{mini page}
+	
+		\begin{framed}
+		\begin{verbatim}
+			\begin{minipage}[c][\textheight]{\linewidth}		
+			\end{minipage}
+		\end{verbatim} 
+		\end{framed}
+						
+		\begin{minipage}[c][\textheight]{\linewidth}
+		1234567890 1234567890 1234567890 1234567890 1234567890 1234567890 1234567890 
+		1234567890 1234567890 1234567890 1234567890 1234567890 1234567890 1234567890 
+		1234567890 1234567890 1234567890 1234567890 1234567890 1234567890 1234567890\\
+		1134234324234535345345345345345343453453453453453453454534543534534
+		\end{minipage}
+
+			
+	\clearpage
+% 	---------------------------------------------------------------------------------------------------------------------- section
+	\section{boxedmini page}
+
+			\begin{framed}
+			\begin{verbatim}
+				\setlength{\fboxrule}{2pt} 
+				\setlength{\fboxsep}{3em} 
+				\begin{boxedminipage}{\textwidth}			
+				\end{boxedminipage}
+			\end{verbatim} 
+			\end{framed}
+			
+	\clearpage			
+	
+			\textbf{□ setlength : 3em}
+			\setlength{\fboxrule}{2pt} 
+			\setlength{\fboxsep}{3em} 
+			\begin{boxedminipage}{0.7\textwidth}			
+				1234567890 1234567890 1234567890 1234567890 1234567890 1234567890 1234567890
+				1234567890 1234567890 1234567890 1234567890 1234567890 1234567890 1234567890 \\
+				1134234324234535345345345345345343453453453453453453454534543534534
+			\end{boxedminipage}
+			
+			\textbf{□ setlength : 2em}
+			\setlength{\fboxrule}{2pt} 
+			\setlength{\fboxsep}{2em} 
+			\begin{boxedminipage}{0.7\textwidth}			
+				1234567890 1234567890 1234567890 1234567890 1234567890 1234567890 1234567890
+				1234567890 1234567890 1234567890 1234567890 1234567890 1234567890 1234567890 \\
+				1134234324234535345345345345345343453453453453453453454534543534534
+			\end{boxedminipage}
+					
+			\textbf{□ setlength : 1em}
+			\setlength{\fboxrule}{2pt} 
+			\setlength{\fboxsep}{1em} 
+			\begin{boxedminipage}{0.7\textwidth}			
+				1234567890 1234567890 1234567890 1234567890 1234567890 1234567890 1234567890
+				1234567890 1234567890 1234567890 1234567890 1234567890 1234567890 1234567890 \\
+				1134234324234535345345345345345343453453453453453453454534543534534
+			\end{boxedminipage}
+			
+			
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+%	============================================================================================================================== part  명령과 클래스 작성
+	\addtocontents{toc} {\protect\newpage}
+
+			\part{명령과 클래스 작성}
+			
+			\parttoc
+	%		\partlof
+	%		\partlot
+
+
+
+
+
+% 	====================================================================================================================== chapter  명령과 클래스 작성
+	\chapter{명령과 클래스 작성}
+	\minitoc
+
+
+
+% --------------------------------------- section --------------
+\section{명령어의 정의}
+
+	앞에서 명령어는 명령(command)과 환경(environment) 두 종류로 구성된다고 했다.
+	따라서 새로운 명령어를 만들거나, 기존의 명령어를 수정하는 명령어도 명령과 환경 각각 따로 존재한다.
+	
+
+% --------------------------------------- section --------------
+\section{새로운 명령의 정의}
+
+		\setlength{\fboxsep}{12pt}
+		\begin{boxedminipage}[c]{1.0\linewidth}
+		\begin{verbatim}
+		\newcommand {명령이름} [정수] [표준값] {정의}
+		\re newcommand {명령이름} [정수] [표준값] {정의}
+		\end{verbatim}
+		\end{boxedminipage}
+		\null
+		
+
+		예제
+		
+		명령의 정의 
+		
+		\begin{verbatim}
+			\newcommand {\ex} [2] [미래] {나는 #1 #2에 간다}
+		\end{verbatim}
+		
+		
+		사용예
+		
+			\newcommand {\ex} [2] [미래] {나는 #1 #2에 간다}
+		
+		\begin{verbatim}
+			\ex{대학}
+		\end{verbatim}
+			\ex{대학}
+
+		\begin{verbatim}
+			\ex{출판}
+		\end{verbatim}		
+			\ex{출판}
+		
+		
+		
+	\newpage  \null
+	\subsection*{예제2}
+		
+		\begin{verbatim}
+		\new command {\red} {\color{red}}			% 글자 색깔 지정
+		\new command {\black} {\color{black}}		% 글자 색깔 지정
+		\end{verbatim}		
+	
+			
+		(사용) \verb|\red 대한민국 \black|\\
+		(결과) \red 대한민국 \black
+
+% --------------------------------------- section --------------
+\section{기존 명령을 바꾸는 경우}
+	
+		\setlength{\fboxsep}{12pt}
+		\begin{boxedminipage}[c]{1.0\linewidth}
+		\begin{verbatim}
+		\re newcommand {명령이름} [정수] [표준값] {정의}
+		\end{verbatim}
+		\end{boxedminipage}
+		\null
+		
+	기존명령을 바꾸는 경우도 생각해 볼 수 있다.
+	
+	\subsection*{예제1}
+			다음은 한글문서를 작성할때, 기본값으로서 장과 별도로 절 번호가 매겨지는 것(제5장 제1절)을,
+			자신의 구미에 맞게 장 번호와 절 번호가 동시에 매겨지도록(제5장 5.1) 
+			기존의 명령을 수정하는 방법이다.\\
+			
+			
+				\begin{verbatim}
+				\re new cmmmand \ the section { \ the chapter. \arabic{section} }
+				\end{verbatim}		
+				
+	\subsection*{예제2}
+			개조식 문서의 나열 기호를 수정하할 수도 있다.
+			
+				\begin{verbatim}
+				\re new cmmmand * {\ label itemi { \ ding{43}}
+				\end{verbatim}		
+
+	% --------------------------------------- section --------------
+\section{새로운 환경의 정의}
+
+		\setlength{\fboxsep}{12pt}
+		\begin{boxedminipage}[c]{1.0\linewidth}
+		\begin{verbatim}
+		\new environment {환경이름} [정수] [표준값] {시작} {끝}
+		\new re environment {환경이름} [정수] [표준값] {시작} {끝}
+		\end{verbatim}
+		\end{boxedminipage}
+		\null
+		
+		
+		여기서 시작과 끝은 \verb|\begin{환경이름}| 이후 지정되는 시가부분과 
+		\verb|\end{환경 이름}| 이후 지정되는 끝 부분의 명령어를 입력하는 곳이다.
+		
+	\subsection*{예제1}
+			다음의 예제는 exercise라는 환경을 새로 만드는 것이다.
+			이 환경의 적용을 받는 부분은 ‘연습문제’라는 제목과 
+			이탤릭체의 본문으로 나타날것이다.
+			
+			
+			\begin{verbatim}
+			\newenvironment{ex-001}{\textbf{연습문제}\begin{itshape} {\end{itshape}}
+			\end{verbatim}		
+		
+			\begin{ex-001}
+			대한민국 대한민국 대한민국 대한민국 대한민국 대한민국 대한민국 대한민국 대한민국 대한민국 
+			\end{ex-001}
+
+	\newpage  \null
+	\subsection*{예제2}
+			
+			
+			\begin{verbatim}
+			\newenvironment{env_ex-002}
+			{ 	\setlength{\fboxsep}{12pt}
+				\begin{boxedminipage}[c]{1.0\linewidth}
+				\color{red}
+			}
+			{ 	\end{boxedminipage} 
+				\color{black}
+			}
+			\end{verbatim}		
+
+
+		(사용) \verb|\begin{env_ex-002} 대한민국 \end{env_ex-002}|\\
+		(결과) \\
+		\begin{env_ex-002} 대한민국 \end{env_ex-002}
+
+
+
+
+
+%	=========================================================================================================================================== part  기타
+	\addtocontents{toc} {\protect\newpage}
+
+			\part{기타}
+			
+			\parttoc
+	%		\partlof
+	%		\partlot
+
+
+% 	---------------------------------------------------------------------------------------------------------------------- section
+	\section{큰 규모의 글쓰기}
+
+
+
+% 	---------------------------------------------------------------------------------------------------------------------- section
+	\section{LaTeX의 종류}
+
+
+
+% 	---------------------------------------------------------------------------------------------------------------------- section
+	\section{작업 과정에서 생성되는 파일들}
+
+
+
+
+
+%	=========================================================================================================================================== part  기타
+	\addtocontents{toc} {\protect\newpage}
+
+			\part{Package}
+
+			\parttoc
+	%		\partlof
+	%		\partlot
+
+
+
+% 	====================================================================================================================== chapter  패키지 다루기
+
+		\include{./tex/package}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
+
+
+
+
+
+
+
+
+			\paragraph{조리 순서 - 전자레인지 사용}
+			\begin{itemize}[topsep=0.0em, parsep=0.0em, itemsep=0em, leftmargin=12.0em, labelwidth=3em, labelsep=3em] 
+			\item [1.] 	모닝빵은 둥근 모양으로 속을 파낸다.
+			\item [2.] 	달걀을 풀어 빵안 넣고 소금, 모차렐라 치즈(2), 파슬리 가루를 뿌리고
+			\item [3.] 	전자레인지에 2분간 돌려 마무리
+			\end{itemize}
+
+
+
+
+
+
+
+
+
+		%		\tabulinesep=0.6ex
+				\begin{tabu} to 1.0\textwidth { X[r, 2.0] X[l,m, 1.6] X[r, 0.8] X[c,m, 1.0] }
+				\tabucline[0.2ex]{-}		
+				품명				&규격		&단가	&비고\\
+				\tabucline[0.1ex]{-}		
+				계란			&				&		&\\
+				닭고기		&				&		&\\
+				돼지고기 삼겹살	&				&		&\\
+				소고기 양지	&				&		&\\
+				뻔데기		&				&		&\\
+				\tabucline[0.1ex]{-}		
+				\end{tabu} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+

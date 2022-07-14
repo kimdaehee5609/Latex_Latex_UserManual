@@ -1,0 +1,241 @@
+	
+% ========================================== chapter ============
+\newpage
+\chapter{Diagram}
+
+
+		% ----------------------- 장 목차 생성 Initialization
+		\minitoc		
+
+
+% -------------------------------------------------------------
+	\newpage
+	\section{Diagram 개요}
+	
+	\setlength{\fboxsep}{12pt}
+	\begin{boxedminipage}[c]{1.0\linewidth}
+	\linespread{1.0}
+	\small
+	\begin{verbatim}
+		\begin{tikzpicture}[
+		roundnode/.style={	circle, 
+							draw=green!60, 
+							fill=green!5, 
+							very thick, 
+							minimum size=7mm},
+		squarednode/.style={	rectangle, 
+							draw=red!60, 
+							fill=red!5, 
+							very thick, 
+							minimum size=5mm},
+		]
+		%Nodes
+		\node[squarednode]	(maintopic)		{2};
+		\node[roundnode]     (uppercircle)		[above=of maintopic] {1};
+		\node[squarednode]	(rightsquare)	[right=of maintopic] {3};
+		\node[roundnode]	(lowercircle)	[below=of maintopic] {4};
+ 		%Lines
+		\draw[->] (uppercircle.south) -- (maintopic.north);
+		\draw[->] (maintopic.east) -- (rightsquare.west);
+		\draw[->] (rightsquare.south) .. controls 
+					+(down:7mm) and +(right:7mm) .. (lowercircle.east);
+	\end{verbatim}
+	\normalsize
+	\end{boxedminipage}
+
+		\begin{tikzpicture}[
+		roundnode/.style={	circle, 
+							draw=green!60, 
+							fill=green!5, 
+							very thick, 
+							minimum size=7mm},
+		squarednode/.style={	rectangle, 
+							draw=red!60, 
+							fill=red!5, 
+							very thick, 
+							minimum size=5mm},
+		]
+		%Nodes
+		\node[squarednode]	(maintopic)		{2};
+		\node[roundnode]     (uppercircle)		[above=of maintopic] {1};
+		\node[squarednode]	(rightsquare)	[right=of maintopic] {3};
+		\node[roundnode]	(lowercircle)	[below=of maintopic] {4};
+ 		%Lines
+		\draw[->] (uppercircle.south) -- (maintopic.north);
+		\draw[->] (maintopic.east) -- (rightsquare.west);
+		\draw[->] (rightsquare.south) .. controls 
+					+(down:7mm) and +(right:7mm) .. (lowercircle.east);
+
+		\end{tikzpicture}
+		
+		\paragraph{ $\backslash$node   [ squarednode ] (maintopic) \{ 2 \} ; }
+
+			\begin{itemize}
+			\setlength\itemsep{0.0em}
+			\item 이전 명령에 정의 된대로 squarednode를 작성합니다. 
+			\item 이 노드는 아이디를 maintopic로 하고, 숫자 2를 포함합니다. 
+			\item 괄호 안에 빈 공간을 둘 경우 텍스트가 표시되지 않습니다. 
+			 \end{itemize}
+			 
+		\paragraph{[above=of maintopic]}
+
+			추가 매개 변수가 
+			첫 번째 노드를 제외한 모든,
+			이 매개 변수가 다른 노드에 상대적인 위치를 결정하는 것을 알 수 있습니다. 
+			[above= maintopic] \\
+			
+			예를 들어 이 노드는 노드 이름 maintopic 위에 표시해야 함을 의미한다. 
+			이 위치 확인 시스템이 작동하려면 프리앰블에 $\backslash$usetikzlibrary\{positioning\}를 
+			추가해야합니다.
+
+
+
+% -------------------------------------------------------------
+	\newpage
+	\section{Diagram 블럭 그리거}
+
+		% -------------------------------------------------------------------    
+			\begin{tikzpicture}
+		    		[node distance=2cm,>=latex',
+				 block/.style = {draw, 	shape=rectangle, align=center} ]
+			\node [block]                      		(start)     	{ 일반 블럭};
+		    	\end{tikzpicture}
+		    	
+		% -------------------------------------------------------------------    
+		    \begin{tikzpicture}
+		    		[node distance=2cm,>=latex',
+				rblock/.style = {draw, 	shape=rectangle, rounded corners=0.5em} ]
+			\linespread{1.0}
+			\node [rblock]                      		(start)     	{ r 블럭 (rectangle)};
+		    	\end{tikzpicture}
+		    	
+		% -------------------------------------------------------------------    
+		    \begin{tikzpicture}
+		    		[node distance=2cm,>=latex',
+				tblock/.style = {draw, 	shape=trapezium, 	
+										trapezium left angle=60, 
+										trapezium right angle=120, 
+										align=center} ]
+			\node [tblock]                      		(start)     	{ t 블럭 (trapezium)};
+		    	\end{tikzpicture}
+
+
+% -------------------------------------------------------------
+	\newpage
+	\section{블럭 배치}
+
+
+
+
+% -------------------------------------------------------------
+	\newpage
+	\section{화살표 배치}
+
+		    			    	
+
+% -------------------------------------------------------------
+	\newpage
+	\section{Diagram 그리기}
+
+
+
+	% ---------------------------------------------- page 
+	\subsection{다이아그램 그리기 일반}
+	\null
+
+		% -------------------------------------------------------------------    
+		%  다이아그램 그리기
+		% -------------------------------------------------------------------    
+		    \begin{tikzpicture}
+		    		[node distance=2cm,>=latex',
+				 block/.style = {draw, 	shape=rectangle, align=center},
+				rblock/.style = {draw, 	shape=rectangle, rounded corners=0.5em},
+				tblock/.style = {draw, 	shape=trapezium, 	
+										trapezium left angle=60, 
+										trapezium right angle=120, 
+										align=center},
+		             ]
+		             
+			\linespread{1.0}
+			\node [rblock]                      		(start)     	{출발\\ Start};
+		    	\node [block, right=of start]       	(acquire)   	{Node2 \\ Acquire Image};
+		    	\node [block, right=of acquire]     	(rgb2gray)  	{RGB to Gray};
+		    	\node [block, right=of rgb2gray]   	(otsu)      	{Localized OTSU\\ Thresholding};
+		    	\node [block, below=of acquire]   	(gchannel)  	{Subtract the\\ Green Channel};
+		    	\node [block, right=of gchannel]   (closing)   	{Morphological\\ Closing};
+		    	\node [block, right=of closing]     	(detecting) 	{Sign Detectiing\\ using NN};
+		    	\node [tblock, right=of detecting] (speed)     	{Speed\\ Limit};
+		    	
+			\draw[->] (start) -- (acquire);
+			\draw[->] (acquire) -- (rgb2gray);
+			
+		%etc
+			\coordinate[below right=5mm and 5mm of otsu]   (a1);
+			\coordinate[left=5mm of a1 -| gchannel.west]   (a2);
+			\draw[->] (otsu) -| (a1) -- (a2) |- (gchannel);
+		%etc
+		    	\end{tikzpicture}
+		    	
+		    	
+		    	
+		    	
+	% ---------------------------------------------- page 
+	\newpage
+	\subsection{아래방향으로 다이아그램 그리기}
+	\null
+    	
+		% -------------------------------------------------------------------    
+		%  아래 방향으로의 다이아그램 그리기
+		% -------------------------------------------------------------------    
+		
+		    \begin{tikzpicture}
+		    		[node distance=1cm,>=latex',
+				 block/.style = {draw, 	shape=rectangle, align=center},
+				rblock/.style = {draw, 	shape=rectangle, rounded corners=0.5em},
+				tblock/.style = {draw, 	shape=trapezium, 
+										trapezium left angle=60, 
+										trapezium right angle=120, 
+										align=center},
+		             ]
+		             
+			\linespread{1.0}
+			\node [rblock]                      		(start)     	{출발\\ Start};
+		    	\node [block, below=of start]       	(acquire)   	{Node2 \\ Acquire Image};
+		    	\node [block, below=of acquire]   	(rgb2gray)  	{RGB to Gray};
+		    	\node [block, below=of rgb2gray]  (otsu)      	{Localized OTSU\\ Thresholding};
+		    	\node [block, below=of otsu]   	(gchannel) 	{Subtract the\\ Green Channel};
+		    	\node [block, below=of gchannel]  (closing)   	{Morphological\\ Closing};
+		    	\node [block, below=of closing]    (detecting) 	{Sign Detectiing\\ using NN};
+		    	\node [tblock, below=of detecting] (speed)     	{Speed\\ Limit};
+		    	
+			\draw[->] (start) -- (acquire);
+			\draw[->] (acquire) -- (rgb2gray);
+			\draw[->] (rgb2gray) -- (otsu);
+			\draw[->] (otsu) -- (gchannel);
+			\draw[->] (gchannel) -- (closing);
+			\draw[->] (closing) -- (detecting);
+			\draw[->] (detecting) -- (speed);
+			
+			
+    	\end{tikzpicture}
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
